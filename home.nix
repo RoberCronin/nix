@@ -6,12 +6,16 @@ in
 {
     home = {
         packages = with pkgs; [
-            hostname
             hello
         ];
 
         inherit username;
         homeDirectory = "/home/${username}";
+
+        file.hostname_file = {
+            enable = true;
+            text = "${hostname}";
+        };
 
         stateVersion = "23.11";
     };
