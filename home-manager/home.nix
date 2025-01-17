@@ -1,7 +1,6 @@
 { lib, pkgs, ... }:
 let
     username = "robert";
-    hostname = builtins.getEnv "HOSTNAME";
 in
 {
     home = {
@@ -11,11 +10,6 @@ in
 
         inherit username;
         homeDirectory = "/home/${username}";
-
-        file.hostname_file = {
-            enable = true;
-            text = "${hostname}";
-        };
 
         stateVersion = "23.11";
     };
