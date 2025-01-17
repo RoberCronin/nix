@@ -1,12 +1,17 @@
 { lib, pkgs, ... }:
+let
+    username = "robert";
+    hostname = builtins.getEnv "HOSTNAME";
+in
 {
     home = {
         packages = with pkgs; [
+            hostname
             hello
         ];
 
-        username = "robert";
-        homeDirectory = "/home/robert";
+        inherit username;
+        homeDirectory = "/home/${username}";
 
         stateVersion = "23.11";
     };
