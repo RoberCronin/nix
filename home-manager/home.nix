@@ -1,9 +1,13 @@
 { config, lib, pkgs, ... }:
 let
     username = "robert";
+    hostname = config.hostdata.hostname;
 in
 {
-    imports = [../hostname.nix];
+    imports = [
+    ../hostname.nix
+    ./environment
+    ];
     
     home = {
         packages = with pkgs; [
@@ -15,7 +19,7 @@ in
 
         file.out = {
             enable = true;
-            text = "${config.hostdata.hostname}";
+            text = "${hostname}";
         };
 
         stateVersion = "23.11";
