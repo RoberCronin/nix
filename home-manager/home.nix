@@ -1,8 +1,10 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 let
     username = "robert";
 in
 {
+    imports = [../hostname.nix];
+    
     home = {
         packages = with pkgs; [
             hello
@@ -11,12 +13,18 @@ in
         inherit username;
         homeDirectory = "/home/${username}";
 
+        file.out = {
+            enable = true;
+            text = "${config.hostdata.hostname}";
+        };
+
         stateVersion = "23.11";
     };
 
     programs.neovim = {
         enable = true;
-        extraLuaPackages = ps: [ ps.magick ];
-        extraPackages = with pkgs; [ imagemagick ];
+        defaultEditor = true;
+        viAlias = true;
+        vimAlias = true;
     };
 }

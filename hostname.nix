@@ -1,7 +1,13 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 let
     hostname = "laptop";
 in
 {
-    lib.hostname = "laptop";
+    options.hostdata = {
+        hostname = lib.mkOption {
+            type = lib.types.str;
+            default = hostname;
+            description = "Networking hostname";
+        };
+    };
 }
