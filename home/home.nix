@@ -5,8 +5,7 @@ let
 in
 {
     imports = [
-    ../hostname.nix
-    ./environment
+        ./environment
     ];
     
     home = {
