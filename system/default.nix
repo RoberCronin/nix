@@ -5,7 +5,7 @@ let
 in
 {
     imports =  [
-        /etc/nixos/hardware-configuration.nix
+        ./hardware
         ./required
         ./options.nix
         ./virtualization.nix
