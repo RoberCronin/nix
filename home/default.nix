@@ -24,11 +24,4 @@ in
 
         stateVersion = "23.11";
     };
-
-    programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-        viAlias = true;
-        vimAlias = true;
-    };
 }
