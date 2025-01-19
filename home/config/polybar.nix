@@ -4,8 +4,9 @@ let
     hostname = config.hostdata.hostname;
 in
 {
-    programs.polybar = {
+    services.polybar = {
         enable = true;
         config = ./imports/polybar.ini;
+        script = "";
     };
 }
