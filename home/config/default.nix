@@ -7,5 +7,6 @@
         ./tmux.nix
         ./polybar.nix
         ./nvim.nix
+        ./picom.nix
     ];
 }
