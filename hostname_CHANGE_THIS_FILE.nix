@@ -3,6 +3,7 @@
 # copy this file and rename it to hostname.nix then
 # change the variables in the let ... in block to reflect
 # the system. 
+# the run command 'git add --intend-to-add hostname.nix'
 
 { config, lib, pkgs, ... }:
 let
