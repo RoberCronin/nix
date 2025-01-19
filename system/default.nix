@@ -5,7 +5,6 @@ let
 in
 {
     imports =  [
-        ./hardware
         ./required
         ./options.nix
         ./virtualization.nix
