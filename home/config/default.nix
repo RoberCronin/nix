@@ -5,5 +5,6 @@
         ./btop.nix
         ./starship.nix
         ./tmux.nix
+        ./polybar.nix
     ];
 }
