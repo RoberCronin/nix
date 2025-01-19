@@ -5,3 +5,9 @@ The file 'hostname_CHANGE_THIS_FILE.nix' must be copied to 'hostname.nix' then t
 You also must copy your hardware-configuration.nix to this folder then run:
 * git add --intent-to-add hardware-configuration.nix
 * git update-index --assume-unchanged hardware-configuration.nix
+
+To rebuild home:
+* home-manager switch -b backup --flake .
+
+To rebuild system:
+* sudo nixos-rebuild switch --flake .#robert
