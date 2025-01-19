@@ -5,10 +5,15 @@ let
     hostname = config.hostdata.hostname;
 in
 {
+    home.file."btop-catppuccin-macchiato.theme" = {
+        source = ./imports/btop-catppuccin-macchiato.theme;
+        target = ".config/btop/themes/catppuccin-macchiato.theme";
+    };
+    
     programs.btop = {
         enable = true;
         settings = {
-            color_theme = ./imports/btop-catppuccin-macchiato.theme;
+            color_theme = "catppuccin-macchiato.theme";
             theme_background = false;
             truecolor = true;
             force_tty = false;
