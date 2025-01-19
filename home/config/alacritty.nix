@@ -7,7 +7,7 @@ in
     programs.alacritty = {
         enable = true;
         settings = {
-            general.import = ./catppuccin-macchiato.toml;
+            general.import = [ ./imports/alacritty-catppuccin-macchiato.toml ];
             font.size = if (hostname == "laptop") then 8 else 12;
             font.normal = {
                 family = "JuliaMono";
