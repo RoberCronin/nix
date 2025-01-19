@@ -6,6 +6,7 @@ in
 {
     home.file.tmux = {
         source = ./imports/tmux;
-        target = ".config";
+        target = ".config/tmux";
+        recursive = true;
     };
 }
