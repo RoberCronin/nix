@@ -3,7 +3,8 @@
 # copy this file and rename it to hostname.nix then
 # change the variables in the let ... in block to reflect
 # the system. 
-# the run command 'git add --intend-to-add hostname.nix'
+# then run command 'git add --intent-to-add hostname.nix'
+# then run command 'git update-index --assume-unchanged hostname.nix'
 
 { config, lib, pkgs, ... }:
 let

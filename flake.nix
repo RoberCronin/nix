@@ -19,7 +19,7 @@
         homeConfigurations = {
             robert = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
-                modules = [ ./home/home.nix ./hostname.nix ];
+                modules = [ ./home ./hostname.nix ];
             };
         };
     };
