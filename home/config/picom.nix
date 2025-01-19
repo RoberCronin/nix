@@ -15,7 +15,7 @@ in
         
         fade = true;
         fadeDelta = 2;
-        fadeSteps = 0.03;
+        fadeSteps = [ 0.03 0.03 ];
         settings = {
             blur = {
                 method = "gaussian";
