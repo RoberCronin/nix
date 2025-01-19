@@ -22,5 +22,12 @@
                 modules = [ ./home ./hostname.nix ];
             };
         };
+        nixosConfigurations = {
+            robert = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [ ./system ./hostname.nix ];
+            };
+
+        };
     };
 }
