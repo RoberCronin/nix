@@ -4,5 +4,6 @@
         ./alacritty.nix
         ./btop.nix
         ./starship.nix
+        ./tmux.nix
     ];
 }
