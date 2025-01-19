@@ -6,5 +6,6 @@
         ./starship.nix
         ./tmux.nix
         ./polybar.nix
+        ./nvim.nix
     ];
 }

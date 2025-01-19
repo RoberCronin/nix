@@ -9,5 +9,6 @@ in
         target = ".config/tmux";
         recursive = true;
     };
+    
     programs.tmux.enable = true;
 }
