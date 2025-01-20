@@ -4,6 +4,12 @@ let
     hostname = config.hostdata.hostname;
 in
 {
+    programs.thunar.plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-volman
+        thunar-media-tags-plugin
+    ];
+    
     nixpkgs.config.packageOverrides = pkgs: {
         catppuccin-gtk = pkgs.catppuccin-gtk.override {
             accents = [ "mauve" ]; # You can specify multiple accents here to outpu>
@@ -97,11 +103,7 @@ in
         jstest-gtk
         copyq
         gparted
-        xfce.thunar
         xfce.exo
-        xfce.thunar-volman
-        xfce.thunar-archive-plugin
-        xfce.thunar-media-tags-plugin
 
         # Window Manager Utils
         dunst
