@@ -17,11 +17,6 @@ in
         inherit username;
         homeDirectory = "/home/${username}";
 
-        file.out = {
-            enable = true;
-            text = "${hostname}";
-        };
-
         stateVersion = "23.11";
     };
 }
