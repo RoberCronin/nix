@@ -10,5 +10,6 @@
         ./picom.nix
         ./yazi.nix
         ./dunst.nix
+        ./rofi.nix
     ];
 }
