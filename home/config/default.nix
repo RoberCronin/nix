@@ -11,5 +11,6 @@
         ./yazi.nix
         ./dunst.nix
         ./rofi.nix
+        ./i3.nix
     ];
 }
