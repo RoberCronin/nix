@@ -8,5 +8,6 @@
         ./polybar.nix
         ./nvim.nix
         ./picom.nix
+        ./yazi.nix
     ];
 }
