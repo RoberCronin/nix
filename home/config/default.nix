@@ -9,5 +9,6 @@
         ./nvim.nix
         ./picom.nix
         ./yazi.nix
+        ./dunst.nix
     ];
 }
