@@ -7,6 +7,7 @@ in
     imports = [
         ./environment
         ./config
+        ./packages.nix
     ];
     
     home = {

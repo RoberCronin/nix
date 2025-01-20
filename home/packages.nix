@@ -5,6 +5,10 @@ let
 in
 {
     home.packages = with pkgs; [
-    
+        # file opening
+        mpv
+        nomacs
+        flameshot
+        xfce.mousepad
     ];
 }

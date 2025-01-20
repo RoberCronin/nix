@@ -39,7 +39,7 @@ exec --no-startup-id COPYQ_SESSION_COLOR=white copyq
 # Application Hotkeys
 bindsym $run+Shift+f exec flatpak run org.mozilla.firefox
 bindsym $run+Shift+s exec flatpak run org.mozilla.firefox -p "school"
-bindsym Print exec flatpak run org.flameshot.Flameshot gui
+bindsym Print exec flameshot gui --clipboard --path ~/Pictures/captures/
 bindsym $mod+Return exec alacritty
 bindsym $run+Shift+t exec thunar
 bindsym $run+Shift+a exec pavucontrol

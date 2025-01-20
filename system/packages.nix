@@ -46,7 +46,6 @@ in
         tree-sitter
 
         # Terminal utils
-        makima
         unrar
         catfs
         xdragon
@@ -121,7 +120,6 @@ in
         volumeicon
 
         plank
-        #obconf
         openbox-menu
         lxqt.obconf-qt
         tint2
@@ -132,8 +130,6 @@ in
         catppuccin-gtk
         papirus-icon-theme
         home-manager
-        #podman
-        #docker
         libnotify
         webp-pixbuf-loader
         xfce.exo
