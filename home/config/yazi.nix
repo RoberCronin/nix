@@ -15,7 +15,7 @@ in
         settings = {
             opener.edit = [
                 {
-                    run = "nvim '$@'";
+                    run = "nvim \"$@\"";
                     block = true;
                 }
             ];
