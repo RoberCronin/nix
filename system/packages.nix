@@ -4,11 +4,14 @@ let
     hostname = config.hostdata.hostname;
 in
 {
-    programs.thunar.plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-volman
-        thunar-media-tags-plugin
-    ];
+    programs.thunar = {
+        enable = true;
+        plugins = with pkgs.xfce; [
+            thunar-archive-plugin
+            thunar-volman
+            thunar-media-tags-plugin
+        ];
+    };
     
     nixpkgs.config.packageOverrides = pkgs: {
         catppuccin-gtk = pkgs.catppuccin-gtk.override {
