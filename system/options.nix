@@ -13,6 +13,7 @@ in
       configDir = "/home/robert/.config/syncthing";
     };
     
+    programs.dconf.enable = true;
     services.printing.enable = true;
     services.printing.drivers = [pkgs.cnijfilter2 pkgs.gutenprint];
     # Fingerprint sensor on laptop
