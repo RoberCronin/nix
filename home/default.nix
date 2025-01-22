@@ -8,6 +8,8 @@ in
         ./environment
         ./config
         ./packages.nix
+        ./shell.nix
+        ./xsession.nix
     ];
     
     home = {
