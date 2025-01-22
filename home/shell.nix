@@ -51,7 +51,7 @@ in
         
         update() {
             if [[ $@ == "all" ]]; then
-                if [ "$EUID" -e 0 ]; then
+                if [ "$EUID" -eq 0 ]; then
                     nix flake update
                     home-manager switch -b backup --flake .#robert
                 else
