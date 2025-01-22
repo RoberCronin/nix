@@ -4,6 +4,11 @@ let
     hostname = config.hostdata.hostname;
 in
 {
+    programs.atuin = {
+        enable = true;
+        enableBashIntegration = true;
+    };
+    
     programs.direnv = {
         enable = true;
         enableBashIntegration = true;
@@ -30,9 +35,33 @@ in
             "c" = "clear";
             "cd" = "z";
             "sl" = "sl -e";
+            #"update" = "nix flake update";
         };
         bashrcExtra = 
         ''
+        rebuild() {
+            if [[ $@ == "home" ]]; then
+                command home-manager switch -b backup --flake .#robert
+            elif [[ $@ == "system" ]]; then
+                command sudo nixos-rebuild switch --flake .#robert
+            else
+                command rebuild "$@"
+            fi
+        }
+        
+        update() {
+            if [[ $@ == "all" ]]; then
+                if [ "$EUID" -e 0 ]; then
+                    nix flake update
+                    home-manager switch -b backup --flake .#robert
+                else
+                    echo "Please run as root"
+                fi
+            else
+                nix flake update
+            fi
+        }
+        
         ssh() {
             if [[ $@ == "ubuntu" ]]; then
                 command ssh -i ~/.ssh/ubuntu/ssh-key-2022-07-02.key ubuntu@158.101.10.218
