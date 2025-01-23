@@ -51,12 +51,9 @@ in
         
         update() {
             if [[ $@ == "all" ]]; then
-                if [ "$EUID" -eq 0 ]; then
-                    nix flake update
-                    home-manager switch -b backup --flake .#robert
-                else
-                    echo "Please run as root"
-                fi
+                nix flake update
+                sudo nixos-rebuild switch --flake .#robert
+                home-manager switch -b backup --flake .#robert
             else
                 nix flake update
             fi
