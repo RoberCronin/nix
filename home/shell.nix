@@ -35,7 +35,7 @@ in
             "c" = "clear";
             "cd" = "z";
             "sl" = "sl -e";
-            #"update" = "nix flake update";
+            "update" = "nix flake update";
         };
         bashrcExtra = 
         ''
@@ -44,18 +44,11 @@ in
                 command home-manager switch -b backup --flake .#robert
             elif [[ $@ == "system" ]]; then
                 command sudo nixos-rebuild switch --flake .#robert
+            elif [[ $@ == "all" ]]; then
+                command sudo nixos-rebuild switch --flake .#robert
+                command home-manager switch -b backup --flake .#robert
             else
                 command rebuild "$@"
-            fi
-        }
-        
-        update() {
-            if [[ $@ == "all" ]]; then
-                nix flake update
-                sudo nixos-rebuild switch --flake .#robert
-                home-manager switch -b backup --flake .#robert
-            else
-                nix flake update
             fi
         }
         
