@@ -28,7 +28,7 @@ in
     services.envfs.enable = true;
   
     security.pam.mount.fuseMountOptions = [ "user_allow_other" ];
-    services.auto-cpufreq.enable = lib.mkIf (hostname == "laptop") true;
+    services.auto-cpufreq.enable = lib.mkIf (hostname == "laptop" || hostname == "big_laptop") true;
     services.auto-cpufreq.settings = {
         battery = {
             governor = "powersave";

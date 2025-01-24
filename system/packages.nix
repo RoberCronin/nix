@@ -13,15 +13,6 @@ in
         ];
     };
     
-    nixpkgs.config.packageOverrides = pkgs: {
-        catppuccin-gtk = pkgs.catppuccin-gtk.override {
-            accents = [ "mauve" ]; # You can specify multiple accents here to outpu>
-            size = "compact";
-            tweaks = [ "normal" ]; # You can also specify multiple tweaks here
-            variant = "macchiato";
-        };
-    };
-    
     environment.systemPackages = with pkgs; [
         # languages
         python3Full
@@ -127,7 +118,6 @@ in
         # System/other
         pulseaudioFull
         polybarFull
-        catppuccin-gtk
         papirus-icon-theme
         home-manager
         libnotify

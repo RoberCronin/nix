@@ -3,7 +3,7 @@ let
     username = config.hostdata.user;
     hostname = config.hostdata.hostname;
 in
-lib.mkIf (hostname == "desktop")
+lib.mkIf (hostname == "desktop" || hostname == "big_laptop")
 {
     services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia = {
