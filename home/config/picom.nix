@@ -5,7 +5,7 @@ let
 in
 {
     services.picom = {
-        enable = true;
+        enable = lib.mkIf (hostname == "laptop") true;
         
         backend = "glx";
         vSync = true;
