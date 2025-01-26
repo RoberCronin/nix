@@ -57,7 +57,6 @@ in
 
         # System/other
         pulseaudioFull
-        polybarFull
         papirus-icon-theme
         home-manager
         libnotify

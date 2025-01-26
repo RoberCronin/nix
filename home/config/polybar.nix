@@ -8,5 +8,8 @@ in
         enable = true;
         config = ./imports/polybar.ini;
         script = "";
+        package = pkgs.polybarFull.override {
+            pulseSupport = true;
+        };
     };
 }
