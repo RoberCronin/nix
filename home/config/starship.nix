@@ -11,6 +11,7 @@ in
             add_newline = false;
             line_break.disabled = true;
             package.disabled = true;
+            command_timeout = 30;
         };
     };
 }
