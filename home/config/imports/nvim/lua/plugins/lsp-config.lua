@@ -6,7 +6,7 @@ return {
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup {
-        ensure_installed = { "lua_ls", "pyright", "rust_analyzer", "clangd", "arduino_language_server", "bashls", "jdtls", "jsonls", "nil_ls", "rust_analyzer"},
+        ensure_installed = { "lua_ls", "pyright", "rust_analyzer", "arduino_language_server", "bashls", "jdtls", "jsonls", "nil_ls", "rust_analyzer"},
       }
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})

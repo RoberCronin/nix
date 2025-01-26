@@ -48,6 +48,7 @@ in
         tree-sitter
         
         # Compiling/Languages
+        clang-tools
         python3Full
         texliveTeTeX
         lua
