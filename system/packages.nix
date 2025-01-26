@@ -14,6 +14,8 @@ in
     };
     
     environment.systemPackages = with pkgs; [
+        # mouse
+        piper
         # languages
         python3Full
         texliveTeTeX
