@@ -46,7 +46,6 @@ in
         xfce.exo
         xfce.xfce4-whiskermenu-plugin
         feh
-        dunst
         rofi
         networkmanagerapplet
         xss-lock
