@@ -30,6 +30,14 @@ in
                 "class_g = 'trayer'"
             ];
 
+            blur-background-exclude = [
+                "window_type = 'menu'"
+                "window_type = 'dropdown_menu'"
+                "window_type = 'popup_menu'"
+                "window_type = 'tooltip'"
+            ];
+
+
             glx-copy-from-front = true;
             glx-swap-method = 2;
             xrender-sync = true;
