@@ -11,6 +11,10 @@ in
         ./shell.nix
         ./xsession.nix
     ];
+
+    nixpkgs.config = {
+        allowUnfree = true;
+    };
     
     home = {
         packages = with pkgs; [

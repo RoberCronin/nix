@@ -14,108 +14,46 @@ in
     };
     
     environment.systemPackages = with pkgs; [
-        # mouse
+        # Input 
         piper
-        # languages
-        python3Full
-        texliveTeTeX
-        lua
-        hugo
-        cargo
-        rustc
-        nodejs_22
-        gcc
 
-        # Dev utils
-        vscode
-        xclip # nvim copyq integration 
-        direnv
-        gh
-        distrobox
-        direnv
-        git
-        stdenv
-        gnumake
-        tree-sitter
-
-        # Terminal utils
+        # Common Terminal Utils
+        zip
+        unzip
+        rar
         unrar
-        catfs
-        xdragon
-        yazi
-        bat
-        ns-usbloader
-        chezmoi
-        winePackages.unstableFull
-        protontricks
-        zoxide
-        feh
+        git
+        gh
         fzf
         wget
+        curl
         bashmount
-        fastfetch
         btop
         ripgrep
         killall
         brightnessctl
         vim
         dtrx
-        unzip
-        zip
         tmux
         jump
-        starship
         bash-completion
-        xorg.xmodmap
-        lazygit
-        lazydocker
-        sshfs
-
-        # Fun utils
-        pipes
-        lolcat 
-        sl 
-        cmatrix
-        pipes-rs
-        cowsay
-        asciiquarium
-        ttyper
 
         # GUI applications
-        onedrivegui
-        xmacro
-        arduino-ide
-        system-config-printer
-        pavucontrol
-        r2modman
-        #gpick
-        alacritty
-        arandr
-        xfce.mousepad
-        xfce.xfce4-whiskermenu-plugin
-        nitrogen
-        lxappearance
-        jstest-gtk
-        copyq
         gparted
-        xfce.exo
 
         # Window Manager Utils
+        xorg.xmodmap
+        xfce.exo
+        xfce.xfce4-whiskermenu-plugin
+        feh
         dunst
-        picom
         rofi
-        trayer
         networkmanagerapplet
         xss-lock
         i3status
         i3lock
         i3blocks
         volumeicon
-
-        plank
-        openbox-menu
-        lxqt.obconf-qt
-        tint2
 
         # System/other
         pulseaudioFull
@@ -124,7 +62,6 @@ in
         home-manager
         libnotify
         webp-pixbuf-loader
-        xfce.exo
         poppler
         ffmpegthumbnailer
         libgsf
