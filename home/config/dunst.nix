@@ -12,12 +12,14 @@ in
             };
 
             urgency_low = {
+                frame_color = "#24273a";
                 background = "#24273a";
                 foreground = "#C5C8C6";
                 timeout = 10;
             };
 
             urgency_normal = {
+                frame_color = "#24273a";
                 background = "#24273a";
                 foreground = "#C5C8C6";
                 timeout = 10;
@@ -38,7 +40,7 @@ in
                 width = 300;
                 height = 300;
                 origin = "top-right";
-                offset = "(10, 50)";
+                offset = "(0, 24)";
                 scale = 0;
                 notification_limit = 20;
                 progress_bar = true;
@@ -57,7 +59,7 @@ in
                 horizontal_padding = 8;
                 text_icon_padding = 0;
                 frame_width = 2;
-                frame_color = "#ee99a0";
+                #frame_color = "#ee99a0";
                 gap_size = 0;
                 separator_color = "frame";
                 sort = "yes";
@@ -86,7 +88,7 @@ in
                 always_run_script = true;
                 title = "Dunst";
                 class = "Dunst";
-                corner_radius = 0;
+                corner_radius = 5;
                 corners = "all";
                 ignore_dbusclose = false;
                 force_xwayland = false;
