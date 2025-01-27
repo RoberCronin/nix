@@ -6,10 +6,12 @@ in
 {
     programs.thunar = {
         enable = true;
-        plugins = with pkgs.xfce; [
-            thunar-archive-plugin
-            thunar-volman
-            thunar-media-tags-plugin
+        plugins = with pkgs; [
+            file-roller
+            xarchiver
+            xfce.thunar-archive-plugin
+            xfce.thunar-volman
+            xfce.thunar-media-tags-plugin
         ];
     };
     
