@@ -24,7 +24,10 @@ in
     # Thumbnail support for images
     services.tumbler.enable = true; 
     services.resolved.enable = true;
-    services.mullvad-vpn.enable = true;
+    services.mullvad-vpn = {
+        enable = true;
+        package = pkgs.mullvad-vpn;
+    };    
     services.blueman.enable = true;
     services.envfs.enable = true;
   
