@@ -10,6 +10,7 @@ in
         ./packages.nix
         ./shell.nix
         ./xsession.nix
+        ./xresources.nix
     ];
 
     nixpkgs.config = {
