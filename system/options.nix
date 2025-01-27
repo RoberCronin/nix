@@ -6,12 +6,12 @@ in
 {
     
     services.input-remapper.enable = true;
-    services.syncthing = {
-      enable = true;
-      user = "robert";
-      dataDir = "/home/robert/Documents";
-      configDir = "/home/robert/.config/syncthing";
-    };
+    #services.syncthing = {
+    #  enable = true;
+    #  user = "robert";
+    #  dataDir = "/home/robert/Documents";
+    #  configDir = "/home/robert/.config/syncthing";
+    #};
     
     services.ratbagd.enable = true;
     programs.dconf.enable = true;
