@@ -32,6 +32,8 @@
             "image/x-portable-pixmap"="nomacs.desktop";
             "image/x-xbitmap"="nomacs.desktop";
             "image/x-xpixmap"="nomacs.desktop";
+
+            "inode/directory"="thunar.desktop";
         };
     };
 
