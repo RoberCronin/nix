@@ -41,12 +41,12 @@ in
         ''
         rebuild() {
             if [[ $@ == "home" ]]; then
-                command home-manager switch -b backup --flake .#robert
+                command home-manager switch -b backup --flake .#default
             elif [[ $@ == "system" ]]; then
-                command sudo nixos-rebuild switch --flake .#robert
+                command sudo nixos-rebuild switch --flake .#default
             elif [[ $@ == "all" ]]; then
-                command sudo nixos-rebuild switch --flake .#robert
-                command home-manager switch -b backup --flake .#robert
+                command sudo nixos-rebuild switch --flake .#default
+                command home-manager switch -b backup --flake .#default
             else
                 command rebuild "$@"
             fi

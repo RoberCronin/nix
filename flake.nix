@@ -1,5 +1,5 @@
 {
-    description = "Home Manager config";
+    description = "NixOS and Home Manager config";
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -17,7 +17,7 @@
     in 
     {
         homeConfigurations = {
-            robert = home-manager.lib.homeManagerConfiguration {
+            default = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [ 
                     ./home 
@@ -26,9 +26,13 @@
             };
         };
         nixosConfigurations = {
-            robert = nixpkgs.lib.nixosSystem {
+            default = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
-                modules = [ ./system ./hostname.nix ./hardware-configuration.nix ];
+                modules = [ 
+                    ./system 
+                    ./hostname.nix 
+                    ./hardware-configuration.nix 
+                ];
             };
 
         };

@@ -7,7 +7,7 @@ You also must copy your hardware-configuration.nix to this folder then run:
 * git update-index --assume-unchanged hardware-configuration.nix
 
 To rebuild home:
-* home-manager switch -b backup --flake .
+* home-manager switch -b backup --flake .#default
 
 To rebuild system:
-* sudo nixos-rebuild switch --flake .#robert
+* sudo nixos-rebuild switch --flake .#default
