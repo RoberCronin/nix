@@ -53,13 +53,26 @@ in
         }
         
         ssh() {
-            if [[ $@ == "ubuntu" ]]; then
-                command ssh -i ~/.ssh/ubuntu/ssh-key-2022-07-02.key ubuntu@158.101.10.218
-            elif [[ $@ == "arm" ]]; then
-                command ssh -i ~/.ssh/arm/ssh-key-2022-08-19.key ubuntu@129.146.80.212
-            else
-                command ssh "$@"
-            fi
+            search_dir=/home/keys/
+
+            for entry in $(sudo ls $search_dir)
+            do
+                filename=$(basename -- "$entry")
+                extension="''${filename##*.}"
+                filename="''${filename%.*}"
+
+                if [[ $extension != "txt" ]]; then
+                    continue
+                fi
+
+                if [[ $@ == $filename ]]; then
+                    login=$(sudo cat $search_dir$filename.txt)
+                    ssh_key=''${search_dir}''${filename}.key
+                    
+                    command sudo ssh -i $ssh_key $login
+                    break
+                fi
+            done
         }
 
         try() {

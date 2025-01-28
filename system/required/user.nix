@@ -17,4 +17,9 @@ in
               "dialout" 
           ];
     };
+    
+    users.extraUsers.keys = {
+        isNormalUser = true;
+        description = "keys";
+    };
 }
