@@ -7,6 +7,7 @@ in
     imports = [
         ./environment
         ./config
+        ./services
         ./packages.nix
         ./shell.nix
         ./xsession.nix

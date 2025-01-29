@@ -7,9 +7,7 @@
         ./tmux.nix
         ./polybar.nix
         ./nvim.nix
-        ./picom.nix
         ./yazi.nix
-        ./dunst.nix
         ./rofi.nix
         ./i3.nix
         ./git.nix
