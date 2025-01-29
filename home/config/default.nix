@@ -11,5 +11,6 @@
         ./rofi.nix
         ./i3.nix
         ./git.nix
+        ./fcitx.nix
     ];
 }
