@@ -3,5 +3,6 @@
     imports = [
         ./dunst.nix
         ./picom.nix
+        ./syncthing.nix
     ];
 }
