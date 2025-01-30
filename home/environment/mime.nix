@@ -1,9 +1,51 @@
 { config, lib, pkgs, ... }:
 {
+    xdg.desktopEntries.xarchiver = {
+        name = "Xarchiver";
+        exec = "xarchiver %f";
+        comment = "Create, extract and modify archives";
+        genericName = "Archive manager";
+        terminal = false;
+        icon = "xarchiver";
+        type = "Application";
+        categories = [ "GTK" "Utility" "Archiving" "Compression" ];
+        mimeType = [ "application/epub+zip" "application/gzip" "application/java-archive" "application/vnd.android.package-archive" "application/vnd.appimage" "application/vnd.comicbook-rar" "application/vnd.comicbook+zip" "application/vnd.debian.binary-package" "application/vnd.ms-cab-compressed" "application/vnd.ms-htmlhelp" "application/vnd.oasis.opendocument.text" "application/vnd.openofficeorg.extension" "application/vnd.openxmlformats-officedocument.wordprocessingml.document" "application/vnd.rar" "application/vnd.snap" "application/vnd.squashfs" "application/x-7z-compressed" "application/x-archive" "application/x-arj" "application/x-bzip" "application/x-bzip-compressed-tar" "application/x-bzip1" "application/x-bzip1-compressed-tar" "application/x-bzip2" "application/x-bzip2-compressed-tar" "application/x-bzip3" "application/x-bzip3-compressed-tar" "application/x-cb7" "application/x-cbt" "application/x-cd-image" "application/x-compress" "application/x-compressed-tar" "application/x-cpio" "application/x-cpio-compressed" "application/x-java-archive" "application/x-lha" "application/x-lrzip" "application/x-lrzip-compressed-tar" "application/x-lz4" "application/x-lz4-compressed-tar" "application/x-lzip" "application/x-lzip-compressed-tar" "application/x-lzma" "application/x-lzma-compressed-tar" "application/x-lzop" "application/x-rar" "application/x-rpm" "application/x-rzip" "application/x-rzip-compressed-tar" "application/x-source-rpm" "application/x-tar" "application/x-tarz" "application/x-tzo" "application/x-xpinstall" "application/x-xz" "application/x-xz-compressed-tar" "application/x-zip-compressed-fb2" "application/x-zpaq" "application/x-zstd-compressed-tar" "application/zip" "application/zstd" ];
+    };
+
+    xdg.desktopEntries.nvim-alacritty = {
+        name = "Neovim Alacritty";
+        exec = "alacritty -e nvim %f";
+        genericName = "Text editor";
+        terminal = false;
+        comment = "Edit text files";
+        type = "Application";
+        icon = "nvim";
+        categories = [ "Utility" "TextEditor" ];
+        mimeType = [ "text/english" "text/plain" "text/x-makefile" "text/x-c++hdr" "text/x-c++src" "text/x-chdr" "text/x-csrc" "text/x-java" "text/x-moc" "text/x-pascal" "text/x-tcl" "text/x-tex" "application/x-shellscript" "text/x-c" "text/x-c++" ];
+    };
+    
     xdg.mimeApps = {
         enable = true;
-
         defaultApplications = {
+            "inode/directory"="thunar.desktop";
+            
+            "text/english"="nvim-alacritty.desktop";
+            "text/plain"="nvim-alacritty.desktop";
+            "text/x-makefile"="nvim-alacritty.desktop";
+            "text/x-c++hdr"="nvim-alacritty.desktop";
+            "text/x-c++src"="nvim-alacritty.desktop";
+            "text/x-chdr"="nvim-alacritty.desktop";
+            "text/x-csrc"="nvim-alacritty.desktop";
+            "text/x-java"="nvim-alacritty.desktop";
+            "text/x-moc"="nvim-alacritty.desktop";
+            "text/x-pascal"="nvim-alacritty.desktop";
+            "text/x-tcl"="nvim-alacritty.desktop";
+            "text/x-tex"="nvim-alacritty.desktop";
+            "application/x-shellscript"="nvim-alacritty.desktop";
+            "text/x-c"="nvim-alacritty.desktop";
+            "text/x-c++"="nvim-alacritty.desktop";
+            "application/xml"="nvim-alacritty.desktop";
+            
             "x-scheme-handler/http"="org.mozilla.firefox.desktop";
             "x-scheme-handler/https"="org.mozilla.firefox.desktop";
             "x-scheme-handler/chrome"="org.mozilla.firefox.desktop";
@@ -32,8 +74,6 @@
             "image/x-portable-pixmap"="org.nomacs.ImageLounge.desktop";
             "image/x-xbitmap"="org.nomacs.ImageLounge.desktop";
             "image/x-xpixmap"="org.nomacs.ImageLounge.desktop";
-
-            "inode/directory"="thunar.desktop";
             
             "application/epub+zip"="xarchiver.desktop";
             "application/gzip"="xarchiver.desktop";
@@ -97,17 +137,5 @@
             "application/zip"="xarchiver.desktop";
             "application/zstd"="xarchiver.desktop"; 
         };
-    };
-
-    xdg.desktopEntries.xarchiver = {
-        name = "Xarchiver";
-        exec = "xarchiver %f";
-        comment = "Create, extract and modify archives";
-        genericName = "Archive manager";
-        terminal = false;
-        icon = "xarchiver";
-        type = "Application";
-        categories = [ "GTK" "Utility" "Archiving" "Compression" ];
-        mimeType = [ "application/epub+zip" "application/gzip" "application/java-archive" "application/vnd.android.package-archive" "application/vnd.appimage" "application/vnd.comicbook-rar" "application/vnd.comicbook+zip" "application/vnd.debian.binary-package" "application/vnd.ms-cab-compressed" "application/vnd.ms-htmlhelp" "application/vnd.oasis.opendocument.text" "application/vnd.openofficeorg.extension" "application/vnd.openxmlformats-officedocument.wordprocessingml.document" "application/vnd.rar" "application/vnd.snap" "application/vnd.squashfs" "application/x-7z-compressed" "application/x-archive" "application/x-arj" "application/x-bzip" "application/x-bzip-compressed-tar" "application/x-bzip1" "application/x-bzip1-compressed-tar" "application/x-bzip2" "application/x-bzip2-compressed-tar" "application/x-bzip3" "application/x-bzip3-compressed-tar" "application/x-cb7" "application/x-cbt" "application/x-cd-image" "application/x-compress" "application/x-compressed-tar" "application/x-cpio" "application/x-cpio-compressed" "application/x-java-archive" "application/x-lha" "application/x-lrzip" "application/x-lrzip-compressed-tar" "application/x-lz4" "application/x-lz4-compressed-tar" "application/x-lzip" "application/x-lzip-compressed-tar" "application/x-lzma" "application/x-lzma-compressed-tar" "application/x-lzop" "application/x-rar" "application/x-rpm" "application/x-rzip" "application/x-rzip-compressed-tar" "application/x-source-rpm" "application/x-tar" "application/x-tarz" "application/x-tzo" "application/x-xpinstall" "application/x-xz" "application/x-xz-compressed-tar" "application/x-zip-compressed-fb2" "application/x-zpaq" "application/x-zstd-compressed-tar" "application/zip" "application/zstd" ];
     };
 }
