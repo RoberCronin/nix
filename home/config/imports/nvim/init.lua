@@ -19,7 +19,15 @@ require('lazy').setup("plugins")
 require("colors")
 require("options")
 
+local function toggle_line_wrap()
+  if vim.o.wrap then
+    vim.opt.wrap = false
+  else
+    vim.opt.wrap = true
+  end
+end
 -- keymaps
+vim.keymap.set("n", "<leader>lw", toggle_line_wrap, {})
 vim.keymap.set("n", "<leader>fe", vim.cmd.Ex, {})
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
