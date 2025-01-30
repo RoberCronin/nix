@@ -4,16 +4,16 @@
         enable = true;
 
         defaultApplications = {
-            "x-scheme-handler/http"="userapp-Firefox-S47AJ2.desktop";
-            "x-scheme-handler/https"="userapp-Firefox-S47AJ2.desktop";
-            "x-scheme-handler/chrome"="userapp-Firefox-S47AJ2.desktop";
-            "text/html"="userapp-Firefox-S47AJ2.desktop";
-            "application/x-extension-htm"="userapp-Firefox-S47AJ2.desktop";
-            "application/x-extension-html"="userapp-Firefox-S47AJ2.desktop";
-            "application/x-extension-shtml"="userapp-Firefox-S47AJ2.desktop";
-            "application/xhtml+xml"="userapp-Firefox-S47AJ2.desktop";
-            "application/x-extension-xhtml"="userapp-Firefox-S47AJ2.desktop";
-            "application/x-extension-xht"="userapp-Firefox-S47AJ2.desktop";
+            "x-scheme-handler/http"="org.mozilla.firefox.desktop";
+            "x-scheme-handler/https"="org.mozilla.firefox.desktop";
+            "x-scheme-handler/chrome"="org.mozilla.firefox.desktop";
+            "text/html"="org.mozilla.firefox.desktop";
+            "application/x-extension-htm"="org.mozilla.firefox.desktop";
+            "application/x-extension-html"="org.mozilla.firefox.desktop";
+            "application/x-extension-shtml"="org.mozilla.firefox.desktop";
+            "application/xhtml+xml"="org.mozilla.firefox.desktop";
+            "application/x-extension-xhtml"="org.mozilla.firefox.desktop";
+            "application/x-extension-xht"="org.mozilla.firefox.desktop";
             
             "image/avif"="org.nomacs.ImageLounge.desktop";
             "image/bmp"="org.nomacs.ImageLounge.desktop";
