@@ -14,6 +14,10 @@ in
             xfce.thunar-media-tags-plugin
         ];
     };
+
+    programs.steam = {
+        enable = true;
+    };
     
     environment.systemPackages = with pkgs; [
         # Input 
