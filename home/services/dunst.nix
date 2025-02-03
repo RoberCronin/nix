@@ -39,8 +39,8 @@ in
                 follow = "none";
                 width = 300;
                 height = 300;
-                origin = "bottom-right";
-                offset = "(20, 20)";
+                origin = "top-right";
+                offset = "(10, 42)";
                 scale = 0;
                 notification_limit = 20;
                 progress_bar = true;
