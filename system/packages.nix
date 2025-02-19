@@ -61,6 +61,7 @@ in
         volumeicon
 
         # System/other
+        evolution-data-server
         pulseaudioFull
         papirus-icon-theme
         home-manager
