@@ -46,6 +46,12 @@ in
         stdenv
         gnumake
         tree-sitter
+        # Code Styling
+        clang-tools
+        isort
+        black
+        stylua
+        nodePackages_latest.prettier
         
         # Compiling/Languages
         clang-tools
