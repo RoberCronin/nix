@@ -5,8 +5,8 @@ return {
     opts = {
         formatters_by_ft = {
             lua = { "stylua" },
-            python = { "isort", "black" },
-            javascript = { "prettierd", "prettier", stop_after_first = true },
+            python = { "black" },
+            javascript = { "prettier", stop_after_first = true },
         },
         default_format_opts = {
             lsp_format = "fallback",

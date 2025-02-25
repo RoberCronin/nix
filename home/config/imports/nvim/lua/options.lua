@@ -23,7 +23,7 @@ vim.opt.smartindent = true
 
 vim.opt.scrolloff = 10
 
-vim.diagnostic.config({ virtual_text = false })
+-- vim.diagnostic.config({ virtual_text = false })
 
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
