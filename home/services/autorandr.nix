@@ -4,8 +4,7 @@ let
     hostname = config.hostdata.hostname;
 in
 {
-    services.syncthing = {
-        enable = false;
-        tray.enable = false;
+    services.autorandr = {
+        enable = true;
     };
 }
