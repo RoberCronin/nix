@@ -4,7 +4,7 @@ let
     hostname = config.hostdata.hostname;
 in
 {
-    
+    services.autorandr.enable = true;
     services.input-remapper.enable = true;
     
     services.ratbagd.enable = true;

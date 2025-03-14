@@ -16,6 +16,7 @@ in
         protontricks
 
         # Terminal Utils
+        autorandr
         catfs
         yazi
         bat
