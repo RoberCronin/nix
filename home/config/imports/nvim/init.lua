@@ -37,4 +37,8 @@ vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
 
 vim.keymap.set('v', '<leader>y', '"+y', {})
 vim.keymap.set('n', '<leader>yy', '"+yy', {})
---vim.keymap.set('n', '<leader>P', '"+p', {})
+
+vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
