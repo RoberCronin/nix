@@ -21,7 +21,8 @@ vim.opt.wrap = false
 
 vim.opt.smartindent = true
 
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 1000
+vim.opt.virtualedit = "block"
 
 -- vim.diagnostic.config({ virtual_text = false })
 

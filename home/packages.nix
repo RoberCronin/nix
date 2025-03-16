@@ -16,6 +16,7 @@ in
         protontricks
 
         # Terminal Utils
+        ueberzugpp
         autorandr
         catfs
         yazi
