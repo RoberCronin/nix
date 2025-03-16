@@ -24,6 +24,7 @@ in
         piper
 
         # Common Terminal Utils
+        bashInteractive
         zip
         unzip
         rar

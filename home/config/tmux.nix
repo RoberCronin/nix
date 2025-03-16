@@ -39,10 +39,10 @@ in
             unbind '"'
             unbind %
             
-            bind -n C-h select-pane -L
-            bind -n C-l select-pane -R
-            bind -n C-k select-pane -U
-            bind -n C-j select-pane -D
+            bind -n M-h select-pane -L
+            bind -n M-l select-pane -R
+            bind -n M-k select-pane -U
+            bind -n M-j select-pane -D
             
             # don't do anything when a 'bell' rings
             set -g visual-activity off

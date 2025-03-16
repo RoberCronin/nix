@@ -39,6 +39,7 @@ in
         };
         bashrcExtra = 
         ''
+        export SHELL=/run/current-system/sw/bin/bash
         rebuild() {
             if [[ $@ == "home" ]]; then
                 command home-manager switch -b backup --flake .#default

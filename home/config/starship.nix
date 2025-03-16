@@ -12,6 +12,8 @@ in
             line_break.disabled = true;
             package.disabled = true;
             command_timeout = 30;
+            python.format = "[python (\($virtualenv\) )]($style)";
+            nix_shell.format = "[nix-shell]($style) ";
         };
     };
 }
