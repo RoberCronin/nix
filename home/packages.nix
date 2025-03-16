@@ -58,6 +58,7 @@ in
         # Compiling/Languages
         clang-tools
         python3Full
+        uv
         texliveTeTeX
         lua
         hugo
