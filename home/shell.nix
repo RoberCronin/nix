@@ -36,6 +36,7 @@ in
             "cd" = "z";
             "sl" = "sl -e";
             "update" = "nix flake update";
+            "gc" = "nix-collect-garbage --delete-older-than 30d";
         };
         bashrcExtra = 
         ''

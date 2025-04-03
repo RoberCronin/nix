@@ -12,8 +12,8 @@ in
         ("nixos-config=" + ./default.nix)
     ];
     
-    nix.gc.automatic = true;
-    nix.gc.options = "--delete-older-than 30d";
+    # nix.gc.automatic = true;
+    # nix.gc.options = "--delete-older-than 30d";
     
     # links /libexec from derivations to /run/current-system/sw 
     environment.pathsToLink = [ "/libexec" ];
