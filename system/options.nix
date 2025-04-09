@@ -13,6 +13,7 @@ in
     services.printing.drivers = [pkgs.cnijfilter2 pkgs.gutenprint];
     # Fingerprint sensor on laptop
     services.fprintd.enable = lib.mkIf (hostname == "laptop") true;
+    services.xserver.wacom.enable = lib.mkIf (hostname == "laptop") true;
     # Mount, trash, and other functionalities
     services.gvfs.enable = true; 
     # Thumbnail support for images
