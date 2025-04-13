@@ -19,6 +19,20 @@ require('lazy').setup("plugins")
 require("colors")
 require("options")
 
+local alpha = function()
+  return string.format("%x", math.floor(255 * vim.g.transparency or 0.8))
+end
+
+if vim.g.neovide then
+  vim.g.neovide_scale_factor = 0.65
+  vim.g.transparency = 0.8
+  vim.g.neovide_opacity = 0.8
+  vim.g.neovide_normal_opacity = 0.8
+  vim.g.neovide_hide_mouse_when_typing = true
+  vim.cmd([[hi! Normal guibg=#24273A]])
+end
+
+
 local function toggle_line_wrap()
   if vim.o.wrap then
     vim.opt.wrap = false

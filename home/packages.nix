@@ -26,6 +26,7 @@ in
         sshfs
 
         # GUI Applications
+        neovide
         onedrivegui
         arduino-ide
         system-config-printer
