@@ -16,6 +16,10 @@ in
         protontricks
 
         # Terminal Utils
+        starship
+        btop
+        zoxide
+        yadm
         ueberzugpp
         autorandr
         catfs
@@ -39,6 +43,7 @@ in
         copyq
         
         # Development
+        neovim
         lazygit
         lazydocker
         vscode

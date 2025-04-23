@@ -2,6 +2,7 @@
 let
     username = config.hostdata.user;
     hostname = config.hostdata.hostname;
+    polybar_pulse = pkgs.polybarFull.override { pulseSupport = true; };
 in
 {
     programs.thunar = {
