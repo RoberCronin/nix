@@ -64,6 +64,7 @@ in
         i3lock
         i3blocks
         volumeicon
+        polybar_pulse
 
         # System/other
         evolution-data-server
