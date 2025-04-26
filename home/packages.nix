@@ -30,6 +30,8 @@ in
         sshfs
 
         # GUI Applications
+        kdePackages.okular
+        zathura
         neovide
         onedrivegui
         arduino-ide
@@ -65,7 +67,7 @@ in
         clang-tools
         python3Full
         uv
-        texliveTeTeX
+        texliveFull
         lua
         hugo
         cargo
