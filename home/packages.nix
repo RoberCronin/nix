@@ -64,6 +64,7 @@ in
         nodePackages_latest.prettier
         
         # Compiling/Languages
+        typst
         clang-tools
         python3Full
         uv

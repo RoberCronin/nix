@@ -28,6 +28,8 @@ in
         kdePackages.wacomtablet
 
         # Common Terminal Utils
+        powertop
+        rclone
         bashInteractive
         zip
         unzip
