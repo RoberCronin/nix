@@ -15,6 +15,7 @@ in
         ./localization.nix
         ./nix_options.nix
         ./x11.nix
+        ./wayland.nix
         ./user.nix
         ./user_apps.nix
         ./unpatched_binaries.nix
