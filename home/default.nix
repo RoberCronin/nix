@@ -8,8 +8,6 @@ in
         ./environment
         ./services
         ./packages.nix
-        ./xsession.nix
-        ./xresources.nix
     ];
 
     nixpkgs.config = {
