@@ -5,6 +5,9 @@ let
 in
 lib.mkIf (hostname == "desktop" || hostname == "big_laptop")
 {
+    environment.variables = {
+        __GL_SYNC_DISPLAY_DEVICE = "DP-0";
+    };
     services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia = {
       # Modesetting is required.
