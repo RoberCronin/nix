@@ -16,6 +16,7 @@ in
         protontricks
 
         # Terminal Utils
+        fd
         starship
         btop
         zoxide
