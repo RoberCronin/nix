@@ -1,10 +1,13 @@
-{ config, lib, pkgs, ... }:
-let
+{
+    config,
+    lib,
+    pkgs,
+    ...
+}: let
     username = config.hostdata.user;
     hostname = config.hostdata.hostname;
-    polybar_pulse = pkgs.polybarFull.override { pulseSupport = true; };
-in
-{
+    polybar_pulse = pkgs.polybarFull.override {pulseSupport = true;};
+in {
     programs.thunar = {
         enable = true;
         plugins = with pkgs; [
@@ -19,9 +22,9 @@ in
     programs.steam = {
         enable = true;
     };
-    
+
     environment.systemPackages = with pkgs; [
-        # Input 
+        # Input
         piper
         xf86_input_wacom
         libwacom
@@ -67,6 +70,8 @@ in
         i3blocks
         volumeicon
         polybar_pulse
+        wofi
+        waybar
 
         # System/other
         evolution-data-server
