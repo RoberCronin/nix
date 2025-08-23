@@ -31,6 +31,11 @@ in
             turbo = "auto";
         };
     };
+
+    services.sunshine = lib.mkIf (hostname == "desktop") {
+      enable = true;
+      openFirewall = true;
+    };
     
     # Fingerprint sensor on laptop
     services.fprintd.enable = lib.mkIf (hostname == "laptop") true;
