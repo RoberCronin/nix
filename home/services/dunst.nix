@@ -1,9 +1,12 @@
-{ config, lib, pkgs, ... }:
-let
+{
+    config,
+    lib,
+    pkgs,
+    ...
+}: let
     username = config.hostdata.user;
     hostname = config.hostdata.hostname;
-in
-{
+in {
     services.dunst = {
         enable = true;
         settings = {
@@ -33,7 +36,7 @@ in
                 timeout = 0;
                 override_pause_level = 60;
             };
-            
+
             global = {
                 monitor = 0;
                 follow = "none";

@@ -1,9 +1,12 @@
-{ config, lib, pkgs, ... }:
-let
+{
+    config,
+    lib,
+    pkgs,
+    ...
+}: let
     username = config.hostdata.user;
     hostname = config.hostdata.hostname;
-in
-{
+in {
     imports = [
         ./hardware/networking.nix
         ./hardware/graphics.nix
@@ -11,7 +14,7 @@ in
         ./hardware/boot.nix
         ./hardware/sound.nix
         ./hardware/bluetooth.nix
-        
+
         ./localization.nix
         ./nix_options.nix
         ./x11.nix

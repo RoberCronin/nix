@@ -1,23 +1,26 @@
-{ config, lib, pkgs, ... }:
-let
+{
+    config,
+    lib,
+    pkgs,
+    ...
+}: let
     username = config.hostdata.user;
     hostname = config.hostdata.hostname;
-in
-{
+in {
     users.users.robert = {
         isNormalUser = true;
         description = "Robert Cronin";
-        extraGroups = [ 
-              "uinput" 
-              "fuse" 
-              "docker" 
-              "networkmanager" 
-              "wheel" 
-              "uucp" 
-              "dialout" 
-          ];
+        extraGroups = [
+            "uinput"
+            "fuse"
+            "docker"
+            "networkmanager"
+            "wheel"
+            "uucp"
+            "dialout"
+        ];
     };
-    
+
     users.extraUsers.keys = {
         isNormalUser = true;
         description = "keys";

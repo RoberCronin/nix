@@ -1,22 +1,26 @@
-{ config, lib, pkgs, ... }:
-let
+{
+    config,
+    lib,
+    pkgs,
+    ...
+}: let
     username = config.hostdata.user;
     hostname = config.hostdata.hostname;
-in
-{
+in {
     services.picom = {
-        enable = lib.mkIf (hostname == "laptop" || hostname == "big_laptop")
-                 true;
-        
+        enable =
+            lib.mkIf (hostname == "laptop" || hostname == "big_laptop")
+            true;
+
         backend = "glx";
         vSync = true;
         opacityRules = [
             "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
         ];
-        
+
         fade = true;
         fadeDelta = 2;
-        fadeSteps = [ 0.03 0.03 ];
+        fadeSteps = [0.03 0.03];
         settings = {
             blur = {
                 method = "gaussian";
@@ -36,7 +40,6 @@ in
                 "window_type = 'popup_menu'"
                 "window_type = 'tooltip'"
             ];
-
 
             glx-copy-from-front = true;
             glx-swap-method = 2;
