@@ -1,10 +1,13 @@
-{ config, lib, pkgs, ... }:
-let
+{
+    config,
+    lib,
+    pkgs,
+    ...
+}: let
     username = config.hostdata.user;
     hostname = config.hostdata.hostname;
-in
-{
-    imports =  [
+in {
+    imports = [
         ./required
         ./options.nix
         ./virtualization.nix

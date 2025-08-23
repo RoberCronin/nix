@@ -10,31 +10,32 @@
         };
     };
 
-    outputs = { nixpkgs, home-manager, ... }:
-    let
+    outputs = {
+        nixpkgs,
+        home-manager,
+        ...
+    }: let
         system = "x86_64-linux";
-        pkgs = import nixpkgs { inherit system; };
-    in 
-    {
+        pkgs = import nixpkgs {inherit system;};
+    in {
         homeConfigurations = {
             default = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
-                modules = [ 
-                    ./home 
-                    ./hostname.nix 
+                modules = [
+                    ./home
+                    ./hostname.nix
                 ];
             };
         };
         nixosConfigurations = {
             default = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
-                modules = [ 
-                    ./system 
-                    ./hostname.nix 
-                    ./hardware-configuration.nix 
+                modules = [
+                    ./system
+                    ./hostname.nix
+                    ./hardware-configuration.nix
                 ];
             };
-
         };
     };
 }

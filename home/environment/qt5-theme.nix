@@ -1,5 +1,9 @@
-{ config, lib, pkgs, ... }:
 {
+    config,
+    lib,
+    pkgs,
+    ...
+}: {
     qt = {
         enable = true;
         style = {

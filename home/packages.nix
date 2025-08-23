@@ -1,9 +1,12 @@
-{ config, lib, pkgs, ... }:
-let
+{
+    config,
+    lib,
+    pkgs,
+    ...
+}: let
     username = config.hostdata.user;
     hostname = config.hostdata.hostname;
-in
-{
+in {
     home.packages = with pkgs; [
         # file opening
         mpv
@@ -44,13 +47,13 @@ in
         nitrogen
         jstest-gtk
         copyq
-        
+
         # Development
         neovim
         lazygit
         lazydocker
         vscode
-        xclip # nvim copyq integration 
+        xclip # nvim copyq integration
         direnv
         distrobox
         direnv
@@ -63,7 +66,7 @@ in
         black
         stylua
         nodePackages_latest.prettier
-        
+
         # Compiling/Languages
         typst
         clang-tools
@@ -76,11 +79,11 @@ in
         rustc
         nodejs_22
         gcc
-        
+
         # Fun utils
         pipes
-        lolcat 
-        sl 
+        lolcat
+        sl
         cmatrix
         pipes-rs
         cowsay

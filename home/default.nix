@@ -1,9 +1,12 @@
-{ config, lib, pkgs, ... }:
-let
+{
+    config,
+    lib,
+    pkgs,
+    ...
+}: let
     username = config.hostdata.user;
     hostname = config.hostdata.hostname;
-in
-{
+in {
     imports = [
         ./environment
         ./services
@@ -13,7 +16,7 @@ in
     nixpkgs.config = {
         allowUnfree = true;
     };
-    
+
     home = {
         packages = with pkgs; [
             hello

@@ -1,14 +1,18 @@
-{ config, lib, pkgs, ... }:
 {
+    config,
+    lib,
+    pkgs,
+    ...
+}: {
     nixpkgs.config.packageOverrides = pkgs: {
         catppuccin-gtk = pkgs.catppuccin-gtk.override {
-            accents = [ "mauve" ]; # You can specify multiple accents here to outpu>
+            accents = ["mauve"]; # You can specify multiple accents here to outpu>
             size = "compact";
-            tweaks = [ "normal" ]; # You can also specify multiple tweaks here
+            tweaks = ["normal"]; # You can also specify multiple tweaks here
             variant = "macchiato";
         };
     };
-    
+
     gtk = {
         enable = true;
         iconTheme.package = pkgs.papirus-icon-theme;
