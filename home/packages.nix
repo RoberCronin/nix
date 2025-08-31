@@ -60,6 +60,10 @@ in {
         stdenv
         gnumake
         tree-sitter
+        cmake
+        cmake-language-server
+        lua-language-server
+
         # Code Styling
         clang-tools
         isort
