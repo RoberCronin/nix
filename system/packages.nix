@@ -6,7 +6,6 @@
 }: let
     username = config.hostdata.user;
     hostname = config.hostdata.hostname;
-    polybar_pulse = pkgs.polybarFull.override {pulseSupport = true;};
 in {
     programs.thunar = {
         enable = true;
@@ -54,27 +53,93 @@ in {
         jump
         bash-completion
 
+        # Other Terminal Utils
+        fd
+        starship
+        btop
+        zoxide
+        yadm
+        ueberzugpp
+        autorandr
+        catfs
+        yazi
+        bat
+        ns-usbloader
+        fastfetch
+        sshfs
+
         # GUI applications
+        mpv
+        nomacs
+        flameshot
+        kdePackages.okular
+        zathura
+        neovide
+        onedrivegui
+        arduino-ide
+        system-config-printer
+        pavucontrol
+        alacritty
+        arandr
+        nitrogen
+        jstest-gtk
+        copyq
         gparted
+        xfce.mousepad
+        xfce.exo
+        xfce.xfce4-whiskermenu-plugin
 
         # Window Manager Utils
         xorg.xmodmap
-        xfce.exo
-        xfce.xfce4-whiskermenu-plugin
-        feh
         rofi
         networkmanagerapplet
-        xss-lock
-        i3status
-        i3lock
-        i3blocks
-        volumeicon
-        polybar_pulse
         wofi
         waybar
         playerctl
         nwg-look
         hyprpaper
+
+        # Gaming
+        r2modman
+        winePackages.unstableFull
+        protontricks
+        glfw
+
+        # Development
+        neovim
+        lazygit
+        lazydocker
+        vscode
+        xclip # nvim copyq integration
+        direnv
+        distrobox
+        direnv
+        stdenv
+        gnumake
+        tree-sitter
+        cmake
+        cmake-language-server
+        lua-language-server
+
+        # Code Styling
+        clang-tools
+        isort
+        black
+        stylua
+        nodePackages_latest.prettier
+
+        # Compiling/Languages
+        typst
+        clang-tools
+        python3Full
+        uv
+        texliveFull
+        lua
+        hugo
+        cargo
+        rustc
+        nodejs_22
+        gcc
 
         # System/other
         evolution-data-server

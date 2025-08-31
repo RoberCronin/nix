@@ -10,7 +10,6 @@ in {
     imports = [
         ./environment
         ./services
-        ./packages.nix
     ];
 
     nixpkgs.config = {
