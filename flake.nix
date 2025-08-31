@@ -23,17 +23,53 @@
                 inherit pkgs;
                 modules = [
                     ./home
-                    ./hostname.nix
+                ];
+            };
+            desktop = home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
+                modules = [
+                    ./home
+                    ./hosts/desktop.nix
+                ];
+            };
+            laptop = home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
+                modules = [
+                    ./home
+                    ./hosts/laptop.nix
+                ];
+            };
+            big_laptop = home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
+                modules = [
+                    ./home
+                    ./hosts/big_laptop.nix
                 ];
             };
         };
         nixosConfigurations = {
-            default = nixpkgs.lib.nixosSystem {
+            desktop = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
                     ./system
-                    ./hostname.nix
-                    ./hardware-configuration.nix
+                    ./hosts/desktop.nix
+                    ./hardware_configurations/desktop.nix
+                ];
+            };
+            laptop = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                    ./system
+                    ./hosts/laptop.nix
+                    ./hardware_configurations/laptop.nix
+                ];
+            };
+            big_laptop = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                    ./system
+                    ./hosts/big_laptop.nix
+                    ./hardware_configurations/big_lapto.nix
                 ];
             };
         };
