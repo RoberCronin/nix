@@ -74,6 +74,7 @@ in {
         waybar
         playerctl
         nwg-look
+        hyprpaper
 
         # System/other
         evolution-data-server
