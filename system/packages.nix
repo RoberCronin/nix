@@ -72,6 +72,8 @@ in {
         polybar_pulse
         wofi
         waybar
+        playerctl
+        nwg-look
 
         # System/other
         evolution-data-server

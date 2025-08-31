@@ -17,6 +17,7 @@ in {
         # Gaming
         winePackages.unstableFull
         protontricks
+        glfw
 
         # Terminal Utils
         fd
