@@ -98,6 +98,7 @@ in {
         playerctl
         nwg-look
         hyprpaper
+        swww
 
         # Gaming
         r2modman
