@@ -152,5 +152,6 @@ in {
         ffmpegthumbnailer
         libgsf
         dex
+        (pkgs.catppuccin-sddm.override {flavor = "macchiato";})
     ];
 }

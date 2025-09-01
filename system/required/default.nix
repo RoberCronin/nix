@@ -22,5 +22,6 @@ in {
         ./user.nix
         ./user_apps.nix
         ./unpatched_binaries.nix
+        ./display_manager.nix
     ];
 }
