@@ -52,6 +52,8 @@ in {
         tmux
         jump
         bash-completion
+        imagemagick
+        ffmpeg
 
         # Other Terminal Utils
         fd
@@ -67,6 +69,7 @@ in {
         ns-usbloader
         fastfetch
         sshfs
+        linux-wallpaperengine
 
         # GUI applications
         mpv
