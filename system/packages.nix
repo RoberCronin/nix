@@ -59,7 +59,7 @@ in {
         btop
         zoxide
         yadm
-        ueberzugpp
+        #ueberzugpp
         autorandr
         catfs
         yazi
