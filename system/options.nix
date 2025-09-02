@@ -40,6 +40,13 @@ in {
         openFirewall = true;
     };
 
+    services.pcscd.enable = true;
+    programs.gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+        pinentryPackage = pkgs.pinentry-curses;
+    };
+
     # Fingerprint sensor on laptop
     services.fprintd.enable = lib.mkIf (hostname == "laptop") true;
     services.xserver.wacom.enable = lib.mkIf (hostname == "laptop") true;

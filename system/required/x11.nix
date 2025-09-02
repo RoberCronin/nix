@@ -9,11 +9,6 @@
     polybar_pulse = pkgs.polybarFull.override {pulseSupport = true;};
 in {
     services.xserver.enable = true;
-    services.xserver.displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-    };
-
     services.xserver.desktopManager.xterm.enable = false;
     services.xserver.windowManager.i3 = {
         enable = true;

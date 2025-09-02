@@ -52,6 +52,8 @@ in {
         tmux
         jump
         bash-completion
+        imagemagick
+        ffmpeg
 
         # Other Terminal Utils
         fd
@@ -67,6 +69,7 @@ in {
         ns-usbloader
         fastfetch
         sshfs
+        linux-wallpaperengine
 
         # GUI applications
         mpv
@@ -98,6 +101,7 @@ in {
         playerctl
         nwg-look
         hyprpaper
+        swww
 
         # Gaming
         r2modman
@@ -152,5 +156,6 @@ in {
         ffmpegthumbnailer
         libgsf
         dex
+        (pkgs.catppuccin-sddm.override {flavor = "macchiato";})
     ];
 }
