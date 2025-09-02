@@ -69,7 +69,7 @@
                 modules = [
                     ./system
                     ./hosts/big_laptop.nix
-                    ./hardware_configurations/big_lapto.nix
+                    ./hardware_configurations/big_laptop.nix
                 ];
             };
         };
