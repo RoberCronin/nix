@@ -13,7 +13,11 @@ in {
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
     services.logind = lib.mkIf (hostname == "laptop") {
-        extraConfig = "HandlePowerKey=suspend\nIdleActionSec=1800";
+        settings.Login = {
+            HandlePowerKey = "suspend";
+            IdleActionSec = 1800;
+        };
+
         lidSwitch = "suspend";
     };
 }
