@@ -70,6 +70,10 @@ in {
         fastfetch
         sshfs
         linux-wallpaperengine
+        grim
+        slurp
+        wl-clipboard
+        mpvpaper
 
         # GUI applications
         mpv
