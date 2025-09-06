@@ -48,7 +48,7 @@ in {
     };
 
     # Fingerprint sensor on laptop
-    services.fprintd.enable = lib.mkIf (hostname == "laptop") true;
+    #services.fprintd.enable = lib.mkIf (hostname == "laptop") true;
     services.xserver.wacom.enable = lib.mkIf (hostname == "laptop") true;
 
     # Thumbnail support for images
