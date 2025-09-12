@@ -141,7 +141,7 @@ in {
         # Compiling/Languages
         typst
         clang-tools
-        python3Full
+        python3
         uv
         texliveFull
         lua
