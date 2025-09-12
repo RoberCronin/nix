@@ -1,4 +1,5 @@
 {
+    inputs,
     config,
     lib,
     pkgs,
@@ -162,5 +163,8 @@ in {
         libgsf
         dex
         (pkgs.catppuccin-sddm.override {flavor = "macchiato";})
+
+        # Fabric widgets
+        inputs.fabric-widgets.packages.${pkgs.stdenv.system}.run-widget
     ];
 }

@@ -8,11 +8,14 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        fabric-widgets.url = "github:Fabric-Development/fabric";
     };
 
-    outputs = {
+    outputs = inputs @ {
         nixpkgs,
         home-manager,
+        fabric-widgets,
         ...
     }: let
         system = "x86_64-linux";
@@ -55,6 +58,9 @@
                     ./hosts/desktop.nix
                     ./hardware_configurations/desktop.nix
                 ];
+                specialArgs = {
+                    inherit inputs;
+                };
             };
             laptop = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
@@ -63,6 +69,9 @@
                     ./hosts/laptop.nix
                     ./hardware_configurations/laptop.nix
                 ];
+                specialArgs = {
+                    inherit inputs;
+                };
             };
             big_laptop = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
@@ -71,6 +80,9 @@
                     ./hosts/big_laptop.nix
                     ./hardware_configurations/big_laptop.nix
                 ];
+                specialArgs = {
+                    inherit inputs;
+                };
             };
         };
     };
