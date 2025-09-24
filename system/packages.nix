@@ -130,6 +130,7 @@ in {
         cmake-language-server
         lua-language-server
         basedpyright
+        nil
 
         # Code Styling
         clang-tools
