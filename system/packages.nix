@@ -131,13 +131,15 @@ in {
         lua-language-server
         basedpyright
         nil
+        glsl_analyzer
 
-        # Code Styling
+        # Code Styling/formatters
         clang-tools
         isort
         black
         stylua
         nodePackages_latest.prettier
+        black
 
         # Compiling/Languages
         typst
@@ -166,6 +168,17 @@ in {
         (pkgs.catppuccin-sddm.override {flavor = "macchiato";})
 
         # Fabric widgets
-        inputs.fabric-widgets.packages.${pkgs.stdenv.system}.run-widget
+        #inputs.fabric-widgets.packages.${pkgs.stdenv.system}.run-widget
+
+        (
+            inputs.fabric-widgets.packages.${pkgs.stdenv.system}.run-widget.override
+            (
+                oldAttrs: {
+                    extraPythonPackages = [
+                        oldAttrs.python3.pkgs.watchdog
+                    ];
+                }
+            )
+        )
     ];
 }
