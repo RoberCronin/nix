@@ -16,8 +16,7 @@ in {
         settings.Login = {
             HandlePowerKey = "suspend";
             IdleActionSec = 1800;
+            HandleLidSwitch = "suspend";
         };
-
-        lidSwitch = "suspend";
     };
 }
