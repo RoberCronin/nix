@@ -1,13 +1,8 @@
 {
     inputs,
-    config,
-    lib,
     pkgs,
     ...
-}: let
-    username = config.hostdata.user;
-    hostname = config.hostdata.hostname;
-in {
+}: {
     programs.thunar = {
         enable = true;
         plugins = with pkgs; [

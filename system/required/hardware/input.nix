@@ -1,12 +1,4 @@
-{
-    config,
-    lib,
-    pkgs,
-    ...
-}: let
-    username = config.hostdata.user;
-    hostname = config.hostdata.hostname;
-in {
+{pkgs, ...}: {
     # Configure keymap in X11
     console.useXkbConfig = true;
     services.xserver.xkb = {

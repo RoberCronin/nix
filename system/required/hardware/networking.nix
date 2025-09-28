@@ -1,10 +1,4 @@
-{
-    config,
-    lib,
-    pkgs,
-    ...
-}: let
-    username = config.hostdata.user;
+{config, ...}: let
     hostname = config.hostdata.hostname;
 in {
     networking.networkmanager.enable = true;

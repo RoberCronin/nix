@@ -1,9 +1,4 @@
-{
-    config,
-    lib,
-    pkgs,
-    ...
-}: let
+{lib, ...}: let
     hostname = "laptop";
     user = "robert";
 in {

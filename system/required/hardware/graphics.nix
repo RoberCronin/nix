@@ -1,10 +1,8 @@
 {
     config,
     lib,
-    pkgs,
     ...
 }: let
-    username = config.hostdata.user;
     hostname = config.hostdata.hostname;
 in
     lib.mkIf (hostname == "desktop" || hostname == "big_laptop")

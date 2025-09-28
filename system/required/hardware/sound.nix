@@ -1,12 +1,4 @@
-{
-    config,
-    lib,
-    pkgs,
-    ...
-}: let
-    username = config.hostdata.user;
-    hostname = config.hostdata.hostname;
-in {
+{...}: {
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {

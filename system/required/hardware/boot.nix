@@ -4,7 +4,6 @@
     pkgs,
     ...
 }: let
-    username = config.hostdata.user;
     hostname = config.hostdata.hostname;
 in {
     boot.kernelPackages = pkgs.linuxPackages_latest;

@@ -1,12 +1,4 @@
-{
-    config,
-    lib,
-    pkgs,
-    ...
-}: let
-    username = config.hostdata.user;
-    hostname = config.hostdata.hostname;
-in {
+{pkgs, ...}: {
     hardware.steam-hardware.enable = true;
 
     xdg.portal.enable = true;

@@ -1,12 +1,4 @@
-{
-    config,
-    lib,
-    pkgs,
-    ...
-}: let
-    username = config.hostdata.user;
-    hostname = config.hostdata.hostname;
-in {
+{pkgs, ...}: {
     programs.nix-ld.enable = true;
     programs.nix-ld.libraries = with pkgs; [
         alsa-lib

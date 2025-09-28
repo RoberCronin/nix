@@ -1,12 +1,4 @@
-{
-    config,
-    lib,
-    pkgs,
-    ...
-}: let
-    username = config.hostdata.user;
-    hostname = config.hostdata.hostname;
-in {
+{...}: {
     imports = [
         ./hardware/networking.nix
         ./hardware/graphics.nix

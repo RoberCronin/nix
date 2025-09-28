@@ -1,9 +1,4 @@
-{
-    config,
-    lib,
-    pkgs,
-    ...
-}: {
+{...}: {
     xdg.desktopEntries.xarchiver = {
         name = "Xarchiver";
         exec = "xarchiver %f";

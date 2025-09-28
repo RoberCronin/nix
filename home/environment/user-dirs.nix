@@ -1,9 +1,4 @@
-{
-    config,
-    lib,
-    pkgs,
-    ...
-}: {
+{config, ...}: {
     xdg.userDirs = {
         enable = true;
         desktop = "${config.home.homeDirectory}/.config/unused/Desktop";

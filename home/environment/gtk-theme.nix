@@ -1,9 +1,4 @@
-{
-    config,
-    lib,
-    pkgs,
-    ...
-}: {
+{pkgs, ...}: {
     nixpkgs.config.packageOverrides = pkgs: {
         catppuccin-gtk = pkgs.catppuccin-gtk.override {
             accents = ["mauve"]; # You can specify multiple accents here to outpu>

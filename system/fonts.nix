@@ -1,12 +1,4 @@
-{
-    config,
-    lib,
-    pkgs,
-    ...
-}: let
-    username = config.hostdata.user;
-    hostname = config.hostdata.hostname;
-in {
+{pkgs, ...}: {
     fonts.fontDir.enable = true;
     fonts.enableDefaultPackages = true;
     fonts.packages = with pkgs; [
