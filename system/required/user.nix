@@ -10,6 +10,7 @@
             "wheel"
             "uucp"
             "dialout"
+            "vboxusers"
         ];
     };
 }
