@@ -23,6 +23,29 @@
         mimeType = ["text/english" "text/plain" "text/x-makefile" "text/x-c++hdr" "text/x-c++src" "text/x-chdr" "text/x-csrc" "text/x-java" "text/x-moc" "text/x-pascal" "text/x-tcl" "text/x-tex" "application/x-shellscript" "text/x-c" "text/x-c++"];
     };
 
+    xdg.desktopEntries.firefox-school = {
+        name = "Firefox School";
+        exec = "flatpak run org.mozilla.firefox -p school";
+        genericName = "Web Browser";
+        terminal = false;
+        comment = "Browse the web";
+        type = "Application";
+        icon = "firefox";
+        categories = [];
+        mimeType = [
+            "x-scheme-handler/http"
+            "x-scheme-handler/https"
+            "x-scheme-handler/chrome"
+            "text/html"
+            "application/x-extension-htm"
+            "application/x-extension-html"
+            "application/x-extension-shtml"
+            "application/xhtml+xml"
+            "application/x-extension-xhtml"
+            "application/x-extension-xht"
+        ];
+    };
+
     xdg.mimeApps = {
         enable = true;
         defaultApplications = {
