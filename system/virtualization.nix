@@ -8,9 +8,11 @@
             defaultNetwork.settings.dns_enabled = true;
         };
 
-        virtualbox = {
-            host.enable = true;
-            host.enableExtensionPack = true;
+        virtualbox.host = {
+            enable = true;
+            enableExtensionPack = true;
+            enableKvm = true;
+            addNetworkInterface = false;
         };
     };
 }
