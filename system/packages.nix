@@ -127,6 +127,7 @@
         basedpyright
         nil
         glsl_analyzer
+        tinymist # typst lsp
 
         # Code Styling/formatters
         clang-tools
