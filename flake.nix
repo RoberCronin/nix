@@ -10,12 +10,15 @@
         };
 
         fabric-widgets.url = "github:Fabric-Development/fabric";
+
+        nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     };
 
     outputs = inputs @ {
         nixpkgs,
         home-manager,
         fabric-widgets,
+        nix-flatpak,
         ...
     }: let
         system = "x86_64-linux";
@@ -25,12 +28,14 @@
             default = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
+                    nix-flatpak.homeManagerModules.nix-flatpak
                     ./home
                 ];
             };
             desktop = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
+                    nix-flatpak.homeManagerModules.nix-flatpak
                     ./home
                     ./hosts/desktop.nix
                 ];
@@ -38,6 +43,7 @@
             laptop = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
+                    nix-flatpak.homeManagerModules.nix-flatpak
                     ./home
                     ./hosts/laptop.nix
                 ];
@@ -45,6 +51,7 @@
             big_laptop = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
+                    nix-flatpak.homeManagerModules.nix-flatpak
                     ./home
                     ./hosts/big_laptop.nix
                 ];

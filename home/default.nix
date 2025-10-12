@@ -8,6 +8,7 @@ in {
     imports = [
         ./environment
         ./services
+        ./flatpak.nix
     ];
 
     nixpkgs.config = {
