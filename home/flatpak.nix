@@ -1,7 +1,5 @@
 {...}: {
     services.flatpak.enable = true;
-    services.flatpak.uninstallUnmanaged = true;
-    services.flatpak.update.onActivation = true;
     services.flatpak.packages = [
         "xyz.xclicker.xclicker"
         "us.zoom.Zoom"
