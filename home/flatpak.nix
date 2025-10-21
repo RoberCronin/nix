@@ -1,6 +1,8 @@
 {...}: {
     services.flatpak.enable = true;
     services.flatpak.packages = [
+        "org.kde.krita"
+        "com.github.flxzt.rnote"
         "xyz.xclicker.xclicker"
         "us.zoom.Zoom"
         "org.qbittorrent.qBittorrent"
