@@ -13,6 +13,7 @@ in {
     programs.kdeconnect.enable = true;
     programs.xfconf.enable = true;
     security.polkit.enable = true;
+    security.soteria.enable = true; # Polkit agent
     services.printing = {
         enable = true;
         drivers = [pkgs.cnijfilter2 pkgs.gutenprint];
