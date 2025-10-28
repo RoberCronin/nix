@@ -2,7 +2,7 @@
     options = {
         hostname = lib.mkOption {
             type = lib.types.str;
-            default = "laptop";
+            default = "tablet";
             description = "Networking hostname";
         };
 
@@ -14,7 +14,7 @@
 
         tpm.enable = lib.mkOption {
             type = lib.types.bool;
-            default = true;
+            default = false;
             description = "Whether to enable tpm on startup.";
         };
 
