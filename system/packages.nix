@@ -151,6 +151,8 @@
         gcc
 
         # System/other
+        hplip
+        hplipWithPlugin
         evolution-data-server
         pulseaudioFull
         papirus-icon-theme
