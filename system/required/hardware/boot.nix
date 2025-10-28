@@ -15,7 +15,7 @@ in {
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-    services.logind = lib.mkIf (hostname == "laptop") {
+    services.logind = lib.mkIf (hostname == "laptop" || hostname == "tablet") {
         settings.Login = {
             HandlePowerKey = "suspend";
             IdleActionSec = 1800;
