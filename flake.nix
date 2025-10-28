@@ -56,6 +56,14 @@
                     ./hosts/big_laptop.nix
                 ];
             };
+            tablet = home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
+                modules = [
+                    nix-flatpak.homeManagerModules.nix-flatpak
+                    ./home
+                    ./hosts/tablet.nix
+                ];
+            };
         };
         nixosConfigurations = {
             desktop = nixpkgs.lib.nixosSystem {
@@ -86,6 +94,17 @@
                     ./system
                     ./hosts/big_laptop.nix
                     ./hardware_configurations/big_laptop.nix
+                ];
+                specialArgs = {
+                    inherit inputs;
+                };
+            };
+            tablet = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                    ./system
+                    ./hosts/tablet.nix
+                    ./hardware_configurations/tablet.nix
                 ];
                 specialArgs = {
                     inherit inputs;

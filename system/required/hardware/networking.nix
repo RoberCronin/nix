@@ -1,5 +1,5 @@
 {config, ...}: let
-    hostname = config.hostdata.hostname;
+    hostname = config.hostname;
 in {
     networking.networkmanager.enable = true;
     networking.firewall.allowedTCPPorts = [80 443 1401 631];

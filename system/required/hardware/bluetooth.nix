@@ -1,5 +1,5 @@
 {config, ...}: let
-    hostname = config.hostdata.hostname;
+    hostname = config.hostname;
 in {
     hardware.bluetooth = {
         enable = true;

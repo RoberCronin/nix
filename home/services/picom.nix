@@ -3,7 +3,7 @@
     lib,
     ...
 }: let
-    hostname = config.hostdata.hostname;
+    hostname = config.hostname;
 in {
     services.picom = {
         enable =

@@ -3,9 +3,7 @@
     lib,
     pkgs,
     ...
-}: let
-    hostname = config.hostdata.hostname;
-in {
+}: {
     services.autorandr.enable = true;
     programs.dconf.enable = true;
     services.blueman.enable = true;
@@ -39,7 +37,7 @@ in {
         enable = true;
         package = pkgs.mullvad-vpn;
     };
-    services.auto-cpufreq.enable = lib.mkIf (hostname == "laptop" || hostname == "big_laptop") true;
+    services.auto-cpufreq.enable = config.auto-cpufreq.enable;
     services.auto-cpufreq.settings = {
         battery = {
             governor = "powersave";
@@ -52,7 +50,7 @@ in {
         };
     };
 
-    services.sunshine = lib.mkIf (hostname == "desktop") {
+    services.sunshine = lib.mkIf config.sunshine.enable {
         enable = true;
         openFirewall = true;
     };
@@ -66,7 +64,7 @@ in {
 
     # Fingerprint sensor on laptop
     #services.fprintd.enable = lib.mkIf (hostname == "laptop") true;
-    services.xserver.wacom.enable = lib.mkIf (hostname == "laptop") true;
+    services.xserver.wacom.enable = config.wacom;
 
     # Thumbnail support for images
     services.tumbler.enable = true;

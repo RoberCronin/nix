@@ -3,7 +3,7 @@
     pkgs,
     ...
 }: let
-    username = config.hostdata.user;
+    username = config.user;
 in {
     imports = [
         ./environment

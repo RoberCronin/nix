@@ -1,10 +1,8 @@
 {
     config,
-    lib,
     pkgs,
     ...
 }: let
-    hostname = config.hostdata.hostname;
     polybar_pulse = pkgs.polybarFull.override {pulseSupport = true;};
 in {
     services.xserver.enable = true;
@@ -22,5 +20,5 @@ in {
         ];
     };
 
-    services.xserver.desktopManager.xfce.enable = lib.mkIf (hostname == "desktop") true;
+    services.xserver.desktopManager.xfce.enable = config.xfce.enable;
 }

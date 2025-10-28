@@ -2,7 +2,7 @@
     options = {
         hostname = lib.mkOption {
             type = lib.types.str;
-            default = "laptop";
+            default = "default hostname";
             description = "Networking hostname";
         };
 
@@ -26,7 +26,7 @@
 
         auto-cpufreq.enable = lib.mkOption {
             type = lib.types.bool;
-            default = true;
+            default = false;
             description = "Whether to enable auto-cpufreq.";
         };
 
@@ -44,7 +44,7 @@
 
         wacom = lib.mkOption {
             type = lib.types.bool;
-            default = true;
+            default = false;
             description = "Whether to enable wacom drivers.";
         };
     };

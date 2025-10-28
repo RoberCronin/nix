@@ -24,5 +24,6 @@
         "com.github.wwmm.easyeffects"
         "com.github.tchx84.Flatseal"
         "com.heroicgameslauncher.hgl"
+        "org.gnome.SimpleScan"
     ];
 }
