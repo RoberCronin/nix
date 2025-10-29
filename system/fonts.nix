@@ -13,7 +13,7 @@
         ubuntu_font_family
         unifont
         julia-mono
-        #nerd-fonts
+        nerd-fonts.jetbrains-mono
     ];
     fonts.fontconfig = {
         antialias = true;

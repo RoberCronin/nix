@@ -5,5 +5,6 @@
         ./qt5-theme.nix
         ./background.nix
         ./user-dirs.nix
+        ./fonts.nix
     ];
 }
