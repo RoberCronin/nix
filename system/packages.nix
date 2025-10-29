@@ -52,6 +52,7 @@
         ffmpeg
 
         # Other Terminal Utils
+        mprime
         fd
         starship
         btop
