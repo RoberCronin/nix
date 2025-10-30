@@ -1,10 +1,4 @@
-{
-    config,
-    lib,
-    ...
-}:
-lib.mkIf config.nvidia.enable
-{
+{config, ...}: {
     environment.variables = {
         __GL_SYNC_DISPLAY_DEVICE = "DP-0";
     };

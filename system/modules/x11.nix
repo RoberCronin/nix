@@ -1,8 +1,4 @@
-{
-    config,
-    pkgs,
-    ...
-}: let
+{pkgs, ...}: let
     polybar_pulse = pkgs.polybarFull.override {pulseSupport = true;};
 in {
     services.xserver.enable = true;
@@ -20,5 +16,5 @@ in {
         ];
     };
 
-    services.xserver.desktopManager.xfce.enable = config.xfce.enable;
+    services.xserver.desktopManager.xfce.enable = true;
 }

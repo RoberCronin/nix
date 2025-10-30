@@ -1,19 +1,17 @@
 {...}: {
     imports = [
-        ./hardware/networking.nix
-        ./hardware/graphics.nix
-        ./hardware/input.nix
-        ./hardware/boot.nix
-        ./hardware/sound.nix
-        ./hardware/bluetooth.nix
+        ./hardware
 
         ./localization.nix
         ./nix_options.nix
-        ./x11.nix
         ./wayland.nix
         ./user.nix
         ./user_apps.nix
         ./unpatched_binaries.nix
         ./display_manager.nix
+        ./fonts.nix
+        ./options.nix
+        ./packages.nix
+        ./virtualization.nix
     ];
 }

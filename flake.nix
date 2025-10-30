@@ -23,6 +23,12 @@
     }: let
         system = "x86_64-linux";
         pkgs = import nixpkgs {inherit system;};
+        hosts = [
+            "desktop"
+            "laptop"
+            "big_laptop"
+            "tablet"
+        ];
     in {
         homeConfigurations = {
             default = home-manager.lib.homeManagerConfiguration {
@@ -32,6 +38,7 @@
                     ./home
                 ];
             };
+
             desktop = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
@@ -40,6 +47,7 @@
                     ./hosts/desktop.nix
                 ];
             };
+
             laptop = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
@@ -48,6 +56,7 @@
                     ./hosts/laptop.nix
                 ];
             };
+
             big_laptop = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
@@ -56,6 +65,7 @@
                     ./hosts/big_laptop.nix
                 ];
             };
+
             tablet = home-manager.lib.homeManagerConfiguration {
                 inherit pkgs;
                 modules = [
@@ -65,51 +75,86 @@
                 ];
             };
         };
-        nixosConfigurations = {
-            desktop = nixpkgs.lib.nixosSystem {
-                system = "x86_64-linux";
-                modules = [
-                    ./system
-                    ./hosts/desktop.nix
-                    ./hardware_configurations/desktop.nix
-                ];
-                specialArgs = {
-                    inherit inputs;
-                };
-            };
-            laptop = nixpkgs.lib.nixosSystem {
-                system = "x86_64-linux";
-                modules = [
-                    ./system
-                    ./hosts/laptop.nix
-                    ./hardware_configurations/laptop.nix
-                ];
-                specialArgs = {
-                    inherit inputs;
-                };
-            };
-            big_laptop = nixpkgs.lib.nixosSystem {
-                system = "x86_64-linux";
-                modules = [
-                    ./system
-                    ./hosts/big_laptop.nix
-                    ./hardware_configurations/big_laptop.nix
-                ];
-                specialArgs = {
-                    inherit inputs;
-                };
-            };
-            tablet = nixpkgs.lib.nixosSystem {
-                system = "x86_64-linux";
-                modules = [
-                    ./system
-                    ./hosts/tablet.nix
-                    ./hardware_configurations/tablet.nix
-                ];
-                specialArgs = {
-                    inherit inputs;
-                };
-            };
-        };
+
+        nixosConfigurations = builtins.listToAttrs (
+            builtins.map (
+                name: {
+                    inherit name;
+                    value = nixpkgs.lib.nixosSystem {
+                        system = "x86_64-linux";
+                        modules = [
+                            ./system
+                            ./hosts/${name}.nix
+                            ./hardware_configurations/${name}.nix
+                            (
+                                {lib, ...}: {
+                                    options = {
+                                        hostname = lib.mkOption {
+                                            type = lib.types.str;
+                                            default = name;
+                                            description = "Networking hostname";
+                                        };
+                                    };
+                                }
+                            )
+                        ];
+
+                        specialArgs = {
+                            inherit inputs;
+                        };
+                    };
+                }
+            )
+            hosts
+        );
+        # {
+        #     desktop = nixpkgs.lib.nixosSystem {
+        #         system = "x86_64-linux";
+        #         modules = [
+        #             ./system
+        #             ./hosts/desktop.nix
+        #             ./hardware_configurations/desktop.nix
+        #         ];
+        #         specialArgs = {
+        #             inherit inputs;
+        #         };
+        #     };
+        #
+        #     laptop = nixpkgs.lib.nixosSystem {
+        #         system = "x86_64-linux";
+        #         modules = [
+        #             ./system
+        #             ./hosts/laptop.nix
+        #             ./hardware_configurations/laptop.nix
+        #         ];
+        #         specialArgs = {
+        #             inherit inputs;
+        #         };
+        #     };
+        #
+        #     big_laptop = nixpkgs.lib.nixosSystem {
+        #         system = "x86_64-linux";
+        #         modules = [
+        #             ./system
+        #             ./hosts/big_laptop.nix
+        #             ./hardware_configurations/big_laptop.nix
+        #         ];
+        #         specialArgs = {
+        #             inherit inputs;
+        #         };
+        #     };
+        #
+        #     tablet = nixpkgs.lib.nixosSystem {
+        #         system = "x86_64-linux";
+        #         modules = [
+        #             ./system
+        #             ./hosts/tablet.nix
+        #             ./hardware_configurations/tablet.nix
+        #         ];
+        #         specialArgs = {
+        #             inherit inputs;
+        #         };
+        #     };
+        # };
     };
 }
