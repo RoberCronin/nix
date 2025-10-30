@@ -73,6 +73,7 @@
         mpvpaper
 
         # GUI applications
+        xournalpp
         mpv
         nomacs
         flameshot
