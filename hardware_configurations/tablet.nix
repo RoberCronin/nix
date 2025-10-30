@@ -11,7 +11,7 @@
     #undervolting
     services.undervolt = {
         enable = true;
-        coreOffset = -90;
+        coreOffset = -85;
     };
     #
     imports = [
