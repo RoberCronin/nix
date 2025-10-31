@@ -1,10 +1,4 @@
-{
-    config,
-    pkgs,
-    ...
-}: let
-    username = config.user;
-in {
+{...}: {
     imports = [
         ./environment
         ./services
@@ -16,12 +10,10 @@ in {
     };
 
     home = {
-        packages = with pkgs; [
-            hello
-        ];
+        # packages = with pkgs; [];
 
-        inherit username;
-        homeDirectory = "/home/${username}";
+        username = "robert";
+        homeDirectory = "/home/robert";
 
         stateVersion = "23.11";
     };

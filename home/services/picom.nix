@@ -1,14 +1,6 @@
-{
-    config,
-    lib,
-    ...
-}: let
-    hostname = config.hostname;
-in {
+{...}: {
     services.picom = {
-        enable =
-            lib.mkIf (hostname == "laptop" || hostname == "big_laptop")
-            true;
+        enable = false;
 
         backend = "glx";
         vSync = true;
