@@ -73,6 +73,7 @@
         mpvpaper
 
         # GUI applications
+        termite
         xournalpp
         mpv
         nomacs

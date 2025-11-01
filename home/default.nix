@@ -2,7 +2,10 @@
     imports = [
         ./environment
         ./services
+        ./programs
+
         ./flatpak.nix
+        ./stylix.nix
     ];
 
     nixpkgs.config = {

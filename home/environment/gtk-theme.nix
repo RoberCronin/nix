@@ -12,8 +12,8 @@
         enable = true;
         iconTheme.package = pkgs.papirus-icon-theme;
         iconTheme.name = "Papirus-Dark";
-        theme.package = pkgs.catppuccin-gtk;
-        theme.name = "catppuccin-macchiato-mauve-compact+normal";
+        #theme.package = pkgs.catppuccin-gtk;
+        #theme.name = "catppuccin-macchiato-mauve-compact+normal";
         cursorTheme.package = pkgs.bibata-cursors;
         cursorTheme.name = "Bibata-Modern-Classic";
         cursorTheme.size = 24;

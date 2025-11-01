@@ -12,6 +12,11 @@
         fabric-widgets.url = "github:Fabric-Development/fabric";
 
         nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
+        stylix = {
+            url = "github:nix-community/stylix";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = inputs @ {
@@ -19,6 +24,7 @@
         home-manager,
         fabric-widgets,
         nix-flatpak,
+        stylix,
         ...
     }: let
         system = "x86_64-linux";
@@ -35,6 +41,7 @@
                 inherit pkgs;
                 modules = [
                     nix-flatpak.homeManagerModules.nix-flatpak
+                    stylix.homeModules.stylix
                     ./home
                 ];
             };
@@ -47,6 +54,7 @@
                     value = nixpkgs.lib.nixosSystem {
                         system = "x86_64-linux";
                         modules = [
+                            stylix.nixosModules.stylix
                             ./system
                             ./hosts/${name}.nix
                             ./hardware_configurations/${name}.nix

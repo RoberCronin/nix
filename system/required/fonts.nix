@@ -3,14 +3,13 @@
     fonts.enableDefaultPackages = true;
     fonts.packages = with pkgs; [
         noto-fonts
-        noto-fonts-extra
         dejavu_fonts
         noto-fonts-cjk-sans
-        noto-fonts-emoji
+        noto-fonts-color-emoji
         liberation_ttf
-        source-han-sans-japanese
-        source-han-serif-japanese
-        ubuntu_font_family
+        source-han-sans
+        source-han-serif
+        ubuntu-classic
         unifont
         julia-mono
         nerd-fonts.jetbrains-mono

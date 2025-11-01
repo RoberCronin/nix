@@ -8,23 +8,23 @@
 
             urgency_low = {
                 #frame_color = "#24273a";
-                background = "#24273a";
-                foreground = "#C5C8C6";
+                #background = "#24273a";
+                #foreground = "#C5C8C6";
                 timeout = 10;
             };
 
             urgency_normal = {
                 #frame_color = "#24273a";
-                background = "#24273a";
-                foreground = "#C5C8C6";
+                #background = "#24273a";
+                #foreground = "#C5C8C6";
                 timeout = 10;
                 override_pause_level = 30;
             };
 
             urgency_critical = {
-                background = "#900000";
-                foreground = "#ffffff";
-                frame_color = "#ff0000";
+                #background = "#900000";
+                #foreground = "#ffffff";
+                #frame_color = "#ff0000";
                 timeout = 0;
                 override_pause_level = 60;
             };
@@ -54,11 +54,11 @@
                 horizontal_padding = 8;
                 text_icon_padding = 0;
                 frame_width = 2;
-                frame_color = "#ee99a0";
+                #frame_color = "#ee99a0";
                 gap_size = 0;
-                separator_color = "frame";
+                #separator_color = "frame";
                 sort = "yes";
-                font = "JuliaMono;2";
+                #font = "JuliaMono;2";
                 line_height = 0;
                 markup = "full";
                 format = "<b>%s</b>\n%b";
