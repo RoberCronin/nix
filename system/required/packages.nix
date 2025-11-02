@@ -26,6 +26,7 @@
         kdePackages.wacomtablet
 
         # Common Terminal Utils
+        jq
         powertop
         rclone
         bashInteractive
