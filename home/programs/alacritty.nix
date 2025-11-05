@@ -1,6 +1,6 @@
 {...}: {
     programs.alacritty = {
-        enable = true;
+        enable = false;
         settings = {
             general.import = [
                 "~/.config/alacritty/differences.toml"
