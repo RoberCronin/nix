@@ -13,6 +13,7 @@
         unifont
         julia-mono
         nerd-fonts.jetbrains-mono
+        nerd-fonts.arimo
         material-icons
         font-awesome
         comic-mono

@@ -74,6 +74,7 @@
         mpvpaper
 
         # GUI applications
+        better-control
         rnote
         termite
         xournalpp
