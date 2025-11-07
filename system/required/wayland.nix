@@ -1,4 +1,9 @@
 {...}: {
+    services.desktopManager.gnome.enable = true;
+    services.gnome.core-apps.enable = true;
+    services.gnome.core-developer-tools.enable = false;
+    services.gnome.games.enable = false;
+
     programs.iio-hyprland.enable = true;
     programs.hyprland = {
         enable = true;
