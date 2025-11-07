@@ -74,6 +74,7 @@
         mpvpaper
 
         # GUI applications
+        rnote
         termite
         xournalpp
         mpv
@@ -134,6 +135,7 @@
         tinymist # typst lsp
 
         # Code Styling/formatters
+        jsonfmt
         clang-tools
         isort
         black

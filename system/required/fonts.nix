@@ -13,6 +13,9 @@
         unifont
         julia-mono
         nerd-fonts.jetbrains-mono
+        material-icons
+        font-awesome
+        comic-mono
     ];
     fonts.fontconfig = {
         antialias = true;
