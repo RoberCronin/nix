@@ -108,6 +108,7 @@
         nwg-look
         hyprpaper
         swww
+        nwg-drawer
 
         # Gaming
         r2modman
