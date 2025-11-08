@@ -17,6 +17,8 @@
         material-icons
         font-awesome
         comic-mono
+        roboto
+        source-sans
     ];
     fonts.fontconfig = {
         antialias = true;
