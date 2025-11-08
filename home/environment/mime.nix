@@ -12,15 +12,15 @@
     };
 
     xdg.desktopEntries.nvim-alacritty = {
-        name = "Neovim Alacritty";
-        exec = "alacritty -e nvim %f";
-        genericName = "Text editor";
+        name = "Close launcher";
+        exec = "echo closed launcher.";
+        genericName = "";
         terminal = false;
-        comment = "Edit text files";
+        comment = "";
         type = "Application";
-        icon = "nvim";
-        categories = ["Utility" "TextEditor"];
-        mimeType = ["text/english" "text/plain" "text/x-makefile" "text/x-c++hdr" "text/x-c++src" "text/x-chdr" "text/x-csrc" "text/x-java" "text/x-moc" "text/x-pascal" "text/x-tcl" "text/x-tex" "application/x-shellscript" "text/x-c" "text/x-c++"];
+        icon = "alacritty";
+        categories = [];
+        mimeType = [];
     };
 
     xdg.desktopEntries.firefox-school = {
