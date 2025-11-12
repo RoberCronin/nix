@@ -12,7 +12,6 @@
         "org.gimp.GIMP"
         "org.blender.Blender"
         "org.audacityteam.Audacity"
-        "net.ankiweb.Anki"
         "md.obsidian.Obsidian"
         "dev.vencord.Vesktop"
         "com.usebottles.bottles"

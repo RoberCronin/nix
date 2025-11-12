@@ -74,6 +74,7 @@
         mpvpaper
 
         # GUI applications
+        anki
         better-control
         rnote
         termite
