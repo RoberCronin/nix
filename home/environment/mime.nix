@@ -49,6 +49,7 @@
     xdg.mimeApps = {
         enable = true;
         defaultApplications = {
+            "application/pdf" = "okular.desktop";
             "inode/directory" = "thunar.desktop";
 
             "text/english" = "nvim-alacritty.desktop";
