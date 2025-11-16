@@ -55,7 +55,7 @@
                         system = "x86_64-linux";
                         modules = [
                             stylix.nixosModules.stylix
-                            ./system
+                            ./nixos
                             ./hosts/${name}.nix
                             ./hardware_configurations/${name}.nix
                             (

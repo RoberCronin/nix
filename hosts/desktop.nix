@@ -1,6 +1,6 @@
 {...}: {
     imports = [
-        ../system/modules/hardware/nvidia.nix
-        ../system/modules/sunshine.nix
+        ../modules/nixos/hardware/nvidia.nix
+        ../modules/nixos/sunshine.nix
     ];
 }

@@ -1,9 +1,8 @@
 {...}: {
     imports = [
-        # ../system/modules/auto-cpufreq.nix
-        ../system/modules/wacom.nix
-        ../system/modules/hardware/power-key.nix
-        ../system/modules/hardware/tpm.nix
+        ../modules/nixos/wacom.nix
+        ../modules/nixos/hardware/power-key.nix
+        ../modules/nixos/hardware/tpm.nix
     ];
 
     services.udev.extraRules = ''
