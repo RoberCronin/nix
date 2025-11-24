@@ -3,7 +3,7 @@
     pkgs,
     ...
 }: {
-    boot.kernelPackages = pkgs.linuxPackages_latest;
+    boot.kernelPackages = pkgs.linuxPackages_zen;
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
