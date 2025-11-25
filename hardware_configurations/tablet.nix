@@ -12,7 +12,7 @@
     services.undervolt = {
         enable = true;
         coreOffset = -80;
-        gpuOffset = -70;
+        gpuOffset = -80;
     };
     #
     imports = [
