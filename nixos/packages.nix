@@ -76,7 +76,7 @@
         # GUI applications
         anki
         better-control
-        rnote
+        #rnote
         termite
         xournalpp
         mpv
