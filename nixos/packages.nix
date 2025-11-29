@@ -1,6 +1,7 @@
 {
     inputs,
     pkgs,
+    pkgs-stable,
     ...
 }: {
     programs.thunar = {
@@ -74,6 +75,7 @@
         mpvpaper
 
         # GUI applications
+        pkgs-stable.freecad
         anki
         better-control
         #rnote
