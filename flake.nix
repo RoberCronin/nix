@@ -10,8 +10,6 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        fabric-widgets.url = "github:Fabric-Development/fabric";
-
         nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
         stylix = {
@@ -24,7 +22,6 @@
         nixpkgs,
         nixpkgs-stable,
         home-manager,
-        fabric-widgets,
         nix-flatpak,
         stylix,
         ...

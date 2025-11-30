@@ -1,5 +1,4 @@
 {
-    inputs,
     pkgs,
     pkgs-stable,
     ...
@@ -174,20 +173,5 @@
         ffmpegthumbnailer
         libgsf
         dex
-        (pkgs.catppuccin-sddm.override {flavor = "macchiato";})
-
-        # Fabric widgets
-        #inputs.fabric-widgets.packages.${pkgs.stdenv.system}.run-widget
-
-        (
-            inputs.fabric-widgets.packages.${pkgs.stdenv.system}.run-widget.override
-            (
-                oldAttrs: {
-                    extraPythonPackages = [
-                        oldAttrs.python3.pkgs.watchdog
-                    ];
-                }
-            )
-        )
     ];
 }
