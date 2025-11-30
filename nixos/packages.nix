@@ -77,7 +77,7 @@
         # GUI applications
         pkgs-stable.freecad
         anki
-        better-control
+        pkgs-stable.better-control
         #rnote
         termite
         xournalpp
