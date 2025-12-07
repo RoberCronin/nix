@@ -1,6 +1,6 @@
 {
     pkgs,
-    pkgs-stable,
+    pkgs-unstable,
     ...
 }: {
     programs.thunar = {
@@ -74,9 +74,9 @@
         mpvpaper
 
         # GUI applications
-        pkgs-stable.freecad
+        freecad
         anki
-        pkgs-stable.better-control
+        better-control
         #rnote
         termite
         xournalpp

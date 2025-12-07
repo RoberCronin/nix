@@ -2,11 +2,11 @@
     description = "NixOS and Home Manager config";
 
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-        nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+        nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
         home-manager = {
-            url = "github:nix-community/home-manager";
+            url = "github:nix-community/home-manager/release-25.11";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
@@ -20,7 +20,7 @@
 
     outputs = inputs @ {
         nixpkgs,
-        nixpkgs-stable,
+        nixpkgs-unstable,
         home-manager,
         nix-flatpak,
         stylix,
@@ -28,7 +28,7 @@
     }: let
         system = "x86_64-linux";
         pkgs = import nixpkgs {inherit system;};
-        pkgs-stable = import nixpkgs-stable {inherit system;};
+        pkgs-unstable = import nixpkgs-unstable {inherit system;};
         hosts = [
             "desktop"
             "laptop"
@@ -54,7 +54,7 @@
                     value = nixpkgs.lib.nixosSystem {
                         system = "x86_64-linux";
                         specialArgs = {
-                            inherit pkgs-stable;
+                            inherit pkgs-unstable;
                         };
                         modules = [
                             stylix.nixosModules.stylix
