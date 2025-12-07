@@ -137,8 +137,10 @@
         nil
         glsl_analyzer
         tinymist # typst lsp
+        harper
 
         # Code Styling/formatters
+        alejandra
         jsonfmt
         clang-tools
         isort
