@@ -53,6 +53,7 @@
         ffmpeg
 
         # Other Terminal Utils
+        exiftool
         mprime
         fd
         starship
