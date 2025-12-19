@@ -141,6 +141,7 @@
         harper
 
         # Code Styling/formatters
+        typstyle
         alejandra
         jsonfmt
         clang-tools
