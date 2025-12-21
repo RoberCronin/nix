@@ -25,7 +25,7 @@
 
     xdg.desktopEntries.firefox-school = {
         name = "Firefox School";
-        exec = "flatpak run org.mozilla.firefox -p school";
+        exec = "firefox -p school";
         genericName = "Web Browser";
         terminal = false;
         comment = "Browse the web";

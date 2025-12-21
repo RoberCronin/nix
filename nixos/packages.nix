@@ -75,10 +75,22 @@
         mpvpaper
 
         # GUI applications
+        krita
+        qbittorrent
+        prismlauncher
+        firefox
+        thunderbird
+        libreoffice
+        blender
+        audacity
+        vesktop
+        bottles
+        easyeffects
+        simple-scan
         freecad
         anki
         better-control
-        #rnote
+        rnote
         termite
         xournalpp
         mpv
@@ -114,6 +126,8 @@
         nwg-drawer
 
         # Gaming
+        pkgs-unstable.luanti
+        heroic
         r2modman
         winePackages.unstableFull
         protontricks
@@ -141,15 +155,14 @@
         harper
 
         # Code Styling/formatters
-        typstyle
-        alejandra
-        jsonfmt
-        clang-tools
-        isort
-        black
-        stylua
-        nodePackages_latest.prettier
-        black
+        typstyle # typst
+        alejandra # nix
+        jsonfmt # json
+        clang-tools # c/c++
+        isort # python import sorter
+        black # python
+        stylua #lua
+        nodePackages_latest.prettier # javascript, css, html
 
         # Compiling/Languages
         typst
