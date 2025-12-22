@@ -114,6 +114,7 @@
         xfce.xfce4-whiskermenu-plugin
 
         # Window Manager Utils
+        dunst
         xorg.xmodmap
         rofi
         networkmanagerapplet
