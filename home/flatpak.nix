@@ -22,5 +22,6 @@
         "com.github.tchx84.Flatseal"
         # "com.heroicgameslauncher.hgl"
         # "org.gnome.SimpleScan"
+        "com.github.scrivanolabs.scrivano"
     ];
 }
