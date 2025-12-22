@@ -11,11 +11,6 @@
         };
 
         nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
-        stylix = {
-            url = "github:nix-community/stylix";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
     };
 
     outputs = inputs @ {
@@ -23,7 +18,6 @@
         nixpkgs-unstable,
         home-manager,
         nix-flatpak,
-        stylix,
         ...
     }: let
         system = "x86_64-linux";
@@ -41,7 +35,6 @@
                 inherit pkgs;
                 modules = [
                     nix-flatpak.homeManagerModules.nix-flatpak
-                    stylix.homeModules.stylix
                     ./home
                 ];
             };
@@ -57,7 +50,6 @@
                             inherit pkgs-unstable;
                         };
                         modules = [
-                            stylix.nixosModules.stylix
                             ./nixos
                             ./hosts/${name}.nix
                             ./hardware_configurations/${name}.nix

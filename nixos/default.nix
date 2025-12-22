@@ -13,6 +13,5 @@
         ./options.nix
         ./packages.nix
         ./virtualization.nix
-        ./stylix.nix
     ];
 }
