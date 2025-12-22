@@ -71,16 +71,16 @@
                 "text/x-c++" = "org.xfce.mousepad.desktop";
                 "application/xml" = "org.xfce.mousepad.desktop";
 
-                "x-scheme-handler/http" = "org.mozilla.firefox.desktop";
-                "x-scheme-handler/https" = "org.mozilla.firefox.desktop";
-                "x-scheme-handler/chrome" = "org.mozilla.firefox.desktop";
-                "text/html" = "org.mozilla.firefox.desktop";
-                "application/x-extension-htm" = "org.mozilla.firefox.desktop";
-                "application/x-extension-html" = "org.mozilla.firefox.desktop";
-                "application/x-extension-shtml" = "org.mozilla.firefox.desktop";
-                "application/xhtml+xml" = "org.mozilla.firefox.desktop";
-                "application/x-extension-xhtml" = "org.mozilla.firefox.desktop";
-                "application/x-extension-xht" = "org.mozilla.firefox.desktop";
+                "x-scheme-handler/http" = "firefox.desktop";
+                "x-scheme-handler/https" = "firefox.desktop";
+                "x-scheme-handler/chrome" = "firefox.desktop";
+                "text/html" = "firefox.desktop";
+                "application/x-extension-htm" = "firefox.desktop";
+                "application/x-extension-html" = "firefox.desktop";
+                "application/x-extension-shtml" = "firefox.desktop";
+                "application/xhtml+xml" = "firefox.desktop";
+                "application/x-extension-xhtml" = "firefox.desktop";
+                "application/x-extension-xht" = "firefox.desktop";
 
                 "image/avif" = "org.nomacs.ImageLounge.desktop";
                 "image/bmp" = "org.nomacs.ImageLounge.desktop";
