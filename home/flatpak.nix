@@ -23,5 +23,6 @@
         # "com.heroicgameslauncher.hgl"
         # "org.gnome.SimpleScan"
         "com.github.scrivanolabs.scrivano"
+        "sh.ppy.osu"
     ];
 }
