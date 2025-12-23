@@ -37,9 +37,6 @@
     font-size: 16px;
     color: #fbf1c7; 
     background: @background;
-    /* box-shadow: inset @accent; */
-
-    /* background: rgba(40,40,40,1.0); */
 }
 
 #tray * :hover {
@@ -112,10 +109,6 @@ window>box{
 #battery {
     color: @foreground;
     margin: 5px;
-    /* border-radius: 5px; */
-    /* border-color: alpha(@accent, 0.5); */
-    /* border-style: solid; */
-    /* border-width: 3px; */
 }
 
 #battery.critical:not(.charging) {

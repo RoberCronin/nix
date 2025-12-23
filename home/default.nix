@@ -3,7 +3,6 @@
         ./configs
         ./environment
         ./services
-        ./programs
 
         ./flatpak.nix
     ];

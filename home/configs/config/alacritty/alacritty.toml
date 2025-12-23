@@ -5,7 +5,6 @@ style = "Regular"
 [general]
 import = [
     "~/.config/alacritty/catppuccin/catppuccin-macchiato.toml",
-    "~/.config/alacritty/differences.toml"
 ]
 
 [window]
