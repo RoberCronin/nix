@@ -75,6 +75,7 @@
         mpvpaper
 
         # GUI applications
+        bitwarden-desktop
         krita
         qbittorrent
         prismlauncher
