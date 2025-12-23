@@ -1,5 +1,6 @@
 {...}: {
     imports = [
+        ./configs
         ./environment
         ./services
         ./programs
@@ -12,8 +13,6 @@
     };
 
     home = {
-        # packages = with pkgs; [];
-
         username = "robert";
         homeDirectory = "/home/robert";
 

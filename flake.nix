@@ -39,15 +39,32 @@
             "tablet"
         ];
     in {
-        homeConfigurations = {
-            default = home-manager.lib.homeManagerConfiguration {
-                inherit pkgs;
-                modules = [
-                    nix-flatpak.homeManagerModules.nix-flatpak
-                    ./home
-                ];
-            };
-        };
+        homeConfigurations = builtins.listToAttrs (
+            builtins.map (
+                name: {
+                    inherit name;
+                    value = home-manager.lib.homeManagerConfiguration {
+                        inherit pkgs;
+                        modules = [
+                            nix-flatpak.homeManagerModules.nix-flatpak
+                            ./home
+                            (
+                                {lib, ...}: {
+                                    options = {
+                                        host = lib.mkOption {
+                                            type = lib.types.str;
+                                            default = name;
+                                            description = "flake host";
+                                        };
+                                    };
+                                }
+                            )
+                        ];
+                    };
+                }
+            )
+            hosts
+        );
 
         nixosConfigurations = builtins.listToAttrs (
             builtins.map (

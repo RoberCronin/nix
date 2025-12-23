@@ -1,0 +1,117 @@
+{
+		"name": "sidebar",
+		"layer": "top",
+		"position": "left",
+        "width": 54,
+		"modules-left": ["hyprland/workspaces"],
+		"modules-center": [],
+		"modules-right": ["custom/up","custom/down","custom/launcher", "custom/quick_settings", "custom/kill", "battery", "backlight", "pulseaudio", "cpu", "memory", "tray", "clock"],
+		"hyprland/workspaces": {
+			"disable-scroll": true,
+			"all-outputs": true,
+			"on-click": "activate",
+			"sort-by-number": true 
+		},
+		"clock": {
+    			"format": "{:%I\n%M}",
+    		},
+		"custom/menu": {
+			
+		},
+        
+    "tray": {
+        "icon-size": 24,
+        "spacing": 10,
+        "icons": {
+        }
+    },
+
+    "cpu": {
+        "interval": 2,
+        "justify": "center",
+        "format": "\n{usage}%",
+        "tooltip": false,
+    },
+
+    "memory": {
+        "interval": 2,
+        "justify": "center",
+        "format": "\n{percentage}%",
+        "tooltip": false,
+    },
+        
+    "battery": {
+        "bat": "BAT0",
+        "justify": "center",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "interval": 2,
+        "tooltip": false,
+        "format": "{icon}\n{capacity}%",
+        "format-charging": "\n{capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    
+    "backlight": {
+        "justify": "center",
+        "format": "{icon}\n{percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "tooltip": false,
+    },
+    "pulseaudio": {
+        "format": "{icon}\n{volume}%",
+        "format-bluetooth": "{icon}\n{volume}%",
+        "format-muted": "\n{volume}%",
+        "justify": "center",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 1,
+        "ignored-sinks": ["Easy Effects Sink"],
+        "tooltip": false,
+    },
+
+    "custom/quick_settings": {
+      "format": "", 
+      "justify": "center",
+      "tooltip": false,
+      "on-click": "hyprctl dispatch togglespecialworkspace quick_settings"
+    },
+        
+    "custom/launcher": {
+      "format": "󱗼", 
+      "justify": "center",
+      "tooltip": false,
+      "on-click": "nwg-drawer"
+    },
+        
+    "custom/kill": {
+      "format": "󰖭", 
+      "justify": "center",
+      "tooltip": false,
+      "on-click": "hyprctl kill"
+    },
+        
+    "custom/up": {
+      "format": "", 
+      "justify": "center",
+      "tooltip": false,
+      "on-click": "hyprctl dispatch workspace -1"
+    },
+        
+    "custom/down": {
+      "format": "", 
+      "justify": "center",
+      "tooltip": false,
+      "on-click": "hyprctl dispatch workspace +1"
+    }
+}

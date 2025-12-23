@@ -1,0 +1,170 @@
+
+@define-color background #24273a;
+@define-color foreground #f5dbc4;
+@define-color color0 #150d16;
+@define-color color1 #72448D;
+@define-color color2 #9C5995;
+@define-color color3 #D5719F;
+@define-color color4 #9A62F3;
+@define-color color5 #E075DF;
+@define-color color6 #F98F9F;
+@define-color color7 #f5dbc4;
+@define-color color8 #ab9989;
+@define-color color9 #72448D;
+@define-color color10 #9C5995;
+@define-color color11 #D5719F;
+@define-color color12 #9A62F3;
+@define-color color13 #E075DF;
+@define-color color14 #F98F9F;
+@define-color color15 #f5dbc4;
+@define-color accent #ee99a0;
+@define-color window-bg alpha(@background, 1);
+@define-color module-bg alpha(@background, 0.4);
+@define-color border-color @color11;
+@define-color ws-active @color9;
+@define-color ws-inactive @color3;
+@define-color ws-empty @color8;
+@define-color ws-hover @color1;
+@define-color ws-urgent @color12;
+
+*{
+	all: unset;
+    color: @foreground;
+    font-family: "Arimo Nerd Font Propo";
+}
+
+#tray * {
+    font-size: 16px;
+    color: #fbf1c7; 
+    background: @background;
+    /* box-shadow: inset @accent; */
+
+    /* background: rgba(40,40,40,1.0); */
+}
+
+#tray * :hover {
+    background-color: alpha(@accent, 0.1);
+}
+
+#tray * :hover * {
+    color: #fbf1c7; 
+    background-color: alpha(@accent, 0.1);
+} 
+
+window>box{
+    font-size: 16px;
+    background-color: @background;
+    box-shadow: inset -3px 0 @accent;
+    padding-right: 3px;
+}
+
+
+#clock{
+	margin: 15px;
+    font-size: 16px;
+	padding: 15px 10px;
+	margin: 0px;
+	background: rgba(0,0,0,0);
+    font-weight: 900;
+}
+
+#tray {
+    color: #282a36;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+    color: #6272a4;
+}
+
+#tray>.needs-attention {
+    background-color: #ff5555;
+    color: #ffffff;
+}
+
+#workspaces button.active{
+    font-family: "Jost*", sans-serif;
+	color: #ff4c4c;
+}
+
+#workspaces button,
+#mode {
+    padding: 10px 8px;
+    background-color: transparent;
+    color: #ffffff;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+#workspaces button:hover {
+    background-color: alpha(@accent, 0.1);
+}
+
+#workspaces button.active {
+    box-shadow: inset -10px 0 @accent;
+    font-weight: 900;
+}
+
+#workspaces button.urgent {
+    background-color: #b54f4f;
+}
+
+#battery {
+    color: @foreground;
+    margin: 5px;
+    /* border-radius: 5px; */
+    /* border-color: alpha(@accent, 0.5); */
+    /* border-style: solid; */
+    /* border-width: 3px; */
+}
+
+#battery.critical:not(.charging) {
+    background-color: #b54f4f;
+    border-radius: 5px;
+    animation: blink 0.5s linear infinite alternate;
+}
+
+#backlight {
+    color: @foreground;
+    margin: 5px;
+}
+
+#pulseaudio {
+    color: @foreground;
+    margin: 5px;
+}
+
+#cpu {
+    color: @foreground;
+    margin: 5px;
+}
+
+#memory {
+    color: @foreground;
+    margin: 5px;
+}
+
+#custom-quick_settings {
+    font-size: 24px;
+    margin: 5px;
+}
+
+#custom-launcher {
+    font-size: 24px;
+    margin: 5px;
+}
+
+#custom-kill {
+    font-size: 24px;
+    margin: 5px;
+}
+
+#custom-down {
+    font-size: 24px;
+    margin: 5px;
+}
+
+#custom-up{
+    font-size: 24px;
+    margin: 5px;
+}

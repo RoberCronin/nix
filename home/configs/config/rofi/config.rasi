@@ -1,0 +1,19 @@
+@theme "theme"
+
+configuration {
+disable-history: false;
+display-Network: " 󰤨  Network";
+display-drun: "   Apps ";
+display-run: "   Run ";
+display-window: " 﩯  Window";
+drun-display-format: "{icon} {name}";
+hide-scrollbar: true;
+icon-theme: "Oranchelo";
+location: 0;
+modi: "run,drun,window";
+show-icons: true;
+sidebar-mode: true;
+terminal: "alacritty";
+xoffset: 0;
+yoffset: 0;
+}
