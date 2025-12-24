@@ -92,9 +92,9 @@
         freecad
         anki
         better-control
-        rnote
+        # install rnote as flatpak because nixpkgs version is broken
+        # rnote
         termite
-        xournalpp
         mpv
         nomacs
         flameshot
