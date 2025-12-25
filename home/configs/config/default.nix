@@ -8,7 +8,7 @@
         # This file contains the differences between hosts.
         # It is imported in ~/.config/hypr/hyprland.conf
         "hyprland_host.conf" = {
-            source = ./hypr/hosts/${config.host}.conf;
+            source = config.lib.file.mkOutOfStoreSymlink ./hypr/hosts/${config.host}.conf;
         };
 
         "alacritty" = {
