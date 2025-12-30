@@ -11,6 +11,7 @@
             "uucp"
             "dialout"
             "vboxusers"
+            "audio"
         ];
     };
 }

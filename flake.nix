@@ -11,6 +11,8 @@
         };
 
         nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
+        musnix.url = "github:musnix/musnix";
     };
 
     nixConfig = {
@@ -79,6 +81,7 @@
                             ./nixos
                             ./hosts/${name}.nix
                             ./hardware_configurations/${name}.nix
+                            inputs.musnix.nixosModules.musnix
                             (
                                 {lib, ...}: {
                                     options = {
