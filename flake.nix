@@ -10,8 +10,6 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
         musnix.url = "github:musnix/musnix";
     };
 
@@ -28,7 +26,6 @@
         nixpkgs,
         nixpkgs-unstable,
         home-manager,
-        nix-flatpak,
         ...
     }: let
         system = "x86_64-linux";
@@ -48,7 +45,6 @@
                     value = home-manager.lib.homeManagerConfiguration {
                         inherit pkgs;
                         modules = [
-                            nix-flatpak.homeManagerModules.nix-flatpak
                             ./home
                             (
                                 {lib, ...}: {
