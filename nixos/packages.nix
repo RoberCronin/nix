@@ -128,6 +128,7 @@
         nwg-drawer
 
         # Gaming
+        gamescope
         pkgs-unstable.luanti
         heroic
         r2modman
