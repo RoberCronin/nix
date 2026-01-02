@@ -85,7 +85,6 @@
         libreoffice
         blender
         audacity
-        vesktop
         bottles
         easyeffects
         simple-scan
