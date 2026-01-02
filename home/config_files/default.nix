@@ -1,16 +1,16 @@
 {...}: {
     imports = [
-        ./config
-        ./local
+        ./.config
+        ./.local
     ];
 
     home.file = {
         ".bashrc" = {
-            source = ./bashrc;
+            source = ./.bashrc;
         };
 
         ".bash_profile" = {
-            source = ./bash_profile;
+            source = ./.bash_profile;
         };
     };
 }
