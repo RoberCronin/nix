@@ -18,6 +18,7 @@
         "sh.ppy.osu"
         "xyz.xclicker.xclicker"
         "org.vinegarhq.Sober"
+        "org.gnome.SimpleScan"
 
         # install rnote as flatpak because nixpkgs version is broken
         "com.github.flxzt.rnote"
