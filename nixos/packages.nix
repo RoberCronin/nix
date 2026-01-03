@@ -87,7 +87,6 @@
         audacity
         bottles
         easyeffects
-        simple-scan
         freecad
         anki
         better-control
@@ -181,6 +180,9 @@
         gcc
 
         # System/other
+        libsForQt5.qt5ct
+        kdePackages.qt6ct
+        kdePackages.qtstyleplugin-kvantum
         hplip
         hplipWithPlugin
         evolution-data-server
