@@ -1,6 +1,6 @@
 {...}: {
     imports = [
-        ./configs
+        ./config_files
         ./environment
         ./services
         ./programs

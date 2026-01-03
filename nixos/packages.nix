@@ -1,4 +1,4 @@
-
+{
     pkgs,
     pkgs-unstable,
     ...
@@ -85,7 +85,6 @@
         libreoffice
         blender
         audacity
-        vesktop
         bottles
         easyeffects
         freecad
@@ -128,6 +127,7 @@
         nwg-drawer
 
         # Gaming
+        gamescope
         pkgs-unstable.luanti
         heroic
         r2modman
