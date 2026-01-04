@@ -42,10 +42,9 @@ in {
         done
 
         # 5. Install or re-install the Flatpaks you DO want
-        for app in ${toString desiredFlatpaks}; do
-          echo "Ensuring $app is installed."
-          ${pkgs.flatpak}/bin/flatpak install --user -y flathub $app
-        done
+        apps="${toString desiredFlatpaks}"
+        echo "Ensuring $apps is installed."
+        ${pkgs.flatpak}/bin/flatpak install --user -y flathub $apps
 
         # 6. Remove unused Flatpaks
         ${pkgs.flatpak}/bin/flatpak uninstall --unused -y
