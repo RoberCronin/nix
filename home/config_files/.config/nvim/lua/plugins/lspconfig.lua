@@ -35,6 +35,8 @@ return {
         vim.keymap.set("n", "<leader>cd", vim.lsp.buf.type_definition)
         vim.keymap.set("n", "<leader>cs", vim.lsp.buf.document_symbol)
 
+        vim.keymap.set("n", "<leader>sh", ":LspClangdSwitchSourceHeader<CR>")
+
         vim.diagnostic.config({ virtual_text = false })
     end,
 
