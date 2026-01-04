@@ -58,6 +58,7 @@
                                 }
                             )
                         ];
+                        extraSpecialArgs = {inherit inputs;};
                     };
                 }
             )
