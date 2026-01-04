@@ -20,11 +20,13 @@ return {
         },
         picker = {
             enabled = true,
+            hidden = true,
             sources = {
                 explorer = {
                     auto_close = true,
                     replace_netrw = true,
                     trash = true,
+                    hidden = true,
                 },
             },
         },
