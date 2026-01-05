@@ -17,6 +17,4 @@
         "i915"
         "intel"
     ];
-
-    hardware.enableAllFirmware = true;
 }

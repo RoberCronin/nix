@@ -6,4 +6,6 @@
         ./sound.nix
         ./bluetooth.nix
     ];
+
+    hardware.enableAllFirmware = true;
 }
