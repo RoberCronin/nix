@@ -1,0 +1,21 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Backup extensions",
+            "type": "shell",
+            "command": "cd \"$XDG_CONFIG_HOME/Code/User\" && code --list-extensions > vscode-extensions.txt",
+            "runOptions": {"runOn": "folderOpen"},
+            "presentation": {
+                "echo": false,
+                "reveal": "never",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        }
+    ]
+}
