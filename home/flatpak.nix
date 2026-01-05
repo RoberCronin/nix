@@ -20,6 +20,7 @@
         "org.vinegarhq.Sober"
         "org.gnome.SimpleScan"
         "dev.vencord.Vesktop"
+        "com.moonlight_stream.Moonlight"
 
         # install rnote as flatpak because nixpkgs version is broken
         "com.github.flxzt.rnote"
