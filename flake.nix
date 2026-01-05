@@ -9,8 +9,6 @@
             url = "github:nix-community/home-manager/release-25.11";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-
-        musnix.url = "github:musnix/musnix";
     };
 
     nixConfig = {
@@ -78,7 +76,6 @@
                             ./nixos
                             ./hosts/${name}.nix
                             ./hardware_configurations/${name}.nix
-                            inputs.musnix.nixosModules.musnix
                             (
                                 {lib, ...}: {
                                     options = {
