@@ -19,7 +19,7 @@
         powerManagement.finegrained = false;
 
         # Use the Nvidia open source kernel module (not nouveu)
-        open = true;
+        open = false;
         nvidiaSettings = true;
         package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
