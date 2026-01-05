@@ -1,5 +1,8 @@
 return {
     "neovim/nvim-lspconfig",
+    cond = function()
+        return not vim.g.vscode
+    end,
     config = function()
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
 

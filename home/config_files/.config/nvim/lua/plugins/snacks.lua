@@ -1,5 +1,8 @@
 return {
     "folke/snacks.nvim",
+    cond = function()
+        return not vim.g.vscode
+    end,
     lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {

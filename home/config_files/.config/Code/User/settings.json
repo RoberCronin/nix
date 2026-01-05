@@ -1,2 +1,30 @@
 {
+    "editor.minimap.enabled": false,
+    "chat.agent.enabled": false,
+    "telemetry.editStats.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    "catppuccin.accentColor": "maroon",
+    "remote.defaultExtensionsIfInstalledLocally": [],
+    "task.allowAutomaticTasks": "on",
+    "editor.inertialScroll": true,
+    "editor.lineNumbers": "relative",
+    "chat.disableAIFeatures": true,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "vscode-neovim.compositeKeys": {
+        "jk": {
+            "command": "vscode-neovim.escape"
+        },
+        "kj": {
+            "command": "vscode-neovim.escape"
+        }
+    },
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+    "notebook.formatOnSave.enabled": true,
+    "nixEnvSelector.useFlakes": true
 }

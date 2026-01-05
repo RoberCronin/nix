@@ -1,5 +1,8 @@
 return {
     "nvim-lualine/lualine.nvim",
+    cond = function()
+        return not vim.g.vscode
+    end,
     dependencies = { "nvim-tree/nvim-web-devicons", "nvim-lua/lsp-status.nvim" },
     -- config = function()
     --     require("lualine").setup({

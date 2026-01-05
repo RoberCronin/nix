@@ -1,5 +1,8 @@
 return {
     "rmagatti/auto-session",
+    cond = function()
+        return not vim.g.vscode
+    end,
     lazy = false,
 
     ---enables autocomplete for opts

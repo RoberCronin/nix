@@ -1,5 +1,8 @@
 return {
     "kevinhwang91/nvim-ufo",
+    cond = function()
+        return not vim.g.vscode
+    end,
     dependencies = { "kevinhwang91/promise-async" },
     config = function()
         local ufo = require("ufo")

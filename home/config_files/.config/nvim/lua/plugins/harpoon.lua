@@ -1,5 +1,8 @@
 return {
     "ThePrimeagen/harpoon",
+    cond = function()
+        return not vim.g.vscode
+    end,
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
