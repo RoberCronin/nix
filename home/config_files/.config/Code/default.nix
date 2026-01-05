@@ -5,7 +5,7 @@
     ...
 }: {
     home.activation.vscodeRestoreExtensions = lib.hm.dag.entryAfter ["writeBoundary"] ''
-        cd "$XDG_CONFIG_HOME/Code/User"
+        cd "${config.home.homeDirectory}/.config/Code/User"
 
         package_list=$(cat vscode-extensions.txt)
         install_args=()
