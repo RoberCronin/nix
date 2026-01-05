@@ -27,6 +27,7 @@ shopt -s checkjobs
 if command -v zoxide &>/dev/null; then
     alias cd=z
 fi
+alias code='code --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias cg='lazygit -ucd ~/.local/share/yadm/lazygit -w ~ -g ~/.local/share/yadm/repo.git'
 alias gc='nix-collect-garbage --delete-older-than 30d'
 alias la='ls -a'
