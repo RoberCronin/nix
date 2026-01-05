@@ -1,6 +1,6 @@
 {
     pkgs,
-    pkgs-unstable,
+    pkgs-stable,
     ...
 }: {
     programs.gamemode = {
@@ -18,9 +18,9 @@
         plugins = with pkgs; [
             file-roller
             xarchiver
-            xfce.thunar-archive-plugin
-            xfce.thunar-volman
-            xfce.thunar-media-tags-plugin
+            thunar-archive-plugin
+            thunar-volman
+            thunar-media-tags-plugin
         ];
     };
 
@@ -97,7 +97,7 @@
         audacity
         bottles
         easyeffects
-        freecad
+        pkgs-stable.freecad
         anki
         better-control
         # install rnote as flatpak because nixpkgs version is broken
@@ -119,9 +119,9 @@
         jstest-gtk
         copyq
         gparted
-        xfce.mousepad
-        xfce.exo
-        xfce.xfce4-whiskermenu-plugin
+        mousepad
+        xfce4-exo
+        xfce4-whiskermenu-plugin
 
         # Window Manager Utils
         dunst
@@ -138,7 +138,7 @@
 
         # Gaming
         gamescope
-        pkgs-unstable.luanti
+        luanti
         heroic
         r2modman
         winePackages.unstableFull

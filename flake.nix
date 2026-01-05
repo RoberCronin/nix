@@ -2,8 +2,8 @@
     description = "NixOS and Home Manager config";
 
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-        nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
 
         home-manager = {
             url = "github:nix-community/home-manager/release-25.11";
@@ -22,13 +22,16 @@
 
     outputs = inputs @ {
         nixpkgs,
-        nixpkgs-unstable,
+        nixpkgs-stable,
         home-manager,
         ...
     }: let
         system = "x86_64-linux";
         pkgs = import nixpkgs {inherit system;};
-        pkgs-unstable = import nixpkgs-unstable {inherit system;};
+        pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config = {allowUnfree = true;};
+        };
         hosts = [
             "desktop"
             "laptop"
@@ -70,7 +73,8 @@
                     value = nixpkgs.lib.nixosSystem {
                         system = "x86_64-linux";
                         specialArgs = {
-                            inherit pkgs-unstable;
+                            inherit inputs;
+                            inherit pkgs-stable;
                         };
                         modules = [
                             ./nixos
@@ -88,10 +92,6 @@
                                 }
                             )
                         ];
-
-                        specialArgs = {
-                            inherit inputs;
-                        };
                     };
                 }
             )

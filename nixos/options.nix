@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+    pkgs,
+    pkgs-stable,
+    ...
+}: {
     services.autorandr.enable = true;
     programs.dconf.enable = true;
     services.blueman.enable = true;
@@ -14,7 +18,7 @@
         browsing = true;
         defaultShared = true;
         openFirewall = true;
-        drivers = with pkgs; [
+        drivers = with pkgs-stable; [
             cnijfilter2
             gutenprint
             gutenprintBin
