@@ -5,7 +5,7 @@
         "width": 54,
 		"modules-left": ["hyprland/workspaces"],
 		"modules-center": [],
-		"modules-right": ["custom/up","custom/down","custom/launcher", "custom/quick_settings", "custom/kill", "battery", "backlight", "pulseaudio", "cpu", "memory", "tray", "clock"],
+		"modules-right": ["custom/launcher", "custom/quick_settings", "battery", "backlight", "pulseaudio", "cpu", "memory", "tray", "clock"],
 		"hyprland/workspaces": {
 			"disable-scroll": true,
 			"all-outputs": true,
@@ -92,26 +92,5 @@
       "justify": "center",
       "tooltip": false,
       "on-click": "nwg-drawer"
-    },
-        
-    "custom/kill": {
-      "format": "󰖭", 
-      "justify": "center",
-      "tooltip": false,
-      "on-click": "hyprctl kill"
-    },
-        
-    "custom/up": {
-      "format": "", 
-      "justify": "center",
-      "tooltip": false,
-      "on-click": "hyprctl dispatch workspace -1"
-    },
-        
-    "custom/down": {
-      "format": "", 
-      "justify": "center",
-      "tooltip": false,
-      "on-click": "hyprctl dispatch workspace +1"
     }
 }
