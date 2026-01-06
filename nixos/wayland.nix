@@ -1,11 +1,12 @@
-{...}: {
-    # services.desktopManager.gnome.enable = true;
-    # services.gnome.core-apps.enable = true;
-    # services.gnome.core-developer-tools.enable = false;
-    # services.gnome.games.enable = false;
-
+{
+    inputs,
+    pkgs,
+    ...
+}: {
     programs.hyprland = {
         enable = true;
         withUWSM = true;
+        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+        portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
 }

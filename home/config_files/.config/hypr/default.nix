@@ -1,4 +1,9 @@
-{config, ...}: {
+{
+    inputs,
+    config,
+    pkgs,
+    ...
+}: {
     xdg.configFile = {
         "hypr" = {
             source = config.lib.meta.mkMutableSymlink ./.;
@@ -9,6 +14,14 @@
         # It is imported in ~/.config/hypr/hyprland.conf
         "hyprland_host.conf" = {
             source = config.lib.meta.mkMutableSymlink ./hosts/${config.host}.conf;
+        };
+
+        "hyprland_plugins.conf" = let
+            hyprgrass_path = "${inputs.hyprgrass.packages.${pkgs.system}.default}/lib/libhyprgrass.so";
+        in {
+            text = ''
+                plugin = ${hyprgrass_path}
+            '';
         };
     };
 }
