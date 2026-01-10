@@ -21,11 +21,13 @@
         substituters = [
             "https://nix-community.cachix.org"
             "https://hyprland.cachix.org"
+            "https://cache.nixos.org/"
         ];
 
         trusted-substituters = [
             "https://nix-community.cachix.org"
             "https://hyprland.cachix.org"
+            "https://cache.nixos.org/"
         ];
 
         extra-trusted-public-keys = [
