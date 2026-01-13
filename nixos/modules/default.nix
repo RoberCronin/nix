@@ -4,7 +4,7 @@
 
         ./auto-cpufreq.nix
         ./sunshine.nix
-        ./virtual_box.nix
+        ./virtualbox.nix
         ./wacom.nix
         ./x11.nix
     ];

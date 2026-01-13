@@ -51,7 +51,7 @@
         hosts = [
             "desktop"
             "laptop"
-            "big_laptop"
+            "bigLaptop"
             "tablet"
         ];
     in {
@@ -63,7 +63,7 @@
                         inherit pkgs;
                         modules = [
                             ./home
-                            ./host_options.nix
+                            ./hostOptions.nix
                             ./hosts/${name}.nix
                         ];
                         extraSpecialArgs = {inherit inputs;};
@@ -85,9 +85,9 @@
                         };
                         modules = [
                             ./nixos
-                            ./host_options.nix
+                            ./hostOptions.nix
                             ./hosts/${name}.nix
-                            ./hardware_configurations/${name}.nix
+                            ./hardwareConfigurations/${name}.nix
                         ];
                     };
                 }

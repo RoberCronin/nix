@@ -1,10 +1,10 @@
 {...}: {
     imports = [
         ./mime.nix
-        ./gtk-theme.nix
-        ./qt5-theme.nix
+        ./gtkTheme.nix
+        ./qt5Theme.nix
         ./background.nix
-        ./user-dirs.nix
+        ./userDirs.nix
         ./fonts.nix
     ];
 }

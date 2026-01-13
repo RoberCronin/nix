@@ -1,14 +1,11 @@
 {...}: {
-    # imports = [
-    #     ../modules/nixos/hardware/nvidia.nix
-    # ];
     nixosModules = {
         hardware = {
             nvidia = true;
         };
     };
 
-    hostname = "big_laptop";
+    hostname = "bigLaptop";
     host = "tablet";
     user = "robert";
     userFullName = "Robert Cronin";

@@ -6,7 +6,7 @@
     wvkbd-toggle = pkgs.callPackage ./programs/wvkbd.nix {};
 in {
     imports = [
-        ./config_files
+        ./configFiles
         ./environment
         ./services
         ./programs

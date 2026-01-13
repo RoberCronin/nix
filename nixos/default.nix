@@ -3,12 +3,12 @@
         ./hardware
 
         ./localization.nix
-        ./nix_options.nix
+        ./nixOptions.nix
         ./wayland.nix
         ./user.nix
-        ./user_apps.nix
-        ./unpatched_binaries.nix
-        ./display_manager.nix
+        ./userApps.nix
+        ./unpatchedBinaries.nix
+        ./displayManager.nix
         ./fonts.nix
         ./options.nix
         ./packages.nix
