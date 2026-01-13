@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+    pkgs,
+    config,
+    ...
+}: let
     wvkbd-toggle = pkgs.callPackage ./programs/wvkbd.nix {};
 in {
     imports = [
@@ -15,8 +19,8 @@ in {
     };
 
     home = {
-        username = "robert";
-        homeDirectory = "/home/robert";
+        username = config.user;
+        homeDirectory = "/home/${config.user}";
         packages = [
             wvkbd-toggle
         ];

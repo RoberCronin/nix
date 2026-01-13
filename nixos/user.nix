@@ -1,7 +1,8 @@
-{...}: {
-    users.users.robert = {
+{config, ...}: {
+    users.users.${config.user} = {
         isNormalUser = true;
-        description = "Robert Cronin";
+        name = config.user;
+        description = config.userFullName;
         extraGroups = [
             "uinput"
             "fuse"

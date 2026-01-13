@@ -1,4 +1,9 @@
-{...}: {
+{
+    lib,
+    config,
+    ...
+}:
+lib.mkIf config.nixosModules.hardware.powerKey {
     services.logind = {
         settings.Login = {
             HandlePowerKey = "suspend";

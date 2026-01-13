@@ -1,12 +1,10 @@
-{config, ...}: let
-    hostname = config.hostname;
-in {
+{config, ...}: {
     hardware.bluetooth = {
         enable = true;
         powerOnBoot = true;
         settings = {
             General = {
-                Name = hostname + "bluetooth";
+                Name = config.hostname + "bluetooth";
                 ControllerMode = "dual";
                 FastConnectable = "true";
                 Experimental = "true";

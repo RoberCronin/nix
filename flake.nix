@@ -63,17 +63,8 @@
                         inherit pkgs;
                         modules = [
                             ./home
-                            (
-                                {lib, ...}: {
-                                    options = {
-                                        host = lib.mkOption {
-                                            type = lib.types.str;
-                                            default = name;
-                                            description = "flake host";
-                                        };
-                                    };
-                                }
-                            )
+                            ./host_options.nix
+                            ./hosts/${name}.nix
                         ];
                         extraSpecialArgs = {inherit inputs;};
                     };
@@ -94,19 +85,9 @@
                         };
                         modules = [
                             ./nixos
+                            ./host_options.nix
                             ./hosts/${name}.nix
                             ./hardware_configurations/${name}.nix
-                            (
-                                {lib, ...}: {
-                                    options = {
-                                        hostname = lib.mkOption {
-                                            type = lib.types.str;
-                                            default = name;
-                                            description = "Networking hostname";
-                                        };
-                                    };
-                                }
-                            )
                         ];
                     };
                 }

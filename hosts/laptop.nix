@@ -1,7 +1,15 @@
 {...}: {
-    imports = [
-        ../modules/nixos/auto-cpufreq.nix
-        ../modules/nixos/wacom.nix
-        ../modules/nixos/hardware/power-key.nix
-    ];
+    nixosModules = {
+        hardware = {
+            powerKey = true;
+        };
+
+        auto-cpufreq = true;
+        wacom = true;
+    };
+
+    hostname = "laptop";
+    host = "tablet";
+    user = "robert";
+    userFullName = "Robert Cronin";
 }

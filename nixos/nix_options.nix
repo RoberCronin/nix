@@ -1,7 +1,7 @@
-{inputs, ...}: {
+{config, ...}: {
     nixpkgs.config.allowUnfree = true;
     nix.settings.experimental-features = ["nix-command" "flakes"];
-    nix.settings.trusted-users = ["root" "robert"];
+    nix.settings.trusted-users = ["root" config.user];
     nix.nixPath = [
         "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
         "/nix/var/nix/profiles/per-user/root/channels"
