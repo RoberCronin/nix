@@ -12,6 +12,9 @@
         "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = false;
         "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" = false;
 
+        # performance settings
+        "gfx.webrender.all" = true;
+
         "browser.theme.toolbar-theme" = true;
         "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
         "layout.css.prefers-color-scheme.content-override" = 0;
