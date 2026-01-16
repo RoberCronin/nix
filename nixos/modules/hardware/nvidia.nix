@@ -1,10 +1,8 @@
 {
-    lib,
     config,
     pkgs,
     ...
-}:
-lib.mkIf config.nixosModules.hardware.nvidia {
+}: {
     hardware.graphics = {
         enable = true;
     };

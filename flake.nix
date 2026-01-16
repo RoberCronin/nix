@@ -48,51 +48,135 @@
             inherit system;
             config = {allowUnfree = true;};
         };
-        hosts = [
-            "desktop"
-            "laptop"
-            "bigLaptop"
-            "tablet"
-        ];
-    in {
-        homeConfigurations = builtins.listToAttrs (
-            builtins.map (
-                name: {
-                    inherit name;
-                    value = home-manager.lib.homeManagerConfiguration {
-                        inherit pkgs;
-                        modules = [
-                            ./home
-                            ./hostOptions.nix
-                            ./hosts/${name}.nix
-                        ];
-                        extraSpecialArgs = {inherit inputs;};
-                    };
-                }
-            )
-            hosts
-        );
 
-        nixosConfigurations = builtins.listToAttrs (
-            builtins.map (
-                name: {
-                    inherit name;
-                    value = nixpkgs.lib.nixosSystem {
-                        system = "x86_64-linux";
-                        specialArgs = {
-                            inherit inputs;
-                            inherit pkgs-stable;
-                        };
-                        modules = [
-                            ./nixos
-                            ./hostOptions.nix
-                            ./hosts/${name}.nix
-                            ./hardwareConfigurations/${name}.nix
-                        ];
-                    };
-                }
-            )
-            hosts
-        );
+        mkHomeConfiguration = {
+            extraModules ? [],
+            hostname ? host,
+            host,
+            user,
+            userFullName,
+            ...
+        }:
+            home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
+                modules =
+                    [
+                        ./home
+                        ./hostOptions.nix
+                        (
+                            {...}: {
+                                hostname = hostname;
+                                host = host;
+                                user = user;
+                                userFullName = userFullName;
+                            }
+                        )
+                    ]
+                    ++ extraModules;
+                extraSpecialArgs = {inherit inputs;};
+            };
+
+        mkNixosConfiguration = {
+            extraModules ? [],
+            hostname ? host,
+            host,
+            user,
+            userFullName,
+            ...
+        }:
+            nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules =
+                    [
+                        ./nixos
+                        ./hostOptions.nix
+                        (
+                            {...}: {
+                                hostname = hostname;
+                                host = host;
+                                user = user;
+                                userFullName = userFullName;
+                            }
+                        )
+                    ]
+                    ++ extraModules;
+                specialArgs = {
+                    inherit inputs;
+                    inherit pkgs-stable;
+                };
+            };
+    in {
+        homeConfigurations = {
+            desktop = mkHomeConfiguration {
+                host = "desktop";
+                user = "robert";
+                userFullName = "Robert Cronin";
+            };
+
+            bigLaptop = mkHomeConfiguration {
+                host = "bigLaptop";
+                user = "robert";
+                userFullName = "Robert Cronin";
+            };
+
+            laptop = mkHomeConfiguration {
+                host = "laptop";
+                user = "robert";
+                userFullName = "Robert Cronin";
+            };
+
+            tablet = mkHomeConfiguration {
+                host = "tablet";
+                user = "robert";
+                userFullName = "Robert Cronin";
+            };
+        };
+
+        nixosConfigurations = {
+            desktop = mkNixosConfiguration {
+                extraModules = [
+                    ./hardwareConfigurations/desktop.nix
+                    ./nixos/modules/hardware/nvidia.nix
+                    ./nixos/modules/sunshine.nix
+                ];
+                host = "tablet";
+                user = "robert";
+                userFullName = "Robert Cronin";
+            };
+
+            bigLaptop = mkNixosConfiguration {
+                extraModules = [
+                    ./hardwareConfigurations/bigLaptop.nix
+                    ./nixos/modules/hardware/nvidia.nix
+                ];
+                host = "bigLaptop";
+                user = "robert";
+                userFullName = "Robert Cronin";
+            };
+
+            laptop = mkNixosConfiguration {
+                extraModules = [
+                    ./hardwareConfigurations/laptop.nix
+                    ./nixos/modules/wacom.nix
+                    ./nixos/modules/hardware/power-key.nix
+                    ./nixos/modules/auto-cpufreq.nix
+                ];
+                host = "laptop";
+                user = "robert";
+                userFullName = "Robert Cronin";
+            };
+
+            tablet = mkNixosConfiguration {
+                extraModules = [
+                    ./hardwareConfigurations/tablet.nix
+                    ./nixos/modules/wacom.nix
+                    ./nixos/modules/hardware/tpm.nix
+                    ./nixos/modules/hardware/power-key.nix
+                ];
+                host = "tablet";
+                user = "robert";
+                userFullName = "Robert Cronin";
+            };
+        };
     };
 }
