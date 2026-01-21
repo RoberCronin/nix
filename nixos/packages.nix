@@ -206,5 +206,6 @@
         ffmpegthumbnailer
         libgsf
         dex
+        nh
     ];
 }

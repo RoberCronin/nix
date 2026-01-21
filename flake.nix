@@ -111,24 +111,28 @@
                 host = "desktop";
                 user = "robert";
                 userFullName = "Robert Cronin";
+                flakePath = "/home/robert/nix";
             };
 
             bigLaptop = mkHomeConfiguration {
                 host = "bigLaptop";
                 user = "robert";
                 userFullName = "Robert Cronin";
+                flakePath = "/home/robert/nix";
             };
 
             laptop = mkHomeConfiguration {
                 host = "laptop";
                 user = "robert";
                 userFullName = "Robert Cronin";
+                flakePath = "/home/robert/nix";
             };
 
             tablet = mkHomeConfiguration {
                 host = "tablet";
                 user = "robert";
                 userFullName = "Robert Cronin";
+                flakePath = "/home/robert/nix";
             };
         };
 
@@ -142,6 +146,7 @@
                 host = "tablet";
                 user = "robert";
                 userFullName = "Robert Cronin";
+                flakePath = "/home/robert/nix";
             };
 
             bigLaptop = mkNixosConfiguration {
@@ -152,6 +157,7 @@
                 host = "bigLaptop";
                 user = "robert";
                 userFullName = "Robert Cronin";
+                flakePath = "/home/robert/nix";
             };
 
             laptop = mkNixosConfiguration {
@@ -164,6 +170,7 @@
                 host = "laptop";
                 user = "robert";
                 userFullName = "Robert Cronin";
+                flakePath = "/home/robert/nix";
             };
 
             tablet = mkNixosConfiguration {
@@ -176,6 +183,7 @@
                 host = "tablet";
                 user = "robert";
                 userFullName = "Robert Cronin";
+                flakePath = "/home/robert/nix";
             };
         };
     };
