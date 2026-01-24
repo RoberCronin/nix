@@ -15,4 +15,8 @@
             "audio"
         ];
     };
+
+    environment.sessionVariables = {
+        NH_FLAKE = config.flakePath;
+    };
 }

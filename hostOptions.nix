@@ -23,5 +23,11 @@
             default = "User Name";
             description = "Username";
         };
+
+        flakePath = lib.mkOption {
+            type = lib.types.str;
+            default = "/home/robert/nix";
+            description = "The path of the flake configuration.";
+        };
     };
 }
