@@ -26,8 +26,21 @@ return {
         })
         vim.lsp.enable("basedpyright")
 
-        vim.lsp.config("nil_ls", { capabilities = capabilities })
-        vim.lsp.enable("nil_ls")
+        vim.lsp.config("nixd", {
+            capabilities = capabilities,
+            nixpkgs = {
+                expr = "import <nixpkgs> { }",
+            },
+            options = {
+                nixos = {
+                    expr = '(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.k-on.options',
+                },
+                home_manager = {
+                    expr = '(builtins.getFlake ("git+file://" + toString ./.)).homeConfigurations."ruixi@k-on".options',
+                },
+            },
+        })
+        vim.lsp.enable("nixd")
 
         vim.lsp.config("glsl_analyzer", { capabilities = capabilities })
         vim.lsp.enable("glsl_analyzer")

@@ -163,6 +163,7 @@
         lua-language-server
         basedpyright
         nil
+        nixd
         glsl_analyzer
         tinymist # typst lsp
         harper
