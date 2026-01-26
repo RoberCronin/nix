@@ -4,6 +4,7 @@
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+        nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
         home-manager = {
             url = "github:nix-community/home-manager/release-25.11";
@@ -22,17 +23,20 @@
             "https://nix-community.cachix.org"
             "https://hyprland.cachix.org"
             "https://cache.nixos.org/"
+            "https://attic.xuyh0120.win/lantian"
         ];
 
         trusted-substituters = [
             "https://nix-community.cachix.org"
             "https://hyprland.cachix.org"
             "https://cache.nixos.org/"
+            "https://attic.xuyh0120.win/lantian"
         ];
 
         extra-trusted-public-keys = [
             "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
             "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+            "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
         ];
     };
 

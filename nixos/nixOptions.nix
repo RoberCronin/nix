@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+    config,
+    inputs,
+    ...
+}: {
     nixpkgs.config.allowUnfree = true;
     nix.settings.experimental-features = ["nix-command" "flakes"];
     nix.settings.trusted-users = ["root" config.user];
@@ -6,6 +10,10 @@
         "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
         "/nix/var/nix/profiles/per-user/root/channels"
         ("nixos-config=" + ./default.nix)
+    ];
+
+    nixpkgs.overlays = [
+        inputs.nix-cachyos-kernel.overlays.pinned
     ];
 
     # nix.gc.automatic = true;

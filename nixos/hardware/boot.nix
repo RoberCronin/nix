@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-    boot.kernelPackages = pkgs.linuxPackages_zen;
+    boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
