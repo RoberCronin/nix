@@ -16,7 +16,14 @@ return {
         vim.lsp.config("clangd", { capabilities = capabilities })
         vim.lsp.enable("clangd")
 
-        vim.lsp.config("basedpyright", { capabilities = capabilities })
+        vim.lsp.config("basedpyright", {
+            capabilities = capabilities,
+            settings = {
+                basedpyright = {
+                    typeCheckingMode = "standard",
+                },
+            },
+        })
         vim.lsp.enable("basedpyright")
 
         vim.lsp.config("nil_ls", { capabilities = capabilities })
@@ -28,7 +35,10 @@ return {
         vim.lsp.config("tinymist", { capabilities = capabilities })
         vim.lsp.enable("tinymist")
 
-        vim.lsp.config("harper_ls", { capabilities = capabilities })
+        vim.lsp.config("harper_ls", {
+            filetypes = { "markdown", "gitcommit", "typst" },
+            capabilities = capabilities,
+        })
         vim.lsp.enable("harper_ls")
 
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
