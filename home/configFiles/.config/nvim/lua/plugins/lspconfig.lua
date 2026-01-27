@@ -21,6 +21,11 @@ return {
             settings = {
                 basedpyright = {
                     typeCheckingMode = "standard",
+                    diagnosticmode = "workspace",
+                    uselibrarycodefortypes = true,
+                    autoimportcompletions = true,
+                    autosearchpaths = true,
+                    allowedUntypedLibraries = true,
                 },
             },
         })
