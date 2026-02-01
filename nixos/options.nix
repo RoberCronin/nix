@@ -1,6 +1,7 @@
 {
     pkgs,
     pkgs-stable,
+    config,
     ...
 }: {
     services.autorandr.enable = true;
@@ -25,6 +26,13 @@
             hplip
             hplipWithPlugin
         ];
+    };
+
+    services.syncthing = {
+        enable = true;
+        user = config.user;
+        dataDir = "/home/${config.user}";
+        configDir = "/home/${config.user}/.config/syncthing";
     };
 
     services.avahi = {
