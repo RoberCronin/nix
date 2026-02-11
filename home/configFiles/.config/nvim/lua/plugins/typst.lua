@@ -5,7 +5,9 @@ return {
     end,
     lazy = true,
     ft = "typst",
-    opts = {},
+    opts = {
+        open_cmd = "qutebrowser %s",
+    },
     keys = {
         {
             "<leader>tp",

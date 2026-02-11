@@ -85,6 +85,7 @@
         mpvpaper
 
         # GUI applications
+        qutebrowser
         obs-studio
         bitwarden-desktop
         krita
