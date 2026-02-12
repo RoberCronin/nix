@@ -11,6 +11,7 @@
         ./better-control
         ./alacritty
         ./Code
+        ./direnv
     ];
     xdg.configFile = {
         "starship.toml" = {
