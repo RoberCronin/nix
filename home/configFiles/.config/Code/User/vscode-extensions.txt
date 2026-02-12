@@ -1,7 +1,7 @@
-arrterian.nix-env-selector
 asvetliakov.vscode-neovim
 catppuccin.catppuccin-vsc
 mechatroner.rainbow-csv
+mkhl.direnv
 ms-python.black-formatter
 ms-python.debugpy
 ms-python.python
