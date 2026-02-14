@@ -126,7 +126,7 @@
 
         # Window Manager Utils
         dunst
-        xorg.xmodmap
+        xmodmap
         rofi
         networkmanagerapplet
         wofi
