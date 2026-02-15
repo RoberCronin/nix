@@ -28,7 +28,7 @@
 in {
     home.activation.flatpakManagement = lib.hm.dag.entryAfter ["writeBoundary"] ''
         # 2. Ensure the Flathub repo is added
-        ${pkgs.flatpak}/bin/flatpak remote-add --if-not-exists flathub \
+        ${pkgs.flatpak}/bin/flatpak remote-add --user --if-not-exists flathub \
           https://flathub.org/repo/flathub.flatpakrepo
 
         # 3. Get currently installed Flatpaks
