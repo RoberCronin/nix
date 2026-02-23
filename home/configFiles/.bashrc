@@ -34,6 +34,7 @@ alias la='ls -a'
 alias lg=lazygit
 alias nf=fastfetch
 alias nv=nvim
+alias t='thunar .'
 alias update='nix flake update'
 alias vimdiff='nvim -d'
 alias c=clear
