@@ -147,7 +147,7 @@
         glfw
 
         # Development
-        pkgs-stable.devenv
+        devenv
         neovim
         lazygit
         lazydocker
