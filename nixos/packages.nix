@@ -3,16 +3,6 @@
     pkgs-stable,
     ...
 }: {
-    programs.gamemode = {
-        enable = true;
-        settings = {
-            custom = {
-                start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
-                end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
-            };
-        };
-    };
-
     programs.thunar = {
         enable = true;
         plugins = with pkgs; [
@@ -49,33 +39,25 @@
         fzf
         wget
         curl
-        bashmount
         btop
         ripgrep
         killall
         brightnessctl
         vim
-        dtrx
         tmux
-        jump
         bash-completion
         imagemagick
         ffmpeg
 
         # Other Terminal Utils
         exiftool
-        mprime
         fd
         starship
         btop
         zoxide
         yadm
-        #ueberzugpp
         autorandr
         catfs
-        yazi
-        bat
-        ns-usbloader
         fastfetch
         sshfs
         linux-wallpaperengine
@@ -86,80 +68,49 @@
 
         # GUI applications
         qutebrowser
-        obs-studio
-        bitwarden-desktop
-        krita
         qbittorrent
         prismlauncher
         firefox
         thunderbird
         libreoffice
-        blender
-        audacity
         bottles
         easyeffects
-        pkgs-stable.freecad
-        anki
+        pkgs-stable.anki
         better-control
         # install rnote as flatpak because nixpkgs version is broken
         # rnote
         termite
         mpv
         nomacs
-        flameshot
         kdePackages.okular
         zathura
         neovide
-        onedrivegui
         arduino-ide
         system-config-printer
         pavucontrol
         alacritty
-        arandr
-        nitrogen
-        jstest-gtk
         copyq
         gparted
         mousepad
         xfce4-exo
         xfce4-whiskermenu-plugin
 
-        # Window Manager Utils
-        dunst
-        xmodmap
-        rofi
-        networkmanagerapplet
-        wofi
-        waybar
-        playerctl
-        nwg-look
-        hyprpaper
-        swww
-        nwg-drawer
-
-        # Gaming
-        gamescope
-        luanti
-        heroic
-        r2modman
-        winePackages.unstableFull
-        protontricks
-        glfw
+        # Editors
+        zed-editor
+        vscode
+        neovim
+        xclip # nvim copyq integration
 
         # Development
         devenv
-        neovim
         lazygit
-        lazydocker
-        vscode
-        xclip # nvim copyq integration
-        direnv
-        distrobox
         direnv
         stdenv
         gnumake
         tree-sitter
         cmake
+
+        # LSP, language server
         cmake-language-server
         lua-language-server
         basedpyright
@@ -183,21 +134,19 @@
         typst
         clang-tools
         python3
-        uv
+        uv # Python package manager
         texliveFull
         lua
-        hugo
         cargo
         rustc
         nodejs_22
         gcc
 
         # System/other
+        glfw
         libsForQt5.qt5ct
         kdePackages.qt6ct
         kdePackages.qtstyleplugin-kvantum
-        hplip
-        hplipWithPlugin
         evolution-data-server
         pulseaudioFull
         papirus-icon-theme
@@ -208,6 +157,5 @@
         ffmpegthumbnailer
         libgsf
         dex
-        nh
     ];
 }

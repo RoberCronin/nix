@@ -146,6 +146,8 @@
                     ./hardwareConfigurations/desktop.nix
                     ./nixos/modules/hardware/nvidia.nix
                     ./nixos/modules/sunshine.nix
+                    ./nixos/modules/extraPackages/gui.nix
+                    ./nixos/modules/extraPackages/gaming.nix
                 ];
                 host = "tablet";
                 user = "robert";
@@ -157,6 +159,7 @@
                 extraModules = [
                     ./hardwareConfigurations/bigLaptop.nix
                     ./nixos/modules/hardware/nvidia.nix
+                    ./nixos/modules/extraPackages/gaming.nix
                 ];
                 host = "bigLaptop";
                 user = "robert";
