@@ -12,18 +12,14 @@
         };
 
         hyprland.url = "github:hyprwm/Hyprland";
-        hyprgrass = {
-            url = "github:horriblename/hyprgrass";
-            inputs.hyprland.follows = "hyprland";
-        };
     };
 
     nixConfig = {
         substituters = [
             "https://nix-community.cachix.org"
-            "https://hyprland.cachix.org"
+            "https://hyprland.cachix.org" # hyprland
             "https://cache.nixos.org/"
-            "https://attic.xuyh0120.win/lantian"
+            "https://attic.xuyh0120.win/lantian" # nix-cachyos-kernel
         ];
 
         trusted-substituters = [
