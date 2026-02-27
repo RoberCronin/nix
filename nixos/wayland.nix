@@ -7,6 +7,10 @@
 }: {
     environment.systemPackages = lib.mkIf config.programs.hyprland.enable (
         with pkgs; [
+            linux-wallpaperengine
+            mpvpaper
+            grim
+            slurp
             dunst
             rofi
             networkmanagerapplet

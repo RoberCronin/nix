@@ -3,19 +3,23 @@
     pkgs-stable,
     ...
 }: {
-    programs.thunar = {
-        enable = true;
-        plugins = with pkgs; [
-            file-roller
-            xarchiver
-            thunar-archive-plugin
-            thunar-volman
-            thunar-media-tags-plugin
-        ];
-    };
+    programs = {
+        kdeconnect.enable = true;
+        thunar = {
+            enable = true;
+            plugins = with pkgs; [
+                file-roller
+                xarchiver
+                thunar-archive-plugin
+                thunar-volman
+                thunar-media-tags-plugin
+                xfce4-exo
+            ];
+        };
 
-    programs.steam = {
-        enable = true;
+        steam = {
+            enable = true;
+        };
     };
 
     environment.systemPackages = with pkgs; [
@@ -29,7 +33,6 @@
         jq
         powertop
         rclone
-        bashInteractive
         zip
         unzip
         rar
@@ -45,61 +48,48 @@
         brightnessctl
         vim
         tmux
-        bash-completion
         imagemagick
         ffmpeg
 
         # Other Terminal Utils
         exiftool
         fd
-        starship
         btop
-        zoxide
         yadm
-        autorandr
-        catfs
         fastfetch
-        sshfs
-        linux-wallpaperengine
-        grim
-        slurp
-        wl-clipboard
-        mpvpaper
+
+        # Shell packages
+        zoxide
+        starship
+        bash-completion
+        bashInteractive
 
         # GUI applications
-        qutebrowser
-        qbittorrent
-        prismlauncher
         firefox
         thunderbird
-        libreoffice
-        bottles
-        easyeffects
+        pkgs-stable.qbittorrent
+        pkgs-stable.libreoffice
+        pkgs-stable.easyeffects
         pkgs-stable.anki
-        better-control
+        pkgs-stable.better-control
         # install rnote as flatpak because nixpkgs version is broken
         # rnote
         termite
         mpv
         nomacs
         kdePackages.okular
-        zathura
-        neovide
-        arduino-ide
         system-config-printer
         pavucontrol
         alacritty
-        copyq
         gparted
         mousepad
-        xfce4-exo
-        xfce4-whiskermenu-plugin
 
         # Editors
+        arduino-ide
         zed-editor
         vscode
         neovim
-        xclip # nvim copyq integration
+        wl-clipboard # nvim clipboard
 
         # Development
         devenv
@@ -111,14 +101,13 @@
         cmake
 
         # LSP, language server
-        cmake-language-server
+        cmake-language-server # c/c++ lsp
         lua-language-server
-        basedpyright
-        nil
+        basedpyright # python lsp
         nixd
         glsl_analyzer
         tinymist # typst lsp
-        harper
+        harper # grammar and spelling
 
         # Code Styling/formatters
         typstyle # typst

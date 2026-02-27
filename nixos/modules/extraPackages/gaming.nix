@@ -16,5 +16,7 @@
         r2modman
         winePackages.unstableFull
         protontricks
+        bottles
+        prismlauncher
     ];
 }
