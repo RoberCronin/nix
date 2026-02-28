@@ -1,10 +1,4 @@
-{
-    pkgs,
-    config,
-    ...
-}: let
-    wvkbd-toggle = pkgs.callPackage ./programs/wvkbd.nix {};
-in {
+{config, ...}: {
     imports = [
         ./configFiles
         ./environment
@@ -21,9 +15,6 @@ in {
     home = {
         username = config.user;
         homeDirectory = "/home/${config.user}";
-        packages = [
-            wvkbd-toggle
-        ];
 
         stateVersion = "23.11";
     };

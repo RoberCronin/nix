@@ -8,7 +8,6 @@
     programs.dconf.enable = true;
     services.blueman.enable = true;
     services.envfs.enable = true;
-    programs.kdeconnect.enable = true;
     programs.xfconf.enable = true;
     security.polkit.enable = true;
     security.soteria.enable = true; # Polkit agent

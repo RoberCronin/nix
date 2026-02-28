@@ -3,29 +3,23 @@
     pkgs-stable,
     ...
 }: {
-    programs.gamemode = {
-        enable = true;
-        settings = {
-            custom = {
-                start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
-                end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
-            };
+    programs = {
+        kdeconnect.enable = true;
+        thunar = {
+            enable = true;
+            plugins = with pkgs; [
+                file-roller
+                xarchiver
+                thunar-archive-plugin
+                thunar-volman
+                thunar-media-tags-plugin
+                xfce4-exo
+            ];
         };
-    };
 
-    programs.thunar = {
-        enable = true;
-        plugins = with pkgs; [
-            file-roller
-            xarchiver
-            thunar-archive-plugin
-            thunar-volman
-            thunar-media-tags-plugin
-        ];
-    };
-
-    programs.steam = {
-        enable = true;
+        steam = {
+            enable = true;
+        };
     };
 
     environment.systemPackages = with pkgs; [
@@ -39,7 +33,6 @@
         jq
         powertop
         rclone
-        bashInteractive
         zip
         unzip
         rar
@@ -49,124 +42,72 @@
         fzf
         wget
         curl
-        bashmount
         btop
         ripgrep
         killall
         brightnessctl
         vim
-        dtrx
         tmux
-        jump
-        bash-completion
         imagemagick
         ffmpeg
 
         # Other Terminal Utils
         exiftool
-        mprime
         fd
-        starship
         btop
-        zoxide
         yadm
-        #ueberzugpp
-        autorandr
-        catfs
-        yazi
-        bat
-        ns-usbloader
         fastfetch
-        sshfs
-        linux-wallpaperengine
-        grim
-        slurp
-        wl-clipboard
-        mpvpaper
+
+        # Shell packages
+        zoxide
+        starship
+        bash-completion
+        bashInteractive
 
         # GUI applications
-        obs-studio
-        bitwarden-desktop
-        krita
-        qbittorrent
-        prismlauncher
         firefox
         thunderbird
-        libreoffice
-        blender
-        audacity
-        bottles
-        easyeffects
-        pkgs-stable.freecad
-        anki
-        better-control
+        pkgs-stable.qbittorrent
+        pkgs-stable.libreoffice
+        pkgs-stable.easyeffects
+        pkgs-stable.anki
+        pkgs-stable.better-control
         # install rnote as flatpak because nixpkgs version is broken
         # rnote
         termite
         mpv
         nomacs
-        flameshot
         kdePackages.okular
-        zathura
-        neovide
-        onedrivegui
-        arduino-ide
         system-config-printer
         pavucontrol
         alacritty
-        arandr
-        nitrogen
-        jstest-gtk
-        copyq
         gparted
         mousepad
-        xfce4-exo
-        xfce4-whiskermenu-plugin
 
-        # Window Manager Utils
-        dunst
-        xmodmap
-        rofi
-        networkmanagerapplet
-        wofi
-        waybar
-        playerctl
-        nwg-look
-        hyprpaper
-        swww
-        nwg-drawer
-
-        # Gaming
-        gamescope
-        luanti
-        heroic
-        r2modman
-        winePackages.unstableFull
-        protontricks
-        glfw
+        # Editors
+        arduino-ide
+        zed-editor
+        vscode
+        neovim
+        wl-clipboard # nvim clipboard
 
         # Development
-        pkgs-stable.devenv
-        neovim
+        devenv
         lazygit
-        lazydocker
-        vscode
-        xclip # nvim copyq integration
-        direnv
-        distrobox
         direnv
         stdenv
         gnumake
         tree-sitter
         cmake
-        cmake-language-server
+
+        # LSP, language server
+        cmake-language-server # c/c++ lsp
         lua-language-server
-        basedpyright
-        nil
+        basedpyright # python lsp
         nixd
         glsl_analyzer
         tinymist # typst lsp
-        harper
+        harper # grammar and spelling
 
         # Code Styling/formatters
         typstyle # typst
@@ -182,21 +123,19 @@
         typst
         clang-tools
         python3
-        uv
+        uv # Python package manager
         texliveFull
         lua
-        hugo
         cargo
         rustc
         nodejs_22
         gcc
 
         # System/other
+        glfw
         libsForQt5.qt5ct
         kdePackages.qt6ct
         kdePackages.qtstyleplugin-kvantum
-        hplip
-        hplipWithPlugin
         evolution-data-server
         pulseaudioFull
         papirus-icon-theme
@@ -207,6 +146,5 @@
         ffmpegthumbnailer
         libgsf
         dex
-        nh
     ];
 }

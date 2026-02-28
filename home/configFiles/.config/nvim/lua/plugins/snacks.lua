@@ -33,5 +33,8 @@ return {
                 },
             },
         },
+        bigfile = {
+            enabled = true,
+        },
     },
 }

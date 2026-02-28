@@ -13,7 +13,6 @@
         "us.zoom.Zoom"
         "md.obsidian.Obsidian"
         "com.slack.Slack"
-        "com.microsoft.Edge"
         "com.github.tchx84.Flatseal"
         "sh.ppy.osu"
         "xyz.xclicker.xclicker"

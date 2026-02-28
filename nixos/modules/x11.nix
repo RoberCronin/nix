@@ -17,4 +17,7 @@ in {
     };
 
     services.xserver.desktopManager.xfce.enable = true;
+    environment.systemPackages = with pkgs; [
+        xfce.xfce4-whiskermenu-plugin
+    ];
 }
