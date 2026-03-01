@@ -12,6 +12,7 @@ return {
             python = { "black" },
             jsonc = { "jsonfmt" },
             typst = { "typstyle" },
+            rust = { "rustfmt" },
         },
 
         format_on_save = {
