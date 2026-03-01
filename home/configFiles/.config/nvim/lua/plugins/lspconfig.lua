@@ -59,6 +59,9 @@ return {
         })
         vim.lsp.enable("harper_ls")
 
+        vim.lsp.config("rust_analyzer", { capabilities = capabilities })
+        vim.lsp.enable("rust_analyzer")
+
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
         vim.keymap.set("n", "<leader>ci", vim.lsp.buf.implementation)
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
