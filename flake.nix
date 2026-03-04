@@ -182,6 +182,7 @@
                     ./nixos/modules/wacom.nix
                     ./nixos/modules/hardware/tpm.nix
                     ./nixos/modules/hardware/power-key.nix
+                    ./nixos/modules/auto-cpufreq.nix
                 ];
                 host = "tablet";
                 user = "robert";

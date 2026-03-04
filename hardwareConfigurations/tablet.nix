@@ -1,7 +1,7 @@
 {
-    config,
     lib,
     modulesPath,
+    pkgs,
     ...
 }: {
     # udev rules to stop side buttons from waking laptop
@@ -17,6 +17,19 @@
         "i915"
         "intel"
     ];
+
+    hardware.graphics = {
+        enable = true;
+        enable32Bit = true;
+        extraPackages = with pkgs; [
+            intel-media-driver
+            vpl-gpu-rt
+            intel-vaapi-driver
+            libva-vdpau-driver
+            libvdpau-va-gl
+            intel-compute-runtime
+        ];
+    };
 
     #undervolting
     services.undervolt = {
@@ -57,5 +70,6 @@
     # networking.interfaces.wlp109s0.useDHCP = lib.mkDefault true;
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-    hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    hardware.cpu.intel.updateMicrocode = true;
+    hardware.enableRedistributableFirmware = true;
 }
