@@ -87,7 +87,7 @@
         # Editors
         arduino-ide
         zed-editor
-        vscode
+        pkgs-stable.vscode
         neovim
         wl-clipboard # nvim clipboard
 
