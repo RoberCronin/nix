@@ -11,6 +11,7 @@
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
         "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = false;
         "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" = false;
+        "ui.key.menuAccessKeyFocuses" = false;
 
         # performance settings
         "gfx.webrender.all" = true;
