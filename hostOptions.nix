@@ -29,5 +29,11 @@
             default = "/home/robert/nix";
             description = "The path of the flake configuration.";
         };
+
+        displayManagerScale = lib.mkOption {
+            type = lib.types.int;
+            default = 1;
+            description = "The display scale for the display manager";
+        };
     };
 }

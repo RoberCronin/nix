@@ -82,6 +82,7 @@
             host,
             user,
             userFullName,
+            displayManagerScale ? 1,
             ...
         }:
             nixpkgs.lib.nixosSystem {
@@ -96,6 +97,7 @@
                                 host = host;
                                 user = user;
                                 userFullName = userFullName;
+                                displayManagerScale = displayManagerScale;
                             }
                         )
                     ]
@@ -188,6 +190,7 @@
                 user = "robert";
                 userFullName = "Robert Cronin";
                 flakePath = "/home/robert/nix";
+                displayManagerScale = 2;
             };
         };
     };
