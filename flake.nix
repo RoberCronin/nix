@@ -145,7 +145,7 @@
                     ./nixos/modules/extraPackages/gui.nix
                     ./nixos/modules/extraPackages/gaming.nix
                 ];
-                host = "tablet";
+                host = "desktop";
                 user = "robert";
                 userFullName = "Robert Cronin";
                 flakePath = "/home/robert/nix";
