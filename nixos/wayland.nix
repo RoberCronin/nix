@@ -19,7 +19,6 @@
             playerctl
             nwg-look
             hyprpaper
-            swww
             nwg-drawer
         ]
     );
