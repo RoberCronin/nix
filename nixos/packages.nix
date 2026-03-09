@@ -77,7 +77,7 @@
         termite
         mpv
         nomacs
-        kdePackages.okular
+        evince
         system-config-printer
         pavucontrol
         alacritty

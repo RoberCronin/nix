@@ -63,7 +63,8 @@
         mimeApps = {
             enable = true;
             defaultApplications = {
-                "application/pdf" = "okularApplication_pdf.desktop";
+                "application/pdf" = "org.gnome.Evince.desktop";
+
                 "inode/directory" = "thunar.desktop";
 
                 "text/english" = "org.xfce.mousepad.desktop";
