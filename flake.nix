@@ -6,6 +6,12 @@
         nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
         nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
+        nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-24.05";
+        nix-on-droid = {
+            url = "github:nix-community/nix-on-droid/release-24.05";
+            inputs.nixpkgs-old.follows = "nixpkgs";
+        };
+
         home-manager = {
             url = "github:nix-community/home-manager/release-25.11";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -40,6 +46,8 @@
         nixpkgs,
         nixpkgs-stable,
         home-manager,
+        nix-on-droid,
+        nixpkgs-old,
         ...
     }: let
         system = "x86_64-linux";
@@ -192,6 +200,11 @@
                 flakePath = "/home/robert/nix";
                 displayManagerScale = 2;
             };
+        };
+
+        nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
+            pkgs = import nixpkgs-old {system = "aarch64-linux";};
+            modules = [./nix-on-droid/nix-on-droid.nix];
         };
     };
 }
