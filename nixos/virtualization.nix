@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
     virtualisation = {
         containers.enable = true;
         # docker.enable = true;
@@ -6,6 +6,10 @@
             enable = true;
             dockerCompat = true;
             defaultNetwork.settings.dns_enabled = true;
+            extraPackages = with pkgs; [
+                podman-compose
+                docker-compose
+            ];
         };
     };
 }
