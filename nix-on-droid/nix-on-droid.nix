@@ -11,7 +11,6 @@
         rclone
         zip
         unzip
-        rar
         unrar
         fzf
         wget

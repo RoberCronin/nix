@@ -9,7 +9,7 @@
         nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-24.05";
         nix-on-droid = {
             url = "github:nix-community/nix-on-droid/release-24.05";
-            inputs.nixpkgs-old.follows = "nixpkgs";
+            inputs.nixpkgs.follows = "nixpkgs-old";
         };
 
         home-manager = {
@@ -203,7 +203,15 @@
         };
 
         nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
-            pkgs = import nixpkgs-old {system = "aarch64-linux";};
+            pkgs = import nixpkgs-old {
+                system = "aarch64-linux";
+                config = {
+                    allowUnfree = true;
+                };
+                overlays = [
+                    nix-on-droid.overlays.default
+                ];
+            };
             modules = [./nix-on-droid/nix-on-droid.nix];
         };
     };
