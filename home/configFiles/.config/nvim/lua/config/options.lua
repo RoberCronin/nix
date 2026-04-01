@@ -1,10 +1,14 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
-
 if vim.g.neovide then
     vim.g.neovide_hide_mouse_when_typing = true
 end
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "org" },
+    callback = function()
+        require("ufo").detach()
+        vim.opt_local.foldenable = false
+    end,
+})
 
 vim.g.clipboard = "wl-copy"
 
