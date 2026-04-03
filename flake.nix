@@ -1,26 +1,8 @@
 {
-    description = "NixOS and Home Manager config";
-
-    inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-        nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
-        nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-
-        nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-24.05";
-        nix-on-droid = {
-            url = "github:nix-community/nix-on-droid/release-24.05";
-            inputs.nixpkgs.follows = "nixpkgs-old";
-        };
-
-        home-manager = {
-            url = "github:nix-community/home-manager/release-25.11";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
-        hyprland.url = "github:hyprwm/Hyprland";
-    };
-
     nixConfig = {
+        abort-on-warn = true;
+        extra-experimental-features = ["pipe-operators"];
+        allow-import-from-derivation = false;
         substituters = [
             "https://nix-community.cachix.org"
             "https://hyprland.cachix.org" # hyprland
@@ -42,197 +24,44 @@
         ];
     };
 
-    outputs = inputs @ {
-        nixpkgs,
-        nixpkgs-stable,
-        home-manager,
-        nix-on-droid,
-        nixpkgs-old,
-        ...
-    }: let
-        system = "x86_64-linux";
-        pkgs = import nixpkgs {inherit system;};
-        pkgs-stable = import nixpkgs-stable {
-            inherit system;
-            config = {allowUnfree = true;};
+    inputs.self.submodules = true;
+    inputs = {
+        files.url = "github:mightyiam/files";
+        import-tree.url = "github:vic/import-tree";
+        input-branches.url = "github:mightyiam/input-branches";
+        flake-parts = {
+            url = "github:hercules-ci/flake-parts";
+            inputs.nixpkgs-lib.follows = "nixpkgs";
         };
 
-        mkHomeConfiguration = {
-            extraModules ? [],
-            hostname ? host,
-            homePkgs ? pkgs,
-            enableDesktopApps ? true,
-            host,
-            user,
-            userFullName,
-            ...
-        }:
-            home-manager.lib.homeManagerConfiguration {
-                pkgs = homePkgs;
-                modules =
-                    [
-                        ./home
-                        ./hostOptions.nix
-                        (
-                            {...}: {
-                                inherit enableDesktopApps;
-                                hostname = hostname;
-                                host = host;
-                                user = user;
-                                userFullName = userFullName;
-                            }
-                        )
-                    ]
-                    ++ extraModules;
-                extraSpecialArgs = {inherit inputs;};
-            };
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+        nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+        hyprland.url = "github:hyprwm/Hyprland";
 
-        mkNixosConfiguration = {
-            extraModules ? [],
-            hostname ? host,
-            host,
-            user,
-            userFullName,
-            displayManagerScale ? 1,
-            ...
-        }:
-            nixpkgs.lib.nixosSystem {
-                inherit system;
-                modules =
-                    [
-                        ./nixos
-                        ./hostOptions.nix
-                        (
-                            {...}: {
-                                hostname = hostname;
-                                host = host;
-                                user = user;
-                                userFullName = userFullName;
-                                displayManagerScale = displayManagerScale;
-                            }
-                        )
-                    ]
-                    ++ extraModules;
-                specialArgs = {
-                    inherit inputs;
-                    inherit pkgs-stable;
-                };
-            };
-    in {
-        homeConfigurations = {
-            desktop = mkHomeConfiguration {
-                host = "desktop";
-                user = "robert";
-                userFullName = "Robert Cronin";
-                flakePath = "/home/robert/nix";
-            };
-
-            bigLaptop = mkHomeConfiguration {
-                host = "bigLaptop";
-                user = "robert";
-                userFullName = "Robert Cronin";
-                flakePath = "/home/robert/nix";
-            };
-
-            laptop = mkHomeConfiguration {
-                host = "laptop";
-                user = "robert";
-                userFullName = "Robert Cronin";
-                flakePath = "/home/robert/nix";
-            };
-
-            tablet = mkHomeConfiguration {
-                host = "tablet";
-                user = "robert";
-                userFullName = "Robert Cronin";
-                flakePath = "/home/robert/nix";
-            };
-
-            phone = mkHomeConfiguration {
-                host = "phone";
-                user = "robert";
-                userFullName = "Robert Cronin";
-                flakePath = "/home/robert/nix";
-                enableDesktopApps = false;
-                homePkgs = import nixpkgs-old {
-                    system = "aarch64-linux";
-                    config = {
-                        allowUnfree = true;
-                    };
-                    overlays = [
-                        nix-on-droid.overlays.default
-                    ];
-                };
-            };
+        nix-on-droid = {
+            url = "github:nix-community/nix-on-droid";
+            home-manager.follows = "home-manager";
+            nixpkgs-docs.follows = "nixpkgs";
+            nixpkgs-for-bootstrap.follows = "nixpkgs";
+            inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        nixosConfigurations = {
-            desktop = mkNixosConfiguration {
-                extraModules = [
-                    ./hardwareConfigurations/desktop.nix
-                    ./nixos/modules/hardware/nvidia.nix
-                    ./nixos/modules/sunshine.nix
-                    ./nixos/modules/extraPackages/gui.nix
-                    ./nixos/modules/extraPackages/gaming.nix
-                ];
-                host = "desktop";
-                user = "robert";
-                userFullName = "Robert Cronin";
-                flakePath = "/home/robert/nix";
-            };
-
-            bigLaptop = mkNixosConfiguration {
-                extraModules = [
-                    ./hardwareConfigurations/bigLaptop.nix
-                    ./nixos/modules/hardware/nvidia.nix
-                    ./nixos/modules/extraPackages/gaming.nix
-                ];
-                host = "bigLaptop";
-                user = "robert";
-                userFullName = "Robert Cronin";
-                flakePath = "/home/robert/nix";
-            };
-
-            laptop = mkNixosConfiguration {
-                extraModules = [
-                    ./hardwareConfigurations/laptop.nix
-                    ./nixos/modules/wacom.nix
-                    ./nixos/modules/hardware/power-key.nix
-                    ./nixos/modules/auto-cpufreq.nix
-                ];
-                host = "laptop";
-                user = "robert";
-                userFullName = "Robert Cronin";
-                flakePath = "/home/robert/nix";
-            };
-
-            tablet = mkNixosConfiguration {
-                extraModules = [
-                    ./hardwareConfigurations/tablet.nix
-                    ./nixos/modules/wacom.nix
-                    ./nixos/modules/hardware/tpm.nix
-                    ./nixos/modules/hardware/power-key.nix
-                    ./nixos/modules/auto-cpufreq.nix
-                ];
-                host = "tablet";
-                user = "robert";
-                userFullName = "Robert Cronin";
-                flakePath = "/home/robert/nix";
-                displayManagerScale = 2;
-            };
+        home-manager = {
+            url = "github:nix-community/home-manager/release-25.11";
+            flake = true;
+            inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
-            pkgs = import nixpkgs-old {
-                system = "aarch64-linux";
-                config = {
-                    allowUnfree = true;
-                };
-                overlays = [
-                    nix-on-droid.overlays.default
-                ];
-            };
-            modules = [./nix-on-droid/nix-on-droid.nix];
+        cpu-microcodes = {
+            flake = false;
+            url = "github:platomav/CPUMicrocodes";
         };
     };
+
+    outputs = inputs:
+        inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+            imports = [(inputs.import-tree ./modules)];
+            _module.args.rootPath = ./.;
+        };
 }
