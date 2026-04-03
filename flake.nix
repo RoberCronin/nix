@@ -60,19 +60,22 @@
         mkHomeConfiguration = {
             extraModules ? [],
             hostname ? host,
+            homePkgs ? pkgs,
+            enableDesktopApps ? true,
             host,
             user,
             userFullName,
             ...
         }:
             home-manager.lib.homeManagerConfiguration {
-                inherit pkgs;
+                pkgs = homePkgs;
                 modules =
                     [
                         ./home
                         ./hostOptions.nix
                         (
                             {...}: {
+                                inherit enableDesktopApps;
                                 hostname = hostname;
                                 host = host;
                                 user = user;
@@ -143,6 +146,23 @@
                 user = "robert";
                 userFullName = "Robert Cronin";
                 flakePath = "/home/robert/nix";
+            };
+
+            phone = mkHomeConfiguration {
+                host = "phone";
+                user = "robert";
+                userFullName = "Robert Cronin";
+                flakePath = "/home/robert/nix";
+                enableDesktopApps = false;
+                homePkgs = import nixpkgs-old {
+                    system = "aarch64-linux";
+                    config = {
+                        allowUnfree = true;
+                    };
+                    overlays = [
+                        nix-on-droid.overlays.default
+                    ];
+                };
             };
         };
 

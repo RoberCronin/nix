@@ -1,4 +1,9 @@
-{pkgs, ...}: let
+{
+    pkgs,
+    lib,
+    config,
+    ...
+}: let
     settings = {
         "browser.aboutConfig.showWarning" = false;
         "browser.rights.3.shown" = true;
@@ -75,27 +80,28 @@
             "google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
         };
     };
-in {
-    programs.firefox = {
-        enable = true;
-        profiles = {
-            default = {
-                id = 0;
-                name = "default";
-                isDefault = true;
-                containersForce = true;
-                inherit settings;
-                inherit search;
-            };
+in
+    lib.mkIf config.enableDesktopApps {
+        programs.firefox = {
+            enable = true;
+            profiles = {
+                default = {
+                    id = 0;
+                    name = "default";
+                    isDefault = true;
+                    containersForce = true;
+                    inherit settings;
+                    inherit search;
+                };
 
-            school = {
-                id = 1;
-                name = "school";
-                isDefault = false;
-                containersForce = true;
-                inherit settings;
-                inherit search;
+                school = {
+                    id = 1;
+                    name = "school";
+                    isDefault = false;
+                    containersForce = true;
+                    inherit settings;
+                    inherit search;
+                };
             };
         };
-    };
-}
+    }

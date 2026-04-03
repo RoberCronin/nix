@@ -4,7 +4,7 @@
     pkgs,
     ...
 }: {
-    home.activation.vscodeRestoreExtensions = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    home.activation.vscodeRestoreExtensions = lib.mkIf config.enableDesktopApps (lib.hm.dag.entryAfter ["writeBoundary"] ''
         cd "${config.home.homeDirectory}/.config/Code/User"
 
         package_list=$(cat vscode-extensions.txt)
@@ -15,7 +15,7 @@
         done
 
         ${pkgs.vscode}/bin/code $install_args
-    '';
+    '');
 
     xdg.configFile = {
         "Code/User/keybindings.json" = {

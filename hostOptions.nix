@@ -35,5 +35,11 @@
             default = 1;
             description = "The display scale for the display manager";
         };
+
+        enableDesktopApps = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+            description = "Wheather to enable desktop using home-manager.";
+        };
     };
 }
