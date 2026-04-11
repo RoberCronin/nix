@@ -13,6 +13,7 @@ bind 'set completion-ignore-case on'
 
 HISTFILESIZE=100000
 HISTSIZE=10000
+SSH_AUTH_SOCK=/home/robert/.bitwarden-ssh-agent.sock
 
 try() {
     command nix-shell -p "$@"

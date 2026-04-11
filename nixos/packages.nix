@@ -65,6 +65,7 @@
         bashInteractive
 
         # GUI applications
+        bitwarden-desktop
         firefox
         thunderbird
         pkgs-stable.qbittorrent
