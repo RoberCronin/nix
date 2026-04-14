@@ -30,6 +30,7 @@ return {
                     replace_netrw = true,
                     trash = true,
                     hidden = true,
+                    ignored = true,
                 },
             },
         },
