@@ -4,36 +4,17 @@
         pkgs,
         ...
     }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.browser];
+        home-manager.sharedModules = [inputs.self.modules.homeManager.nvim];
         environment.systemPackages = with pkgs; [
             neovim
         ];
     };
 
-    flake.modules.homeManager.browser = {pkgs, ...}: let
-        settings = import ./_settings.nix;
-        search = import ./_search.nix {inherit pkgs;};
-    in {
-        programs.firefox = {
-            enable = true;
-            profiles = {
-                default = {
-                    id = 0;
-                    name = "default";
-                    isDefault = true;
-                    containersForce = true;
-                    inherit settings;
-                    inherit search;
-                };
-
-                school = {
-                    id = 1;
-                    name = "school";
-                    isDefault = false;
-                    containersForce = true;
-                    inherit settings;
-                    inherit search;
-                };
+    flake.modules.homeManager.nvim = {config, ...}: {
+        xdg.configFile = {
+            "nvim" = {
+                source = config.lib.meta.mkMutableSymlink ./_config;
+                recursive = true;
             };
         };
     };
