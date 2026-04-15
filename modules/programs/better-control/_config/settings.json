@@ -1,0 +1,13 @@
+{
+    "visibility": {
+        "Autostart": false,
+        "USBGuard": false,
+        "Power": false
+    },
+    "positions": {},
+    "usbguard_hidden_devices": [],
+    "language": "en",
+    "vertical_tabs": true,
+    "vertical_tabs_icon_only": true,
+    "gamma": 4500
+}
