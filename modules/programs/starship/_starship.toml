@@ -1,0 +1,14 @@
+add_newline = false
+command_timeout = 100
+
+[line_break]
+disabled = true
+
+[nix_shell]
+format = "[nix-shell]($style) "
+
+[package]
+disabled = true
+
+[python]
+format = "[python (($virtualenv) )]($style)"
