@@ -1,0 +1,31 @@
+[global]
+monitor = 1
+frame_width = 1
+separator_color= frame
+corner_radius = 5
+progress_bar_corner_radius = 5
+corners = top-left,bottom
+progress_bar_corners = top-left,bottom-right
+offset = (15, 25)
+gap_size = 5
+format = "<b>󰁕 %a</b>\n%s\n<i>%b</i>"
+
+frame_color = "#8aadf4"
+separator_color= frame
+highlight = "#8aadf4"
+
+[urgency_low]
+background = "#24273a"
+foreground = "#cad3f5"
+default_icon = "~/.config/dunst/icons/bell-badge-low.svg"
+
+[urgency_normal]
+background = "#24273a"
+foreground = "#cad3f5"
+default_icon = "~/.config/dunst/icons/bell-badge.svg"
+
+[urgency_critical]
+background = "#24273a"
+foreground = "#cad3f5"
+frame_color = "#f5a97f"
+default_icon = "~/.config/dunst/icons/alert-decagram.svg"
