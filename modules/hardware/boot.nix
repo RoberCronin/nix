@@ -1,5 +1,12 @@
 {
-    flake.modules.nixos.hardware.boot = {pkgs, ...}: {
+    flake.modules.nixos.hardware.boot = {
+        inputs,
+        pkgs,
+        ...
+    }: {
+        nixpkgs.overlays = [
+            inputs.nix-cachyos-kernel.overlays.pinned
+        ];
         boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
         # Bootloader.
