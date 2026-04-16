@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.hardware.desktop = {
+    flake.modules.nixos.desktop = {
         config,
         lib,
         modulesPath,

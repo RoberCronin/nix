@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.hardware.powerKey = {...}: {
+    flake.modules.nixos.powerKey = {...}: {
         services.logind = {
             settings.Login = {
                 HandlePowerKey = "suspend";

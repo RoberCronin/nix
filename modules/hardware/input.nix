@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.hardware.input = {...}: {
+    flake.modules.nixos.input = {...}: {
         # Configure keymap in X11
         console.useXkbConfig = true;
         services.xserver.xkb = {

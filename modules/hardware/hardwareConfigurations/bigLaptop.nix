@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.hardware.bigLaptop = {
+    flake.modules.nixos.bigLaptop = {
         config,
         lib,
         modulesPath,

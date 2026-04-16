@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.users.robert = {config, ...}: {
+    flake.modules.nixos.robert = {config, ...}: {
         users.users.robert = {
             isNormalUser = true;
             name = "robert";

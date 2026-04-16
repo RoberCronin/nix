@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.hardware.networking = {config, ...}: {
+    flake.modules.nixos.networking = {config, ...}: {
         networking.networkmanager.enable = true;
         networking.firewall.allowedTCPPorts = [80 443 1401 631];
         networking.hostName = config.host;

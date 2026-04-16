@@ -41,9 +41,9 @@
 
         nix-on-droid = {
             url = "github:nix-community/nix-on-droid";
-            home-manager.follows = "home-manager";
-            nixpkgs-docs.follows = "nixpkgs";
-            nixpkgs-for-bootstrap.follows = "nixpkgs";
+            # home-manager.follows = "home-manager";
+            # nixpkgs-docs.follows = "nixpkgs";
+            # nixpkgs-for-bootstrap.follows = "nixpkgs";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
@@ -61,7 +61,7 @@
 
     outputs = inputs:
         inputs.flake-parts.lib.mkFlake {inherit inputs;} {
-            imports = [(inputs.import-tree ./modules)];
+            imports = [(inputs.import-tree ./modules) inputs.flake-parts.flakeModules.modules];
             _module.args.rootPath = ./.;
         };
 }

@@ -1,6 +1,6 @@
 {inputs, ...}: {
-    flake.modules.nixos.tablet = {
-        imports = with inputs.self.modules.nixos; [
+    flake.nixosConfigurations.tablet = inputs.nixpkgs.lib.nixosSystem {
+        modules = with inputs.self.modules.nixos; [
             wayland
             virtualization
             options
@@ -23,6 +23,25 @@
             hardware.powerKey
             hardware.wacom
             hardware.tablet
+
+            auto-cpufreq
+            packages
+            alacritty
+            bash
+            better-control
+            browser
+            btop
+            direnv
+            dunst
+            fcitx5
+            git
+            hyprland
+            nvim
+            rofi
+            starship
+            vscode
+            waybar
+            wofi
         ];
     };
 }
