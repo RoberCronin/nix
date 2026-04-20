@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.unpatchedBinaries = {pkgs, ...}: {
+    flake.modules.nixos.base = {pkgs, ...}: {
         programs.nix-ld.enable = true;
         programs.nix-ld.libraries = with pkgs; [
             alsa-lib

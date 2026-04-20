@@ -1,5 +1,5 @@
 {
-    flake.modules.general.functions = {
+    flake.modules.homeManager.base = {
         inputs,
         config,
         lib,

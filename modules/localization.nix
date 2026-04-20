@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.localization = {...}: {
+    flake.modules.nixos.base = {...}: {
         time.timeZone = "America/Los_Angeles";
         time.hardwareClockInLocalTime = true;
 

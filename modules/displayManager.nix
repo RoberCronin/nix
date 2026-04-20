@@ -1,16 +1,12 @@
 {
-    flake.modules.nixos.displayManager = {
-        pkgs,
-        config,
-        ...
-    }: {
+    flake.modules.nixos.base = {pkgs, ...}: {
         services.displayManager.sddm = {
             enable = true;
             wayland.enable = true;
             theme = "sddm-astronaut-theme";
             settings = {
                 General = {
-                    GreeterEnvironment = "QT_SCREEN_SCALE_FACTORS=${toString config.displayManagerScale},QT_FONT_DPI=192";
+                    GreeterEnvironment = "QT_SCREEN_SCALE_FACTORS=2,QT_FONT_DPI=192";
                 };
             };
 

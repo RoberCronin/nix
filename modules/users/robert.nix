@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.robert = {config, ...}: {
+    flake.modules.nixos.robert = {
         users.users.robert = {
             isNormalUser = true;
             name = "robert";
@@ -15,10 +15,6 @@
                 "vboxusers"
                 "audio"
             ];
-        };
-
-        environment.sessionVariables = {
-            NH_FLAKE = config.flakePath;
         };
     };
 }

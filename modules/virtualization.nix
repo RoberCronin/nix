@@ -1,16 +1,10 @@
 {
-    flake.modules.nixos.virtualization = {pkgs, ...}: {
+    flake.modules.nixos.base = {pkgs, ...}: {
         virtualisation = {
             containers.enable = true;
-            # docker.enable = true;
-            podman = {
+            docker = {
                 enable = true;
-                dockerCompat = true;
-                defaultNetwork.settings.dns_enabled = true;
-                extraPackages = with pkgs; [
-                    podman-compose
-                    docker-compose
-                ];
+                extraPackages = with pkgs; [docker-compose];
             };
         };
     };

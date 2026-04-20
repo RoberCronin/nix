@@ -1,7 +1,11 @@
-{
-    flake.modules.nixos.options = {
+{inputs, ...}: let
+    pkgs-stable = import inputs.nixpkgs-stable {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+    };
+in {
+    flake.modules.nixos.base = {
         pkgs,
-        pkgs-stable,
         config,
         ...
     }: {
@@ -30,9 +34,9 @@
 
         services.syncthing = {
             enable = true;
-            user = config.user;
-            dataDir = "/home/${config.user}";
-            configDir = "/home/${config.user}/.config/syncthing";
+            user = config.mainUser;
+            dataDir = "/home/${config.mainUser}";
+            configDir = "/home/${config.mainUser}/.config/syncthing";
         };
 
         services.avahi = {

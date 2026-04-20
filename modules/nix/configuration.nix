@@ -1,12 +1,8 @@
-{
-    flake.modules.nixos.nixOptions = {
-        config,
-        inputs,
-        ...
-    }: {
+{inputs, ...}: {
+    flake.modules.nixos.base = {
         nixpkgs.config.allowUnfree = true;
         nix.settings.experimental-features = ["nix-command" "flakes"];
-        nix.settings.trusted-users = ["root" config.user];
+        nix.settings.trusted-users = ["root" "robert"];
         nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
         nixpkgs.overlays = [

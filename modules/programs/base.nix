@@ -1,9 +1,10 @@
-{
-    flake.modules.nixos.packages = {
-        pkgs,
-        pkgs-stable,
-        ...
-    }: {
+{inputs, ...}: let
+    pkgs-stable = import inputs.nixpkgs-stable {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+    };
+in {
+    flake.modules.nixos.base = {pkgs, ...}: {
         programs = {
             kdeconnect.enable = true;
             thunar = {

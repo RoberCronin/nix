@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.firmware = {...}: {
+    flake.modules.nixos.base = {...}: {
         hardware.enableAllFirmware = true;
         hardware.enableRedistributableFirmware = true;
     };

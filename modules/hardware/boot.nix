@@ -1,9 +1,5 @@
-{
-    flake.modules.nixos.boot = {
-        inputs,
-        pkgs,
-        ...
-    }: {
+{inputs, ...}: {
+    flake.modules.nixos.base = {pkgs, ...}: {
         nixpkgs.overlays = [
             inputs.nix-cachyos-kernel.overlays.pinned
         ];

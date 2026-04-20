@@ -59,9 +59,5 @@
         };
     };
 
-    outputs = inputs:
-        inputs.flake-parts.lib.mkFlake {inherit inputs;} {
-            imports = [(inputs.import-tree ./modules) inputs.flake-parts.flakeModules.modules];
-            _module.args.rootPath = ./.;
-        };
+    outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
 }
