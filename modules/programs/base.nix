@@ -1,10 +1,32 @@
-{inputs, ...}: let
+{
+    self,
+    inputs,
+    ...
+}: let
     pkgs-stable = import inputs.nixpkgs-stable {
         system = "x86_64-linux";
         config.allowUnfree = true;
     };
 in {
     flake.modules.nixos.base = {pkgs, ...}: {
+        imports = with self.modules.nixos; [
+            nvim
+            starship
+            alacritty
+            bash
+            better-control
+            browser
+            btop
+            direnv
+            dunst
+            fcitx5
+            git
+            rofi
+            starship
+            vscode
+            wofi
+        ];
+
         programs = {
             kdeconnect.enable = true;
             thunar = {
@@ -18,19 +40,9 @@ in {
                     xfce4-exo
                 ];
             };
-
-            steam = {
-                enable = true;
-            };
         };
 
         environment.systemPackages = with pkgs; [
-            # Input
-            piper
-            xf86_input_wacom
-            libwacom
-            kdePackages.wacomtablet
-
             # Common Terminal Utils
             jq
             powertop
@@ -60,14 +72,7 @@ in {
             yadm
             fastfetch
 
-            # Shell packages
-            zoxide
-            starship
-            bash-completion
-            bashInteractive
-
             # GUI applications
-            firefox
             thunderbird
             pkgs-stable.qbittorrent
             pkgs-stable.libreoffice
@@ -89,9 +94,6 @@ in {
             # Editors
             arduino-ide
             zed-editor
-            pkgs-stable.vscode
-            neovim
-            wl-clipboard # nvim clipboard
 
             # Development
             lazydocker
@@ -142,7 +144,6 @@ in {
             evolution-data-server
             pulseaudioFull
             papirus-icon-theme
-            home-manager
             libnotify
             webp-pixbuf-loader
             poppler

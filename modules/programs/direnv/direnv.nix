@@ -1,10 +1,5 @@
 {
-    flake.modules.nixos.direnv = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.direnv];
+    flake.modules.nixos.direnv = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             direnv
         ];

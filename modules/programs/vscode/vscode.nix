@@ -1,10 +1,5 @@
 {
-    flake.modules.nixos.vscode = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.vscode];
+    flake.modules.nixos.vscode = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             vscode
         ];

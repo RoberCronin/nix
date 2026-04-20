@@ -1,10 +1,5 @@
 {
-    flake.modules.nixos.wofi = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.wofi];
+    flake.modules.nixos.wofi = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             wofi
         ];

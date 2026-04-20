@@ -1,10 +1,13 @@
 {
-    flake.modules.nixos.hyprland = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.hyprland];
+    self,
+    inputs,
+    ...
+}: {
+    flake.modules.nixos.hyprland = {pkgs, ...}: {
+        imports = with self.modules.nixos; [
+            waybar
+        ];
+
         environment.systemPackages = with pkgs; [
             linux-wallpaperengine
             mpvpaper

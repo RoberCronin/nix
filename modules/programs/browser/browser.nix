@@ -1,10 +1,5 @@
 {
-    flake.modules.nixos.browser = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.browser];
+    flake.modules.nixos.browser = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             firefox
         ];

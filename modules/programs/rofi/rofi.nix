@@ -1,10 +1,5 @@
 {
-    flake.modules.nixos.rofi = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.rofi];
+    flake.modules.nixos.rofi = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             rofi
         ];

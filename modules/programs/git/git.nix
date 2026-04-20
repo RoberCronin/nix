@@ -1,10 +1,5 @@
 {
-    flake.modules.nixos.git = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.git];
+    flake.modules.nixos.git = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             git
         ];

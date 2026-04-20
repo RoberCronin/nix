@@ -1,10 +1,5 @@
 {
-    flake.modules.nixos.alacritty = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.alacritty];
+    flake.modules.nixos.alacritty = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             alacritty
         ];

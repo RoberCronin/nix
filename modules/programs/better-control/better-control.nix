@@ -1,10 +1,5 @@
 {
-    flake.modules.nixos.better-control = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.better-control];
+    flake.modules.nixos.better-control = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             better-control
         ];

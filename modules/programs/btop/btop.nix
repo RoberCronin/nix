@@ -1,10 +1,5 @@
 {
-    flake.modules.nixos.btop = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.btop];
+    flake.modules.nixos.btop = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             btop
         ];

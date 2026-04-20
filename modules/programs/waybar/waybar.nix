@@ -1,6 +1,5 @@
 {
-    flake.modules.nixos.waybar = {inputs, ...}: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.waybar];
+    flake.modules.nixos.waybar = {
         programs.waybar = {
             enable = true;
         };

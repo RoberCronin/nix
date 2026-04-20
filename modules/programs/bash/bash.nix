@@ -1,10 +1,5 @@
 {
-    flake.modules.nixos.bash = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.bash];
+    flake.modules.nixos.bash = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             zoxide
             starship

@@ -1,10 +1,5 @@
 {
-    flake.modules.nixos.starship = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.starship];
+    flake.modules.nixos.starship = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             starship
         ];

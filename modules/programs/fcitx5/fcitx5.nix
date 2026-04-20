@@ -1,11 +1,5 @@
 {
-    flake.modules.nixos.fcitx5 = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.fcitx5];
-
+    flake.modules.nixos.fcitx5 = {pkgs, ...}: {
         i18n.inputMethod.enable = true;
         i18n.inputMethod.type = "fcitx5";
         i18n.inputMethod.fcitx5.addons = with pkgs; [fcitx5-mozc];

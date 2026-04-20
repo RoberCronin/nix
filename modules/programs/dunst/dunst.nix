@@ -1,10 +1,5 @@
 {
-    flake.modules.nixos.dunst = {
-        inputs,
-        pkgs,
-        ...
-    }: {
-        home-manager.sharedModules = [inputs.self.modules.homeManager.dunst];
+    flake.modules.nixos.dunst = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             dunst
         ];

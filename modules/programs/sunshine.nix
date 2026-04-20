@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.sunshine = {...}: {
+    flake.modules.nixos.sunshine = {
         services.sunshine = {
             enable = true;
             openFirewall = true;
