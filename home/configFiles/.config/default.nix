@@ -12,7 +12,9 @@
         ./alacritty
         ./Code
         ./direnv
+        ./sway
     ];
+
     xdg.configFile = {
         "starship.toml" = {
             source = config.lib.meta.mkMutableSymlink ./starship.toml;

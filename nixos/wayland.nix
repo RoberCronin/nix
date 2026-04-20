@@ -30,6 +30,20 @@
         portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
 
+    programs.sway = {
+        enable = true;
+        extraOptions = ["--unsupported-gpu"];
+    };
+
+    programs.uwsm = {
+        enable = true;
+        waylandCompositors.sway = {
+            prettyName = "Sway";
+            comment = "Sway with UWSM";
+            binPath = "${pkgs.sway}/bin/sway";
+        };
+    };
+
     programs.waybar = {
         enable = true;
     };
