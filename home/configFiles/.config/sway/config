@@ -63,6 +63,11 @@ bindsym Print exec grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/captu
 include /etc/sway/config.d/*
 include ~/.config/sway_monitors
 
+input "type:pointer" {
+    accel_profile "flat"
+    pointer_accel 0.0
+}
+
 input type:touchpad {
     tap enabled
     accel_profile "flat"
