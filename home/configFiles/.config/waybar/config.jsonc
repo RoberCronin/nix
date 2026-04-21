@@ -3,7 +3,7 @@
 		"layer": "top",
 		"position": "left",
         "width": 54,
-		"modules-left": ["hyprland/workspaces"],
+		"modules-left": ["sway/workspaces"],
 		"modules-center": [],
 		"modules-right": ["custom/launcher", "custom/quick_settings", "battery", "backlight", "pulseaudio", "cpu", "memory", "tray", "clock"],
 		"hyprland/workspaces": {
@@ -12,6 +12,14 @@
 			"on-click": "activate",
 			"sort-by-number": true 
 		},
+        
+		"sway/workspaces": {
+			"disable-scroll": true,
+			"all-outputs": true,
+			"on-click": "activate",
+			"sort-by-number": true 
+		},
+        
 		"clock": {
     			"format": "{:%I\n%M}",
     		},

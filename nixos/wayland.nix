@@ -41,6 +41,7 @@
             prettyName = "Sway";
             comment = "Sway with UWSM";
             binPath = "${pkgs.sway}/bin/sway";
+            extraArgs = ["--unsupported-gpu"];
         };
     };
 
