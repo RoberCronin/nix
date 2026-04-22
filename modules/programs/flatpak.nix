@@ -9,7 +9,6 @@
     flake.modules.homeManager.base = {
         pkgs,
         lib,
-        config,
         ...
     }: let
         # We point directly to 'gnugrep' instead of 'grep'

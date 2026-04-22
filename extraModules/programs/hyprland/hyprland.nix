@@ -37,6 +37,10 @@
     };
 
     flake.modules.homeManager.hyprland = {config, ...}: {
+        imports = with self.modules.homeManager; [
+            waybar
+        ];
+
         xdg.configFile = {
             "hypr" = {
                 source = config.lib.meta.mkMutableSymlink ./_config;

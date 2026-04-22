@@ -1,32 +1,10 @@
-{
-    self,
-    inputs,
-    ...
-}: let
+{inputs, ...}: let
     pkgs-stable = import inputs.nixpkgs-stable {
         system = "x86_64-linux";
         config.allowUnfree = true;
     };
 in {
     flake.modules.nixos.base = {pkgs, ...}: {
-        imports = with self.modules.nixos; [
-            nvim
-            starship
-            alacritty
-            bash
-            better-control
-            browser
-            btop
-            direnv
-            dunst
-            fcitx5
-            git
-            rofi
-            starship
-            vscode
-            wofi
-        ];
-
         programs = {
             kdeconnect.enable = true;
             thunar = {
@@ -87,7 +65,6 @@ in {
             evince
             system-config-printer
             pavucontrol
-            alacritty
             gparted
             mousepad
 
@@ -104,25 +81,6 @@ in {
             gnumake
             tree-sitter
             cmake
-
-            # LSP, language server
-            cmake-language-server # c/c++ lsp
-            lua-language-server
-            basedpyright # python lsp
-            nixd
-            glsl_analyzer
-            tinymist # typst lsp
-            harper # grammar and spelling
-
-            # Code Styling/formatters
-            typstyle # typst
-            alejandra # nix
-            jsonfmt # json
-            clang-tools # c/c++
-            isort # python import sorter
-            black # python
-            stylua #lua
-            nodePackages_latest.prettier # javascript, css, html
 
             # Compiling/Languages
             typst

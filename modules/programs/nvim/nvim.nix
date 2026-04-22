@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.nvim = {pkgs, ...}: {
+    flake.modules.nixos.base = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             neovim
             wl-clipboard
@@ -25,7 +25,7 @@
         ];
     };
 
-    flake.modules.homeManager.nvim = {config, ...}: {
+    flake.modules.homeManager.base = {config, ...}: {
         xdg.configFile = {
             "nvim" = {
                 source = config.lib.meta.mkMutableSymlink ./_config;

@@ -1,11 +1,11 @@
 {
-    flake.modules.nixos.dunst = {pkgs, ...}: {
+    flake.modules.nixos.base = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             dunst
         ];
     };
 
-    flake.modules.homeManager.dunst = {config, ...}: {
+    flake.modules.homeManager.base = {config, ...}: {
         xdg.configFile = {
             "dunst" = {
                 source = config.lib.meta.mkMutableSymlink ./_config;

@@ -1,11 +1,11 @@
 {
-    flake.modules.nixos.direnv = {pkgs, ...}: {
+    flake.modules.nixos.base = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             direnv
         ];
     };
 
-    flake.modules.homeManager.direnv = {config, ...}: {
+    flake.modules.homeManager.base = {config, ...}: {
         xdg.configFile = {
             "direnv" = {
                 source = config.lib.meta.mkMutableSymlink ./_config;

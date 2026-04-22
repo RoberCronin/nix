@@ -1,11 +1,11 @@
 {
-    flake.modules.nixos.btop = {pkgs, ...}: {
+    flake.modules.nixos.base = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             btop
         ];
     };
 
-    flake.modules.homeManager.btop = {config, ...}: {
+    flake.modules.homeManager.base = {config, ...}: {
         xdg.configFile = {
             "btop" = {
                 source = config.lib.meta.mkMutableSymlink ./_config;
