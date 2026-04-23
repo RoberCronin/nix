@@ -7,7 +7,7 @@
         imports = with self.modules.nixos; [
             base
             nvidiaGraphics
-            hyprland
+            sway
             robert
         ];
 
@@ -23,21 +23,7 @@
     flake.modules.homeManager.desktop = {
         imports = with self.modules.homeManager; [
             base
-            hyprland
-            alacritty
-            bash
-            better-control
-            browser
-            btop
-            direnv
-            fcitx5
-            git
-            nvim
-            rofi
-            starship
-            vscode
-            waybar
-            wofi
+            sway
         ];
 
         config.host = "desktop";

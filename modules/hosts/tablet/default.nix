@@ -7,7 +7,7 @@
         imports = with self.modules.nixos; [
             base
             intelGraphics
-            hyprland
+            sway
             robert
         ];
 
@@ -17,6 +17,24 @@
     flake.nixosConfigurations.tablet = inputs.nixpkgs.lib.nixosSystem {
         modules = [
             self.modules.nixos.tablet
+        ];
+    };
+
+    flake.modules.homeManager.sway = {
+        imports = with self.modules.homeManager; [
+            base
+            sway
+        ];
+
+        config.host = "tablet";
+    };
+
+    flake.homeConfigurations.desktop = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs;};
+
+        modules = [
+            self.modules.homeManager.tablet
         ];
     };
 }
