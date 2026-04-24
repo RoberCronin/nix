@@ -40,9 +40,6 @@
 
         nix-on-droid = {
             url = "github:nix-community/nix-on-droid";
-            # home-manager.follows = "home-manager";
-            # nixpkgs-docs.follows = "nixpkgs";
-            # nixpkgs-for-bootstrap.follows = "nixpkgs";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
