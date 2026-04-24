@@ -83,6 +83,11 @@ window>box{
 	color: #ff4c4c;
 }
 
+#workspaces button.focused{
+    font-family: "Jost*", sans-serif;
+	color: #ff4c4c;
+}
+
 #workspaces button,
 #mode {
     padding: 10px 8px;
@@ -97,6 +102,11 @@ window>box{
 }
 
 #workspaces button.active {
+    box-shadow: inset -10px 0 @accent;
+    font-weight: 900;
+}
+
+#workspaces button.focused {
     box-shadow: inset -10px 0 @accent;
     font-weight: 900;
 }
