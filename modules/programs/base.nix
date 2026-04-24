@@ -5,21 +5,6 @@
     };
 in {
     flake.modules.nixos.base = {pkgs, ...}: {
-        programs = {
-            kdeconnect.enable = true;
-            thunar = {
-                enable = true;
-                plugins = with pkgs; [
-                    file-roller
-                    xarchiver
-                    thunar-archive-plugin
-                    thunar-volman
-                    thunar-media-tags-plugin
-                    xfce4-exo
-                ];
-            };
-        };
-
         environment.systemPackages = with pkgs; [
             # Common Terminal Utils
             jq

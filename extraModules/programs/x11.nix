@@ -2,6 +2,8 @@
     flake.modules.nixos.x11 = {pkgs, ...}: let
         polybar_pulse = pkgs.polybarFull.override {pulseSupport = true;};
     in {
+        services.autorandr.enable = true;
+
         services.xserver.enable = true;
         services.xserver.desktopManager.xterm.enable = false;
         services.xserver.windowManager.i3 = {
