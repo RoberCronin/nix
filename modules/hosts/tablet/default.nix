@@ -8,6 +8,7 @@
             base
             intelGraphics
             wacom
+            auto-cpufreq
 
             sway
             robert

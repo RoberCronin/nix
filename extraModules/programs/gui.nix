@@ -1,15 +1,11 @@
 {
-    flake.modules.nixos.gui = {
-        pkgs,
-        pkgs-stable,
-        ...
-    }: {
+    flake.modules.nixos.gui = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             obs-studio
-            pkgs-stable.krita
+            krita
             blender
             audacity
-            pkgs-stable.freecad
+            freecad
             jstest-gtk
         ];
     };

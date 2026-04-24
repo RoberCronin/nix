@@ -7,6 +7,9 @@
         imports = with self.modules.nixos; [
             base
             nvidiaGraphics
+            gui
+            gaming
+
             sway
             robert
         ];
