@@ -36,7 +36,7 @@
         ];
     };
 
-    flake.modules.homeManager.hyprland = {config, ...}: {
+    flake.modules.homeManager.sway = {config, ...}: {
         imports = with self.modules.homeManager; [
             waybar
         ];

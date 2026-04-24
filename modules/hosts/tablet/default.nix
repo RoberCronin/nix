@@ -20,7 +20,7 @@
         ];
     };
 
-    flake.modules.homeManager.sway = {
+    flake.modules.homeManager.tablet = {
         imports = with self.modules.homeManager; [
             base
             sway
@@ -29,7 +29,7 @@
         config.host = "tablet";
     };
 
-    flake.homeConfigurations.desktop = inputs.home-manager.lib.homeManagerConfiguration {
+    flake.homeConfigurations.tablet = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs;};
 
