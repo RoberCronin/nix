@@ -21,7 +21,7 @@
             isort # python import sorter
             black # python
             stylua #lua
-            nodePackages_latest.prettier # javascript, css, html
+            # nodePackages_latest.prettier # javascript, css, html
         ];
     };
 
