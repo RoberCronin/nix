@@ -7,11 +7,14 @@
         imports = with self.modules.nixos; [
             base
             intelGraphics
+            wacom
+
             sway
             robert
         ];
 
         config.host = "tablet";
+        config.mainUser = "robert";
     };
 
     flake.nixosConfigurations.tablet = inputs.nixpkgs.lib.nixosSystem {
@@ -27,6 +30,7 @@
         ];
 
         config.host = "tablet";
+        config.mainUser = "robert";
     };
 
     flake.homeConfigurations.tablet = inputs.home-manager.lib.homeManagerConfiguration {

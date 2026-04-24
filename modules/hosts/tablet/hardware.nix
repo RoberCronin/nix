@@ -4,6 +4,10 @@
         modulesPath,
         ...
     }: {
+        # disable tpm
+        systemd.tpm2.enable = false;
+        boot.initrd.systemd.tpm2.enable = false;
+
         # udev rules to stop side buttons from waking laptop
         services.udev.extraRules = ''
             ACTION=="add", SUBSYSTEM=="serio", DRIVERS=="atkbd", ATTR{firmware_id}=="PNP: PNP0303", ATTR{id/extra}=="00", ATTR{id/id}=="00", ATTR{id/proto}=="00", ATTR{id/type}=="06", ATTR{power/wakeup}="disabled"
