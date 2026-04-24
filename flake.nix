@@ -48,11 +48,6 @@
             flake = true;
             inputs.nixpkgs.follows = "nixpkgs";
         };
-
-        cpu-microcodes = {
-            flake = false;
-            url = "github:platomav/CPUMicrocodes";
-        };
     };
 
     outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree [./modules ./extraModules]);
