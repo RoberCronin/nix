@@ -16,12 +16,11 @@
             # Code Styling/formatters
             typstyle # typst
             alejandra # nix
-            jsonfmt # json
             clang-tools # c/c++
             isort # python import sorter
             black # python
             stylua #lua
-            # nodePackages_latest.prettier # javascript, css, html
+            prettier # javascript, css, html, json
         ];
     };
 

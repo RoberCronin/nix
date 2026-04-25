@@ -10,7 +10,7 @@ return {
             cpp = { "clang-format" },
             c = { "clang-format" },
             python = { "black" },
-            jsonc = { "jsonfmt" },
+            jsonc = { "prettier" },
             typst = { "typstyle" },
             rust = { "rustfmt" },
         },
