@@ -9,6 +9,7 @@ progress_bar_corners = top-left,bottom-right
 offset = (15, 25)
 gap_size = 5
 format = "<b>󰁕 %a</b>\n%s\n<i>%b</i>"
+follow = mouse
 
 frame_color = "#8aadf4"
 separator_color= frame
