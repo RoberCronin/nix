@@ -8,12 +8,9 @@
                     end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
                 };
             };
-
-            steam = {
-                enable = true;
-            };
         };
 
+	programs.steam.enable = true;
         hardware.steam-hardware.enable = true;
 
         environment.systemPackages = with pkgs; [
