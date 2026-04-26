@@ -17,7 +17,6 @@
             rofi
             networkmanagerapplet
             wofi
-            waybar
             playerctl
             nwg-look
             hyprpaper
@@ -29,6 +28,16 @@
             withUWSM = true;
             package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
             portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+        };
+
+        programs.uwsm = {
+            enable = true;
+            waylandCompositors.hyprland = {
+                prettyName = "Hyprland";
+                comment = "Hyprland with UWSM";
+                binPath = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprland";
+                extraArgs = [];
+            };
         };
     };
 

@@ -3,7 +3,7 @@
   "layer": "top",
   "position": "left",
   "width": 54,
-  "modules-left": ["sway/workspaces"],
+  "modules-left": ["sway/workspaces", "hyprland/workspaces"],
   "modules-center": [],
   "modules-right": [
     "battery",
@@ -14,6 +14,13 @@
     "tray",
     "clock",
   ],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "sort-by-number": true,
+  },
 
   "sway/workspaces": {
     "disable-scroll": true,
