@@ -10,7 +10,7 @@
             };
         };
 
-	programs.steam.enable = true;
+        programs.steam.enable = true;
         hardware.steam-hardware.enable = true;
 
         environment.systemPackages = with pkgs; [
@@ -20,7 +20,7 @@
             r2modman
             winePackages.unstableFull
             protontricks
-            bottles
+            # bottles
             prismlauncher
         ];
     };
