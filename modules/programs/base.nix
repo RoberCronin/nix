@@ -36,6 +36,7 @@ in {
             fastfetch
 
             # GUI applications
+            bitwarden-desktop
             thunderbird
             pkgs-stable.qbittorrent
             pkgs-stable.libreoffice
