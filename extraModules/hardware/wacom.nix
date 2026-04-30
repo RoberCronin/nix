@@ -1,6 +1,9 @@
 {
-    flake.modules.nixos.wacom = {...}: {
+    flake.modules.nixos.wacom = {pkgs, ...}: {
         services.xserver.wacom.enable = true;
-        # hardware.opentabletdriver.enable = true;
+        environment.systemPackages = with pkgs; [
+            xf86_input_wacom
+            libwacom
+        ];
     };
 }

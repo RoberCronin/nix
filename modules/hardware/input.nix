@@ -18,9 +18,7 @@
         environment.systemPackages = with pkgs; [
             # Input
             piper
-            xf86_input_wacom
-            libwacom
-            kdePackages.wacomtablet
+            libinput
         ];
     };
 }
