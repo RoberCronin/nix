@@ -26,6 +26,7 @@
             "org.gnome.SimpleScan"
             "dev.vencord.Vesktop"
             "com.moonlight_stream.Moonlight"
+            "net.drawpile.drawpile"
 
             # install rnote as flatpak because nixpkgs version is broken
             "com.github.flxzt.rnote"
