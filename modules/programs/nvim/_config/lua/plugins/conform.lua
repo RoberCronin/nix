@@ -10,9 +10,12 @@ return {
             cpp = { "clang-format" },
             c = { "clang-format" },
             python = { "black" },
-            jsonc = { "prettier" },
             typst = { "typstyle" },
             rust = { "rustfmt" },
+            jsonc = { "prettier" },
+            html = { "prettier" },
+            javascript = { "prettier" },
+            css = { "prettier" },
         },
 
         format_on_save = {

@@ -62,6 +62,9 @@ return {
         vim.lsp.config("rust_analyzer", { capabilities = capabilities })
         vim.lsp.enable("rust_analyzer")
 
+        vim.lsp.config("typescript-language-server", { capabilities = capabilities })
+        vim.lsp.enable("typescript-language-server")
+
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
         vim.keymap.set("n", "<leader>ci", vim.lsp.buf.implementation)
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)

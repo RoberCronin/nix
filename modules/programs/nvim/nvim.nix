@@ -7,6 +7,7 @@
             # LSP, language server
             cmake-language-server # c/c++ lsp
             lua-language-server
+            typescript-language-server
             basedpyright # python lsp
             nixd
             glsl_analyzer
