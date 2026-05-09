@@ -10,7 +10,7 @@
             gui
             gaming
 
-            hyprland
+            sway
             robert
         ];
 
@@ -26,7 +26,7 @@
     flake.modules.homeManager.desktop = {
         imports = with self.modules.homeManager; [
             base
-            hyprland
+            sway
         ];
 
         config.host = "desktop";
