@@ -9,6 +9,7 @@
             nvidiaGraphics
             gui
             gaming
+            openssh
 
             sway
             robert
