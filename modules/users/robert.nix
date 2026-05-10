@@ -14,6 +14,8 @@
                 "dialout"
                 "vboxusers"
                 "audio"
+                "scanner"
+                "lp"
             ];
         };
     };

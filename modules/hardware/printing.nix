@@ -20,6 +20,15 @@
             enable = true;
             nssmdns4 = true;
             openFirewall = true;
+            publish = {
+                enable = true;
+                userServices = true;
+            };
+        };
+
+        hardware.sane = {
+            enable = true;
+            extraBackends = [pkgs.sane-airscan];
         };
     };
 }
