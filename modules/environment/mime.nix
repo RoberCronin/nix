@@ -24,18 +24,6 @@
             mimeType = [];
         };
 
-        xdg.desktopEntries.nvim-alacritty = {
-            name = "Close launcher";
-            exec = "echo closed launcher.";
-            genericName = "";
-            terminal = false;
-            comment = "";
-            type = "Application";
-            icon = "alacritty";
-            categories = [];
-            mimeType = [];
-        };
-
         xdg.desktopEntries.firefox-school = {
             name = "Firefox School";
             exec = "firefox -p school";
