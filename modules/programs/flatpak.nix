@@ -27,6 +27,7 @@
             "dev.vencord.Vesktop"
             "com.moonlight_stream.Moonlight"
             "net.drawpile.drawpile"
+            "com.usebottles.bottles"
 
             # install rnote as flatpak because nixpkgs version is broken
             "com.github.flxzt.rnote"
