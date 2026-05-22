@@ -58,10 +58,10 @@ if [[ $TERM != "dumb" ]]; then
     eval "$(starship init bash --print-full-init)"
 fi
 
-#if [[ :$SHELLOPTS: =~ :(vi|emacs): ]]; then
-#  source "/nix/store/w8nzzxba3qm6x32vbf21agkv3611mqc6-bash-preexec-0.5.0/share/bash/bash-preexec.sh"
-#  eval "$(atuin init bash )"
-#fi
+# Load local secret environment variables if they exist
+if [ -f "$HOME/.bashrc.local" ]; then
+    source "$HOME/.bashrc.local"
+fi
 
 if command -v direnv &>/dev/null; then
     eval "$(direnv hook bash)"
