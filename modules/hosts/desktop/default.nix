@@ -12,6 +12,7 @@
             openssh
 
             sway
+            hyprland
             robert
         ];
 
@@ -28,6 +29,7 @@
         imports = with self.modules.homeManager; [
             base
             sway
+            hyprland
         ];
 
         config.host = "desktop";

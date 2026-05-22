@@ -1,8 +1,4 @@
-{
-    self,
-    inputs,
-    ...
-}: {
+{self, ...}: {
     flake.modules.nixos.hyprland = {pkgs, ...}: {
         imports = with self.modules.nixos; [
             waybar
@@ -26,8 +22,6 @@
         programs.hyprland = {
             enable = true;
             withUWSM = true;
-            package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-            portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
         };
 
         programs.uwsm = {
@@ -35,7 +29,7 @@
             waylandCompositors.hyprland = {
                 prettyName = "Hyprland";
                 comment = "Hyprland with UWSM";
-                binPath = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprland";
+                binPath = "${pkgs.hyprland}/bin/hyprland";
                 extraArgs = [];
             };
         };
