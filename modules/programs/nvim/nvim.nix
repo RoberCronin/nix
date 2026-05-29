@@ -3,6 +3,9 @@
         environment.systemPackages = with pkgs; [
             neovim
             wl-clipboard
+            pkgs.vimPlugins.avante-nvim # The Avante package
+            pkgs.gcc # Required to compile/link Avante's native components
+            pkgs.ripgrep
 
             # LSP, language server
             cmake-language-server # c/c++ lsp
@@ -25,39 +28,18 @@
             prettier # javascript, css, html, json
             ormolu # haskell
         ];
+
+        environment.sessionVariables = {
+            NVIM_AVANTE_PATH = "${pkgs.vimPlugins.avante-nvim}";
+        };
     };
 
-    flake.modules.homeManager.base = {
-        pkgs,
-        config,
-        ...
-    }: {
+    flake.modules.homeManager.base = {config, ...}: {
         xdg.configFile = {
             "nvim" = {
                 source = config.lib.meta.mkMutableSymlink ./_config;
                 recursive = true;
             };
-        };
-
-        home.packages = with pkgs; [
-            curl
-            imagemagick
-            git
-            ripgrep
-            fd
-        ];
-
-        programs.neovim = {
-            enable = true;
-
-            plugins = with pkgs.vimPlugins; [
-                avante-nvim
-                plenary-nvim
-                dressing-nvim
-                nui-nvim
-                render-markdown-nvim
-                nvim-cmp
-            ];
         };
     };
 }
