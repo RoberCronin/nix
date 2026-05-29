@@ -45,7 +45,6 @@ in {
             pkgs-stable.better-control
             # install rnote as flatpak because nixpkgs version is broken
             # rnote
-            termite
             mpv
             nomacs
             evince
