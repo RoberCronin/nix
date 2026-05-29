@@ -13,6 +13,7 @@
             glsl_analyzer
             tinymist # typst lsp
             harper # grammar and spelling
+            haskell-language-server
 
             # Code Styling/formatters
             typstyle # typst
@@ -22,6 +23,7 @@
             black # python
             stylua #lua
             prettier # javascript, css, html, json
+            ormolu # haskell
         ];
     };
 

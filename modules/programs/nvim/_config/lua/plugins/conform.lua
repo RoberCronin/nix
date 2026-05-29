@@ -16,6 +16,7 @@ return {
             html = { "prettier" },
             javascript = { "prettier" },
             css = { "prettier" },
+            haskell = { "ormolu" },
         },
 
         format_on_save = {

@@ -79,6 +79,7 @@ in {
             rustc
             nodejs_22
             gcc
+            ghc
 
             # System/other
             glfw
