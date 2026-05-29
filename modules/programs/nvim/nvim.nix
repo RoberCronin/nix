@@ -27,12 +27,37 @@
         ];
     };
 
-    flake.modules.homeManager.base = {config, ...}: {
+    flake.modules.homeManager.base = {
+        pkgs,
+        config,
+        ...
+    }: {
         xdg.configFile = {
             "nvim" = {
                 source = config.lib.meta.mkMutableSymlink ./_config;
                 recursive = true;
             };
+        };
+
+        home.packages = with pkgs; [
+            curl
+            imagemagick
+            git
+            ripgrep
+            fd
+        ];
+
+        programs.neovim = {
+            enable = true;
+
+            plugins = with pkgs.vimPlugins; [
+                avante-nvim
+                plenary-nvim
+                dressing-nvim
+                nui-nvim
+                render-markdown-nvim
+                nvim-cmp
+            ];
         };
     };
 }
