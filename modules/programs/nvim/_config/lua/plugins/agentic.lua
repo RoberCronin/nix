@@ -11,10 +11,11 @@ return {
                 command = "opencode",
                 args = { "acp" },
 
-                initial_model = "openrouter/deepseek/deepseek-chat",
+                initial_model = "qwen/qwen3-coder",
 
                 env = {
                     OPENROUTER_API_KEY = vim.env.OPENROUTER_API_KEY,
+                    OPENCODE_EXPERIMENTAL_OUTPUT_TOKEN_MAX = "4096",
                 },
             },
         },
