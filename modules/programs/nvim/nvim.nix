@@ -3,9 +3,7 @@
         environment.systemPackages = with pkgs; [
             neovim
             wl-clipboard
-            pkgs.vimPlugins.avante-nvim # The Avante package
-            pkgs.gcc # Required to compile/link Avante's native components
-            pkgs.ripgrep
+            opencode # ACP provider for Agentic.nvim
 
             # LSP, language server
             cmake-language-server # c/c++ lsp
@@ -28,10 +26,6 @@
             prettier # javascript, css, html, json
             ormolu # haskell
         ];
-
-        environment.sessionVariables = {
-            NVIM_AVANTE_PATH = "${pkgs.vimPlugins.avante-nvim}";
-        };
     };
 
     flake.modules.homeManager.base = {config, ...}: {
