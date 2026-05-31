@@ -4,9 +4,15 @@ return {
     --- @type agentic.PartialUserConfig
     opts = {
         provider = "opencode-acp",
+
         acp_providers = {
             ["opencode-acp"] = {
-                initial_model = "deepseek/deepseek-v4-flash",
+                name = "OpenCode",
+                command = "opencode",
+                args = { "acp" },
+
+                initial_model = "openrouter/deepseek/deepseek-chat",
+
                 env = {
                     OPENROUTER_API_KEY = vim.env.OPENROUTER_API_KEY,
                 },
