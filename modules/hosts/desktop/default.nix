@@ -16,7 +16,12 @@
             robert
         ];
 
-        config.host = "desktop";
+        config = {
+            host = "desktop";
+
+            networking.firewall.allowedTCPPorts = [8096];
+            networking.firewall.allowedUDPPorts = [7359];
+        };
     };
 
     flake.nixosConfigurations.desktop = inputs.nixpkgs.lib.nixosSystem {
