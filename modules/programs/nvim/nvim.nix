@@ -4,6 +4,8 @@
             neovim
             wl-clipboard
             opencode # ACP provider for Agentic.nvim
+            tree-sitter
+            luaPackages.tree-sitter-cli
 
             # LSP, language server
             cmake-language-server # c/c++ lsp
