@@ -79,6 +79,7 @@ in {
             nodejs_22
             gcc
             ghc
+            elixir
 
             # System/other
             glfw

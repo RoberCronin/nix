@@ -15,6 +15,7 @@
             tinymist # typst lsp
             harper # grammar and spelling
             haskell-language-server
+            elixir-ls
 
             # Code Styling/formatters
             typstyle # typst
