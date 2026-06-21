@@ -37,6 +37,9 @@
                 source = config.lib.meta.mkMutableSymlink ./_config;
                 recursive = true;
             };
+            "opencode/opencode.json" = {
+                source = config.lib.meta.mkMutableSymlink ./_configOther/opencode.json;
+            };
         };
     };
 }
