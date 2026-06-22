@@ -13,6 +13,7 @@ return {
             typst = { "typstyle" },
             rust = { "rustfmt" },
             jsonc = { "prettier" },
+            json = { "prettier" },
             html = { "prettier" },
             javascript = { "prettier" },
             css = { "prettier" },
