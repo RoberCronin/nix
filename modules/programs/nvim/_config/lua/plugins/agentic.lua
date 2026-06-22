@@ -11,7 +11,7 @@ return {
                 command = "opencode",
                 args = { "acp" },
 
-                initial_model = "qwen/qwen3-coder",
+                initial_model = "deepseek/deepseek-v4-pro",
 
                 env = {
                     OPENROUTER_API_KEY = vim.env.OPENROUTER_API_KEY,

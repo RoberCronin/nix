@@ -3,15 +3,10 @@
   "provider": {
     "openrouter": {
       "models": {
-        "qwen/qwen3-coder": {
-          "name": "Qwen 3 Coder"
-        },
-        "deepseek/deepseek-v4-pro": {
-          "name": "DeepSeek V4 Pro"
-        }
+        "qwen/qwen3-coder": { "name": "Qwen 3 Coder" },
+        "deepseek/deepseek-v4-pro": { "name": "DeepSeek V4 Pro" }
       }
     }
   },
-  "model": "openrouter/qwen/qwen3-coder"
+  "model": "openrouter/deepseek/deepseek-v4-pro"
 }
-
