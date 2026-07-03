@@ -1,9 +1,25 @@
 {
-    flake.modules.nixos.base = {pkgs, ...}: {
+    flake.modules.nixos.base = {
+        pkgs,
+        config,
+        ...
+    }: {
         xdg.portal.enable = true;
         xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
         xdg.portal.config.common.default = "*";
         services.flatpak.enable = true;
+
+        # config for getting obs' virtual camera working
+        boot.extraModulePackages = with config.boot.kernelPackages; [
+            v4l2loopback
+        ];
+        boot.kernelModules = [
+            "v4l2loopback"
+        ];
+        boot.extraModprobeConfig = ''
+            options v4l2loopback exclusive_caps=1 card_label="OBS Virtual Camera"
+        '';
+        security.polkit.enable = true;
     };
 
     flake.modules.homeManager.base = {
@@ -28,6 +44,8 @@
             "com.moonlight_stream.Moonlight"
             "net.drawpile.drawpile"
             "com.usebottles.bottles"
+            "com.obsproject.Studio.Plugin.DroidCam"
+            "com.obsproject.Studio"
 
             # install rnote as flatpak because nixpkgs version is broken
             "com.github.flxzt.rnote"
@@ -59,6 +77,9 @@
 
             # 7. Update all installed Flatpaks
             # ${pkgs.flatpak}/bin/flatpak update -y
+
+            # 8. Update permissions
+            ${pkgs.flatpak}/bin/flatpak override --user --device=all com.obsproject.Studio
         '';
     };
 }
