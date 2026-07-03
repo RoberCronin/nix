@@ -15,8 +15,6 @@
 
         config = {
             host = "server";
-            # networking.firewall.allowedTCPPorts = [8096];
-            # networking.firewall.allowedUDPPorts = [7359];
         };
     };
 
