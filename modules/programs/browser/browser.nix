@@ -1,11 +1,11 @@
 {
-    flake.modules.nixos.base = {pkgs, ...}: {
+    flake.modules.nixos.browser = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             firefox
         ];
     };
 
-    flake.modules.homeManager.base = {pkgs, ...}: let
+    flake.modules.homeManager.browser = {pkgs, ...}: let
         settings = import ./_settings.nix;
         search = import ./_search.nix {inherit pkgs;};
     in {

@@ -1,6 +1,5 @@
 {
-    flake.modules.nixos.base = {pkgs, ...}: {
-        # Configure keymap in X11
+    flake.modules.nixos.input = {pkgs, ...}: {
         console.useXkbConfig = true;
         services.xserver.xkb = {
             layout = "us";
@@ -16,7 +15,6 @@
         '';
 
         environment.systemPackages = with pkgs; [
-            # Input
             piper
             libinput
         ];

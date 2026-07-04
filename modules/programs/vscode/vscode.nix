@@ -1,11 +1,11 @@
 {
-    flake.modules.nixos.base = {pkgs, ...}: {
+    flake.modules.nixos.vscode = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             vscode
         ];
     };
 
-    flake.modules.homeManager.base = {
+    flake.modules.homeManager.vscode = {
         lib,
         config,
         pkgs,

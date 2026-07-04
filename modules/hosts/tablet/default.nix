@@ -4,14 +4,16 @@
     ...
 }: {
     flake.modules.nixos.tablet = {
-        imports = with self.modules.nixos; [
-            base
-            intelGraphics
-            wacom
-            auto-cpufreq
+        imports = [
+            self.modules.nixos.base
+            self.modules.nixos.desktopBase
+            self.modules.nixos.intelGraphics
+            self.modules.nixos.wacom
+            self.modules.nixos.auto-cpufreq
 
-            sway
-            robert
+            self.modules.nixos.sway
+            self.modules.nixos.robert
+            self.modules.nixos.dev
         ];
 
         config.host = "tablet";
@@ -25,9 +27,10 @@
     };
 
     flake.modules.homeManager.tablet = {
-        imports = with self.modules.homeManager; [
-            base
-            sway
+        imports = [
+            self.modules.homeManager.base
+            self.modules.homeManager.desktopBase
+            self.modules.homeManager.sway
         ];
 
         config.host = "tablet";

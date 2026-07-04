@@ -12,7 +12,7 @@
         programs.openvpn3.enable = true;
         networking.networkmanager = {
             enable = true;
-            packages = [pkgs.networkmanager-openvpn];
+            plugins = [pkgs.networkmanager-openvpn];
         };
     };
 }

@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.base = {pkgs, ...}: {
+    flake.modules.nixos.thunar = {pkgs, ...}: {
         programs.thunar = {
             enable = true;
             plugins = with pkgs; [
@@ -12,7 +12,6 @@
             ];
         };
 
-        # Thumbnail support for images
         services.tumbler.enable = true;
         services.resolved.enable = true;
     };

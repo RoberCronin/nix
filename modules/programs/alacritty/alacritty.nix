@@ -1,11 +1,11 @@
 {
-    flake.modules.nixos.base = {pkgs, ...}: {
+    flake.modules.nixos.alacritty = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             alacritty
         ];
     };
 
-    flake.modules.homeManager.base = {config, ...}: {
+    flake.modules.homeManager.alacritty = {config, ...}: {
         xdg.configFile = {
             "alacritty" = {
                 source = config.lib.meta.mkMutableSymlink ./_config;

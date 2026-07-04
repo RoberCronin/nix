@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.base = {pkgs, ...}: {
+    flake.modules.nixos.qtTheme = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             libsForQt5.qt5ct
             kdePackages.qt6ct
@@ -7,7 +7,7 @@
         ];
     };
 
-    flake.modules.homeManager.base = {pkgs, ...}: {
+    flake.modules.homeManager.qtTheme = {pkgs, ...}: {
         qt = {
             enable = true;
             style = {

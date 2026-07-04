@@ -4,16 +4,18 @@
     ...
 }: {
     flake.modules.nixos.desktop = {
-        imports = with self.modules.nixos; [
-            base
-            nvidiaGraphics
-            gui
-            gaming
-            openssh
+        imports = [
+            self.modules.nixos.base
+            self.modules.nixos.desktopBase
+            self.modules.nixos.nvidiaGraphics
+            self.modules.nixos.gui
+            self.modules.nixos.gaming
+            self.modules.nixos.openssh
 
-            sway
-            hyprland
-            robert
+            self.modules.nixos.sway
+            self.modules.nixos.hyprland
+            self.modules.nixos.robert
+            self.modules.nixos.dev
         ];
 
         config = {
@@ -31,10 +33,11 @@
     };
 
     flake.modules.homeManager.desktop = {
-        imports = with self.modules.homeManager; [
-            base
-            sway
-            hyprland
+        imports = [
+            self.modules.homeManager.base
+            self.modules.homeManager.desktopBase
+            self.modules.homeManager.sway
+            self.modules.homeManager.hyprland
         ];
 
         config.host = "desktop";

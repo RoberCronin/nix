@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.base = {pkgs, ...}: {
+    flake.modules.nixos.printing = {pkgs, ...}: {
         services.printing = {
             enable = true;
             listenAddresses = ["*:631"];

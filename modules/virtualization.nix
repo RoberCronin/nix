@@ -1,5 +1,5 @@
 {
-    flake.modules.nixos.base = {pkgs, ...}: {
+    flake.modules.nixos.virtualization = {pkgs, ...}: {
         virtualisation = {
             containers.enable = true;
             docker = {
