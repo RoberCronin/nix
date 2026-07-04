@@ -7,7 +7,6 @@
             input
             printing
             fonts
-            virtualization
             desktopOptions
 
             alacritty

@@ -6,11 +6,7 @@
     flake.modules.nixos.server = {
         imports = [
             self.modules.nixos.base
-            self.modules.nixos.desktopBase
-            self.modules.nixos.nvidiaGraphics
             self.modules.nixos.openssh
-
-            self.modules.nixos.hyprland
             self.modules.nixos.robert
         ];
 
@@ -28,8 +24,6 @@
     flake.modules.homeManager.server = {
         imports = [
             self.modules.homeManager.base
-            self.modules.homeManager.desktopBase
-            self.modules.homeManager.hyprland
         ];
 
         config.host = "server";

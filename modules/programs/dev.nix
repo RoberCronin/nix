@@ -1,10 +1,5 @@
-{inputs, ...}: let
-    pkgs-stable = import inputs.nixpkgs-stable {
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-    };
-in {
-    flake.modules.nixos.dev = {pkgs, ...}: {
+{...}: {
+    flake.modules.nixos.base = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             # Development
             lazydocker

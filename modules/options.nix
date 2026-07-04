@@ -1,5 +1,6 @@
 {
     flake.modules.nixos.base = {pkgs, ...}: {
+        programs.dconf.enable = true;
         security.polkit.enable = true;
         programs.gnupg.agent = {
             enable = true;
