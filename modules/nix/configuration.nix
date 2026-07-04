@@ -1,16 +1,15 @@
 {inputs, ...}: {
     flake.modules.nixos.base = {pkgs, ...}: {
         nixpkgs.config.allowUnfree = true;
+        nixpkgs.config.permittedInsecurePackages = [
+            "electron-39.8.10"
+        ];
         nix.settings.experimental-features = ["nix-command" "flakes"];
         nix.settings.trusted-users = ["root" "robert"];
         nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
         environment.systemPackages = with pkgs; [
             home-manager
-        ];
-
-        nixpkgs.overlays = [
-            inputs.nix-cachyos-kernel.overlays.pinned
         ];
 
         # nix.gc.automatic = true;
