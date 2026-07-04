@@ -10,7 +10,6 @@ in {
             lazydocker
             devenv
             lazygit
-            direnv
             stdenv
             gnumake
             tree-sitter

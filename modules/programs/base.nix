@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{...}: {
     flake.modules.nixos.base = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             # Common Terminal Utils
@@ -9,12 +9,10 @@
             unzip
             rar
             unrar
-            git
             gh
             fzf
             wget
             curl
-            btop
             ripgrep
             killall
             brightnessctl
