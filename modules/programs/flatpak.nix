@@ -40,12 +40,12 @@
             "xyz.xclicker.xclicker"
             "org.vinegarhq.Sober"
             "org.gnome.SimpleScan"
-            "dev.vencord.Vesktop"
             "com.moonlight_stream.Moonlight"
             "net.drawpile.drawpile"
             "com.usebottles.bottles"
             "com.obsproject.Studio.Plugin.DroidCam"
             "com.obsproject.Studio"
+            "com.discordapp.Discord"
 
             # install rnote as flatpak because nixpkgs version is broken
             "com.github.flxzt.rnote"
