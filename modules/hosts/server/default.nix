@@ -7,11 +7,17 @@
         imports = [
             self.modules.nixos.base
             self.modules.nixos.openssh
+
+            # users
             self.modules.nixos.robert
+            self.modules.nixos.ash
         ];
 
         config = {
             host = "server";
+
+            networking.firewall.allowedTCPPorts = [8096 8191 8989 7878 9696 6767 8080 2283 9898 445 7000];
+            # networking.firewall.allowedUDPPorts = [];
         };
     };
 
