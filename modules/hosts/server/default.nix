@@ -7,6 +7,7 @@
         imports = [
             self.modules.nixos.base
             self.modules.nixos.openssh
+            self.modules.nixos.intelGraphics
 
             # users
             self.modules.nixos.robert

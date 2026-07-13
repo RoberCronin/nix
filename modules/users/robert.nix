@@ -16,6 +16,8 @@
                 "audio"
                 "scanner"
                 "lp"
+                "render"
+                "video"
             ];
         };
     };
