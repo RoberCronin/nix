@@ -46,6 +46,8 @@
             "com.obsproject.Studio.Plugin.DroidCam"
             "com.obsproject.Studio"
             "com.discordapp.Discord"
+            "moe.launcher.the-honkers-railway-launcher"
+            "org.jellyfin.JellyfinDesktop"
 
             # install rnote as flatpak because nixpkgs version is broken
             "com.github.flxzt.rnote"
