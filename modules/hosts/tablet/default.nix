@@ -10,10 +10,10 @@
             self.modules.nixos.intelGraphics
             self.modules.nixos.wacom
             self.modules.nixos.auto-cpufreq
+            self.modules.nixos.bluetooth
 
             self.modules.nixos.sway
             self.modules.nixos.robert
-            self.modules.nixos.dev
         ];
 
         config.host = "tablet";
