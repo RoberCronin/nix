@@ -1,18 +1,7 @@
 {
-    flake.modules.nixos.desktopOptions = {
-        pkgs,
-        config,
-        ...
-    }: {
+    flake.modules.nixos.desktopOptions = {pkgs, ...}: {
         programs.xfconf.enable = true;
         security.soteria.enable = true;
-
-        services.syncthing = {
-            enable = true;
-            user = config.mainUser;
-            dataDir = "/home/${config.mainUser}";
-            configDir = "/home/${config.mainUser}/.config/syncthing";
-        };
 
         services.mullvad-vpn = {
             enable = true;
