@@ -1,5 +1,29 @@
-{
-    flake.modules.nixos.nvidiaGraphics = {
+{self, ...}: {
+    flake.modules.nixos.nvidiaGraphics = {config, ...}: {
+        imports = [
+            self.modules.nixos.nvidiaGraphicsBase
+        ];
+
+        config = {
+            hardware.nvidia = {
+                package = config.boot.kernelPackages.nvidiaPackages.stable;
+            };
+        };
+    };
+
+    flake.modules.nixos.nvidiaGraphicsLegacy = {config, ...}: {
+        imports = [
+            self.modules.nixos.nvidiaGraphicsBase
+        ];
+
+        config = {
+            hardware.nvidia = {
+                package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+            };
+        };
+    };
+
+    flake.modules.nixos.nvidiaGraphicsBase = {
         config,
         pkgs,
         ...
@@ -32,7 +56,6 @@
             # Use the Nvidia open source kernel module (not nouveu)
             open = false;
             nvidiaSettings = true;
-            package = config.boot.kernelPackages.nvidiaPackages.stable;
         };
 
         environment.systemPackages = with pkgs; [

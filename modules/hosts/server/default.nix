@@ -8,6 +8,7 @@
             self.modules.nixos.base
             self.modules.nixos.openssh
             self.modules.nixos.intelGraphics
+            self.modules.nixos.nvidiaGraphicsLegacy
 
             # users
             self.modules.nixos.robert
@@ -17,7 +18,7 @@
         config = {
             host = "server";
 
-            networking.firewall.allowedTCPPorts = [8096 8191 8989 7878 9696 6767 8080 2283 9898 445 7000];
+            networking.firewall.allowedTCPPorts = [8096 8191 8989 7878 9696 6767 8080 2283 9898 445 7000 8081 8090 2022];
             # networking.firewall.allowedUDPPorts = [];
         };
     };
