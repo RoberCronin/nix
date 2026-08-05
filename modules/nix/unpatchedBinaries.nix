@@ -3,6 +3,8 @@
         services.envfs.enable = true;
         programs.nix-ld.enable = true;
         programs.nix-ld.libraries = with pkgs; [
+            qt6.qtdeclarative
+            qt6.qtbase
             alsa-lib
             at-spi2-atk
             at-spi2-core
