@@ -15,7 +15,6 @@
             self.modules.nixos.sway
             self.modules.nixos.hyprland
             self.modules.nixos.robert
-            self.modules.nixos.dev
         ];
 
         config = {
