@@ -11,6 +11,7 @@
             self.modules.nixos.wacom
             self.modules.nixos.auto-cpufreq
             self.modules.nixos.bluetooth
+            self.modules.nixos.gaming
 
             self.modules.nixos.sway
             self.modules.nixos.robert

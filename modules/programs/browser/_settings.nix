@@ -14,6 +14,10 @@
 
     # performance settings
     "gfx.webrender.all" = true;
+    "media.ffmpeg.vaapi.enabled" = true;
+    "media.ffvpx.enabled" = false;
+    "media.navigator.mediadatadecoder_vpx_enabled" = true;
+    "media.rdd-ffmpeg.enabled" = false;
 
     "browser.theme.toolbar-theme" = true;
     "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";

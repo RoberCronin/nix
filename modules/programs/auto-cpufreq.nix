@@ -3,12 +3,12 @@
         services.auto-cpufreq.enable = true;
         services.auto-cpufreq.settings = {
             battery = {
-                governor = "performance";
+                governor = "powersave";
                 turbo = "auto";
             };
 
             charger = {
-                governor = "performance";
+                governor = "schedutil";
                 turbo = "auto";
             };
         };
