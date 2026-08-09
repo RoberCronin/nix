@@ -1,17 +1,13 @@
-{inputs, ...}: let
-    pkgs-stable = import inputs.nixpkgs-stable {
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-    };
+{...}: let
 in {
     flake.modules.nixos.desktopApps = {pkgs, ...}: {
         environment.systemPackages = with pkgs; [
             bitwarden-desktop
             thunderbird
-            pkgs-stable.qbittorrent
-            pkgs-stable.libreoffice
-            pkgs-stable.easyeffects
-            pkgs-stable.anki
+            qbittorrent
+            libreoffice
+            easyeffects
+            anki
             mpv
             nomacs
             evince
