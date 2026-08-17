@@ -23,16 +23,6 @@
             enable = true;
             withUWSM = true;
         };
-
-        programs.uwsm = {
-            enable = true;
-            waylandCompositors.hyprland = {
-                prettyName = "Hyprland";
-                comment = "Hyprland with UWSM";
-                binPath = "${pkgs.hyprland}/bin/hyprland";
-                extraArgs = [];
-            };
-        };
     };
 
     flake.modules.homeManager.hyprland = {config, ...}: {
