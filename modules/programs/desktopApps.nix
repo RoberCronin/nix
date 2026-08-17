@@ -15,6 +15,7 @@ in {
             pavucontrol
             gparted
             mousepad
+            feishin
 
             glfw
             evolution-data-server

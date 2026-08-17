@@ -47,7 +47,7 @@
             "com.obsproject.Studio"
             "com.discordapp.Discord"
             "moe.launcher.the-honkers-railway-launcher"
-            "flathub org.jeffvli.feishin"
+            # "flathub org.jeffvli.feishin"
             "com.stremio.Stremio"
 
             # install rnote as flatpak because nixpkgs version is broken
@@ -73,7 +73,7 @@
             # 5. Install or re-install the Flatpaks you DO want
             apps="${toString desiredFlatpaks}"
             echo "Ensuring $apps is installed."
-            ${pkgs.flatpak}/bin/flatpak install --user -y flathub $apps
+            ${pkgs.flatpak}/bin/flatpak install --user -y flathub --noninteractive $apps
 
             # 6. Remove unused Flatpaks
             ${pkgs.flatpak}/bin/flatpak uninstall --unused -y
