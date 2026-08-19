@@ -1,6 +1,6 @@
 {inputs, ...}: {
     flake.modules.nixos.base = {pkgs, ...}: {
-        boot.kernelPackages = pkgs.linuxPackages_6_6;
+        boot.kernelPackages = pkgs.linuxPackages_latest;
 
         # Bootloader.
         boot.loader.systemd-boot.enable = true;
