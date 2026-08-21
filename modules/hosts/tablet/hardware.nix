@@ -36,6 +36,10 @@
         boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "sd_mod"];
         boot.initrd.kernelModules = ["i915"];
         boot.kernelModules = ["kvm-intel"];
+        boot.kernelParams = [
+            "usbcore.autosuspend=-1"
+            "usbcore.quirks=044e:1218:k"
+        ];
         boot.extraModulePackages = [];
 
         fileSystems."/" = {
