@@ -11,6 +11,7 @@
     in {
         programs.firefox = {
             enable = true;
+            profileVersion = null;
             profiles = {
                 default = {
                     id = 0;
