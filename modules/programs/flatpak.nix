@@ -46,9 +46,8 @@
             "com.obsproject.Studio.Plugin.DroidCam"
             "com.obsproject.Studio"
             "com.discordapp.Discord"
-            "moe.launcher.the-honkers-railway-launcher"
-            # "flathub org.jeffvli.feishin"
             "com.stremio.Stremio"
+            "com.prusa3d.PrusaSlicer"
 
             # install rnote as flatpak because nixpkgs version is broken
             "com.github.flxzt.rnote"
