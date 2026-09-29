@@ -1,5 +1,6 @@
 {
     flake.modules.homeManager.base = {
+        xdg.userDirs.setSessionVariables = true;
         xdg.desktopEntries.xarchiver = {
             name = "Xarchiver";
             exec = "xarchiver %f";

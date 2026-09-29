@@ -15,6 +15,7 @@
             cursorTheme.package = pkgs.bibata-cursors;
             cursorTheme.name = "Bibata-Modern-Classic";
             cursorTheme.size = 24;
+            gtk4.theme = null;
         };
     };
 }
