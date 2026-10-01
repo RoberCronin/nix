@@ -16,6 +16,23 @@ function M.sync()
     local full_api_url = base_url .. "/api/v2/projects/" .. LIST_ID .. "/tasks"
 
     local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+
+    local has_content = false
+    for _, l in ipairs(lines) do
+        if string.gsub(l, "^%s*(.-)%s*$", "%1") ~= "" then
+            has_content = true
+            break
+        end
+    end
+
+    if not has_content then
+        local today = os.date("%Y-%m-%d")
+        local template = "task name due:" .. today .. " 11:59 pm"
+        vim.api.nvim_buf_set_lines(0, 0, -1, false, { template })
+        vim.cmd("stopinsert")
+        return
+    end
+
     local count = 0
 
     for _, line in ipairs(lines) do
