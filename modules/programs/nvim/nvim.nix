@@ -1,9 +1,15 @@
-{
-    flake.modules.nixos.base = {pkgs, ...}: {
+{inputs, ...}: {
+    flake.modules.nixos.base = {pkgs, ...}: let
+        unstable = import inputs.nixpkgs-unstable {
+            system = pkgs.stdenv.system;
+            config.allowUnfree = true;
+        };
+    in {
         environment.systemPackages = with pkgs; [
             neovim
             wl-clipboard
             opencode # ACP provider for Agentic.nvim
+            unstable.antigravity-cli
             tree-sitter
             luaPackages.tree-sitter-cli
 
