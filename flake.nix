@@ -29,6 +29,11 @@
 
         nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
+        nixpkgs-unstable = {
+            url = "github:nixos/nixpkgs/nixpkgs-unstable";
+            flake = false;
+        };
+
         nix-on-droid = {
             url = "github:nix-community/nix-on-droid";
             inputs.nixpkgs.follows = "nixpkgs";
