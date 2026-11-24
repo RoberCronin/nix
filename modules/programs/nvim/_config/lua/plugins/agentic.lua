@@ -3,7 +3,7 @@ return {
     lazy = false,
     --- @type agentic.PartialUserConfig
     opts = {
-        provider = "opencode-acp",
+        provider = "antigravity-acp",
 
         acp_providers = {
             ["opencode-acp"] = {
@@ -17,6 +17,11 @@ return {
                     OPENROUTER_API_KEY = vim.env.OPENROUTER_API_KEY,
                     OPENCODE_EXPERIMENTAL_OUTPUT_TOKEN_MAX = "4096",
                 },
+            },
+            ["antigravity-acp"] = {
+                name = "Antigravity",
+                command = "agy",
+                args = { "acp" },
             },
         },
 
